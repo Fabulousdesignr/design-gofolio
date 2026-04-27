@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Designer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar sticky-nav">
+        <div class="container nav-container">
+            <div class="logo">G.O</div>
+            <div class="nav-links">
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-controls">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg id="sun-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+                <a href="#contact" class="nav-cta">Let's talk</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero scroll-reveal">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="availability-badge">
+                    <span class="pulsing-dot"></span> Available for work
+                </div>
+                <span class="intro-line">Hi, I'm Godwin.</span>
+                <h1>I turn complex user flows into simple, intuitive experiences.</h1>
+                <p class="subtitle">I design digital products that are clear, usable, and built for real people.</p>
+                <div class="hero-actions">
+                    <a href="#work" class="cta-button">View my work</a>
+                </div>
+                <div class="location-text">🌍 Based in GMT +1, working with teams globally.</div>
+            </div>
+            <div class="hero-image scroll-reveal fade-right">
+                <div class="profile-placeholder" aria-label="Profile image placeholder"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section stats-section scroll-reveal fade-up">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>4+</h3>
+                    <p>Products Designed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10+</h3>
+                    <p>Live & Concept Projects</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Mobile & Web</h3>
+                    <p>Experience Across Platforms</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Global</h3>
+                    <p>Worked With Teams & Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="section selected-work scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">Selected Work</h2>
+            <div class="work-grid">
+                <!-- Project 1 (Featured) -->
+                <div class="project-card featured scroll-reveal fade-up">
+                    <div class="card-image">
+                        <img src="shove_bet.png" alt="Shove.bet App Interface">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Mobile • Sports</span>
+                        <h3>Shove.bet</h3>
+                        <p>A live betting platform focused on clear and fast user interactions.</p>
+                        <a href="shove-bet.html" class="case-study-btn">View case study &rarr;</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card scroll-reveal fade-up">
+                    <div class="card-image">
+                        <img src="money_link.png" alt="MoneyLink Dashboard">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Fintech • Web</span>
+                        <h3>MoneyLink</h3>
+                        <p>A fintech product designed to simplify cross-border financial transactions.</p>
+                        <a href="#" class="case-study-btn">View case study &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card scroll-reveal fade-up">
+                    <div class="card-image">
+                        <img src="date_wave.png" alt="DateWave App Interface">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Mobile • Social</span>
+                        <h3>DateWave</h3>
+                        <p>A dating app focused on improving match quality and user engagement.</p>
+                        <a href="#" class="case-study-btn">View case study &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card scroll-reveal fade-up">
+                    <div class="card-image">
+                        <img src="loodle.png" alt="Loodle App Interface">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Mobile • Education</span>
+                        <h3>Loodle</h3>
+                        <p>A mobile learning app designed for neurodiverse children.</p>
+                        <a href="#" class="case-study-btn">View case study &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card scroll-reveal fade-up">
+                    <div class="card-image">
+                        <img src="ui_showcase_1.png" alt="PayFlow Interface">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">SaaS • Web</span>
+                        <h3>PayFlow</h3>
+                        <p>A comprehensive payment gateway dashboard for enterprise clients.</p>
+                        <a href="#" class="case-study-btn">View case study &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section ui-showcase scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">UI Explorations</h2>
+        </div>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="showcase-item"><img src="ui_showcase_1.png" alt="UI Screen 1"></div>
+                <div class="showcase-item"><img src="ui_showcase_2.png" alt="UI Screen 2"></div>
+                <div class="showcase-item"><img src="ui_showcase_3.png" alt="UI Screen 3"></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="showcase-item"><img src="ui_showcase_1.png" alt="UI Screen 1"></div>
+                <div class="showcase-item"><img src="ui_showcase_2.png" alt="UI Screen 2"></div>
+                <div class="showcase-item"><img src="ui_showcase_3.png" alt="UI Screen 3"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section why-i-design scroll-reveal fade-up">
+        <div class="container">
+            <div class="why-content">
+                <span class="section-label">Why I Design</span>
+                <h2>I believe design should solve problems, not create them.</h2>
+                <p>I focus on simplifying complexity to create products that feel natural, intuitive, and are built to help people accomplish their goals seamlessly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section process-section scroll-reveal fade-up">
+        <div class="container">
+            <h2 class="section-title">My Process</h2>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="step-num">01</div>
+                    <h3>Discover</h3>
+                    <p>Understanding the problem, user needs, and business goals through research.</p>
+                </div>
+                <div class="process-card">
+                    <div class="step-num">02</div>
+                    <h3>Define</h3>
+                    <p>Synthesizing insights to define clear problem statements and user journeys.</p>
+                </div>
+                <div class="process-card">
+                    <div class="step-num">03</div>
+                    <h3>Design</h3>
+                    <p>Iterating on wireframes and visual designs to create intuitive solutions.</p>
+                </div>
+                <div class="process-card">
+                    <div class="step-num">04</div>
+                    <h3>Test</h3>
+                    <p>Validating designs with real users to ensure usability and effectiveness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section tools-section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">Tools I Use</h2>
+        </div>
+        
+        <div class="tools-category">
+            <div class="container"><h3 class="tools-category-title">Core Design Tools</h3></div>
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <!-- Group 1 -->
+                    <div class="tool-card">Figma</div>
+                    <div class="tool-card">FigJam</div>
+                    <div class="tool-card">Framer</div>
+                    <div class="tool-card">Canva</div>
+                    <div class="tool-card">Notion</div>
+                    <div class="tool-card">Protopie</div>
+                    <!-- Duplicate Group 1 for loop -->
+                    <div class="tool-card">Figma</div>
+                    <div class="tool-card">FigJam</div>
+                    <div class="tool-card">Framer</div>
+                    <div class="tool-card">Canva</div>
+                    <div class="tool-card">Notion</div>
+                    <div class="tool-card">Protopie</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tools-category">
+            <div class="container"><h3 class="tools-category-title">AI-Assisted Tools</h3></div>
+            <div class="marquee-container">
+                <div class="marquee-track reverse-track">
+                    <!-- Group 1 -->
+                    <div class="tool-card">ChatGPT</div>
+                    <div class="tool-card">Claude</div>
+                    <div class="tool-card">Lovable</div>
+                    <div class="tool-card">Google Stitch</div>
+                    <div class="tool-card">Antigravity</div>
+                    <div class="tool-card">Windsurf</div>
+                    <!-- Duplicate Group 1 for loop -->
+                    <div class="tool-card">ChatGPT</div>
+                    <div class="tool-card">Claude</div>
+                    <div class="tool-card">Lovable</div>
+                    <div class="tool-card">Google Stitch</div>
+                    <div class="tool-card">Antigravity</div>
+                    <div class="tool-card">Windsurf</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section services-section scroll-reveal fade-up">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Product Design</h3>
+                    <p>End-to-end design for SaaS platforms and complex web applications.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Mobile App Design</h3>
+                    <p>Intuitive iOS and Android app experiences tailored for mobile users.</p>
+                </div>
+                <div class="service-card">
+                    <h3>UX Research</h3>
+                    <p>User interviews, usability testing, and deep-dive problem discovery.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Prototyping</h3>
+                    <p>High-fidelity, interactive prototypes for stakeholder alignment and testing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials-section scroll-reveal fade-up">
+        <div class="container">
+            <h2 class="section-title">Client Feedback</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="quote">"Godwin transformed our complex fintech dashboard into a beautifully simple experience. Our users love it."</p>
+                    <div class="author">
+                        <strong>Sarah Jenkins</strong>
+                        <span>Product Manager, MoneyLink</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"Incredible attention to detail and a true understanding of user psychology. Highly recommended."</p>
+                    <div class="author">
+                        <strong>David Chen</strong>
+                        <span>Founder, DateWave</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section cta-section scroll-reveal fade-up">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Let's work together.</h2>
+                <p>I'm currently available for freelance projects and full-time opportunities.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary">Book a call</a>
+                    <a href="mailto:hello@example.com" class="btn-secondary">Send an email</a>
+                    <a href="#" class="btn-secondary">Chat on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>G.O</h3>
+                <p>&copy; 2026 Godwin. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+                <a href="#">Dribbble</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

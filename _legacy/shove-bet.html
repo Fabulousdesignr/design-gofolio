@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shove.bet - Case Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="shove-bet-page">
+    <nav class="navbar sticky-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" style="text-decoration: none;">G.O</a>
+            <div class="nav-links">
+                <a href="index.html" style="font-weight: 600;">&larr; Back to Home</a>
+            </div>
+            <div class="nav-controls">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg id="sun-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <header class="cs-hero scroll-reveal">
+        <div class="container cs-hero-container">
+            <span class="category">Mobile • Sports</span>
+            <h1>Shove.bet</h1>
+            <p class="cs-subtitle">A live betting platform focused on clear and fast user interactions.</p>
+            <div class="cs-hero-image-wrapper">
+                <img src="shove_bet.png" alt="Shove.bet Hero Image" class="cs-hero-img">
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview Grid: Problem and Role -->
+    <section class="section cs-section cs-overview scroll-reveal fade-up">
+        <div class="container">
+            <div class="cs-overview-grid">
+                <div class="cs-text-block">
+                    <h2>The Problem</h2>
+                    <p>Live betting platforms are often cluttered, confusing, and overwhelming for casual bettors. The sheer volume of data and complex navigation paths create friction, leading to missed betting opportunities and user frustration. Shove.bet needed a streamlined experience that prioritized speed and clarity.</p>
+                </div>
+                <div class="cs-text-block cs-role-block">
+                    <h2>My Role</h2>
+                    <div class="role-tags">
+                        <span class="role-tag">Lead Product Designer</span>
+                        <span class="role-tag">UX Research & Strategy</span>
+                        <span class="role-tag">UI Design & Prototyping</span>
+                        <span class="role-tag">Interaction Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process (brief) -->
+    <section class="section cs-section scroll-reveal fade-up">
+        <div class="container">
+            <h2 class="section-title">The Process</h2>
+            <div class="cs-process-row">
+                <div class="cs-process-step">
+                    <strong>01. Research</strong>
+                    <p>Analyzed competitor platforms and conducted user interviews to understand pain points.</p>
+                </div>
+                <div class="cs-process-step">
+                    <strong>02. Ideation</strong>
+                    <p>Sketched rapid wireframes focusing on the bet slip and live odds display.</p>
+                </div>
+                <div class="cs-process-step">
+                    <strong>03. Design</strong>
+                    <p>Developed a high-fidelity design system that ensures readability in high-stress moments.</p>
+                </div>
+                <div class="cs-process-step">
+                    <strong>04. Testing</strong>
+                    <p>Validated the simplified bet flow through usability testing, refining interactions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Decisions section -->
+    <section class="section cs-section scroll-reveal fade-up">
+        <div class="container">
+            <h2 class="section-title">Key Decisions</h2>
+            <div class="cs-decisions-grid">
+                <div class="cs-decision-card">
+                    <h3>Simplified Bet Slip Interaction</h3>
+                    <p>Instead of a complex modal or a separate page, we introduced a bottom-sheet bet slip that overlays the live action. This allows users to place bets rapidly without losing sight of the game.</p>
+                </div>
+                <div class="cs-decision-card">
+                    <h3>Dynamic Odds Highlighting</h3>
+                    <p>To reduce cognitive load, we implemented a subtle color-coding system (green for rising, red for falling odds) that helps users quickly parse changes without reading every number.</p>
+                </div>
+                <div class="cs-decision-card">
+                    <h3>Focused Information Architecture</h3>
+                    <p>We stripped away secondary statistics from the main view, prioritizing current score, time remaining, and primary betting markets. Deeper stats are tucked behind a simple swipe gesture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Design showcase -->
+    <section class="section cs-section scroll-reveal fade-up">
+        <div class="container">
+            <h2 class="section-title">Final Design</h2>
+            <div class="cs-showcase-grid">
+                <div class="cs-showcase-item">
+                    <img src="ui_showcase_1.png" alt="Shove.bet UI Screen 1">
+                </div>
+                <div class="cs-showcase-item">
+                    <img src="ui_showcase_2.png" alt="Shove.bet UI Screen 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact section -->
+    <section class="section cs-section cs-impact scroll-reveal fade-up">
+        <div class="container">
+            <div class="cs-impact-content">
+                <h2>The Impact</h2>
+                <p>The redesign significantly improved the platform's core metrics. The streamlined interface allowed users to make decisions faster and with greater confidence.</p>
+                <div class="cs-impact-metrics">
+                    <div class="cs-metric">
+                        <span class="cs-metric-value">40%</span>
+                        <span class="cs-metric-label">Increase in bet placement speed</span>
+                    </div>
+                    <div class="cs-metric">
+                        <span class="cs-metric-value">25%</span>
+                        <span class="cs-metric-label">Reduction in abandoned bet slips</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA at the end -->
+    <section class="section cs-cta scroll-reveal fade-up">
+        <div class="container">
+            <h2>Ready to build something similar?</h2>
+            <a href="index.html#contact" class="cta-button">Let's work together</a>
+            <div class="cs-nav-bottom">
+                <a href="index.html#work" class="btn-secondary">&larr; Back to all work</a>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>G.O</h3>
+                <p>&copy; 2026 Godwin. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+                <a href="#">Dribbble</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
