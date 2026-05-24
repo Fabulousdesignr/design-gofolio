@@ -24,6 +24,7 @@ export default function Navbar({ isCaseStudy = false }) {
             <div className="hidden md:flex gap-8">
               <a href="#work" className="font-medium text-text-secondary hover:text-text-primary transition-colors">Work</a>
               <Link to="/about" className="font-medium text-text-secondary hover:text-text-primary transition-colors">About</Link>
+              <Link to="/labs" className="font-medium text-text-secondary hover:text-text-primary transition-colors">AI Labs</Link>
               <a href="#services" className="font-medium text-text-secondary hover:text-text-primary transition-colors">Services</a>
             </div>
           )}

@@ -4,6 +4,8 @@ import About from './pages/About';
 import CaseStudyDetail from './pages/CaseStudyDetail';
 import AtmosphericBackground from './components/AtmosphericBackground';
 import ScrollToTop from './components/ScrollToTop';
+import Experiments from './pages/Experiments';
+import ExperimentDetail from './pages/ExperimentDetail';
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/labs" element={<Experiments />} />
         <Route path="/case-study/:slug" element={<CaseStudyDetail />} />
+        <Route path="/ai-playground/:slug" element={<ExperimentDetail />} />
         {/* Fallback to home */}
         <Route path="*" element={<Home />} />
       </Routes>
