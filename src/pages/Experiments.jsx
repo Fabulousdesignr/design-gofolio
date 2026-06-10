@@ -22,10 +22,10 @@ export default function Experiments() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent font-bold text-xs uppercase tracking-widest mb-6">
               Experimental Builds
             </span>
-            <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase">
+            <h1 className="text-detail-title font-black tracking-tighter mb-6 uppercase">
               AI Playground & Labs
             </h1>
-            <p className="text-xl md:text-2xl text-text-secondary font-medium leading-relaxed max-w-2xl">
+            <p className="text-body-base text-text-secondary font-medium max-w-2xl">
               A space for fast AI-assisted product experiments, vibe-coded builds, and emotionally-driven ideas outside the traditional enterprise design constraints.
             </p>
           </div>

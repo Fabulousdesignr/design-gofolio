@@ -5,7 +5,8 @@ export default function FeaturedExperimentCard({ experiment }) {
   return (
     <Link 
       to={`/ai-playground/${experiment.slug}`}
-      className="group block relative rounded-3xl overflow-hidden bg-bg-secondary border border-card-border hover:border-accent/40 transition-all duration-700 hover:shadow-[0_0_50px_rgba(79,70,229,0.15)] cursor-pointer"
+      className="group block relative card-hover-system overflow-hidden cursor-pointer"
+      style={{ borderRadius: 'var(--radius-lg)' }}
     >
       <div className="flex flex-col md:flex-row h-full">
         {/* Left: Image Showcase */}
@@ -29,7 +30,7 @@ export default function FeaturedExperimentCard({ experiment }) {
         </div>
 
         {/* Right: Content */}
-        <div className="w-full md:w-[40%] p-8 lg:p-14 flex flex-col justify-center relative z-20 bg-bg-primary md:bg-transparent">
+        <div className="w-full md:w-[40%] card-padding flex flex-col justify-center relative z-20 bg-bg-primary md:bg-transparent">
           <div className="mb-auto">
             <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent font-bold text-[0.65rem] uppercase tracking-widest mb-6 border border-accent/20">
               Featured Build

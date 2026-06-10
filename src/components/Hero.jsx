@@ -37,7 +37,7 @@ export default function Hero() {
             </nav>
 
             <div className="flex flex-wrap gap-3 mt-8">
-              <a href="/#work" className="workspace-btn workspace-btn--primary">
+              <a href="/#work" className="workspace-btn-primary">
                 Open featured work
               </a>
             </div>

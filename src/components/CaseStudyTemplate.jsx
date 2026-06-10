@@ -103,7 +103,7 @@ export default function CaseStudyTemplate({ data }) {
 
                 {/* Left: title, summary, meta, tools, CTA */}
                 <div>
-                  <h1 className="text-4xl md:text-5xl lg:text-[3.1rem] font-black tracking-tighter text-text-primary mb-5 leading-[1.07]">
+                  <h1 className="text-detail-title font-black tracking-tighter text-text-primary mb-5">
                     {data.title}
                   </h1>
                   <p className="cs-section-intro mb-8">
@@ -111,7 +111,7 @@ export default function CaseStudyTemplate({ data }) {
                   </p>
 
                   {/* Meta grid */}
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 py-6 border-t border-card-border mb-7">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-5 py-6 border-t border-card-border mb-7">
                     {data.meta?.map((item) => (
                       <div key={item.label}>
                         <span className="workspace-doc-label block">{item.label}</span>
@@ -144,7 +144,7 @@ export default function CaseStudyTemplate({ data }) {
                       href={data.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="workspace-btn workspace-btn--primary inline-flex items-center gap-2"
+                      className="workspace-btn-primary"
                     >
                       View live project <ArrowUpRight size={14} />
                     </a>
@@ -265,10 +265,10 @@ export default function CaseStudyTemplate({ data }) {
                       )}
                       {/* Title + description */}
                       <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-5 md:gap-10">
-                        <h3 className="text-xl md:text-2xl font-black text-text-primary tracking-tight leading-snug">
+                        <h3 className="text-section-title font-black text-text-primary tracking-tight">
                           {decision.title}
                         </h3>
-                        <p className="text-text-secondary leading-relaxed text-base">
+                        <p className="text-body-base text-text-secondary">
                           {decision.desc}
                         </p>
                       </div>
@@ -282,7 +282,7 @@ export default function CaseStudyTemplate({ data }) {
             <CaseStudyDocPanel id="cs-solution" index="06. Solution" title="The solution">
               <div className="cs-media-frame group mb-8">
                 <ProductFrame
-                  src={data.solution?.video}
+                  src={data.solution?.video || data.solution?.fallback}
                   fallback={data.solution?.fallback}
                   alt={`${data.title} — final product`}
                   label={`${data.title} — Final product`}
@@ -298,7 +298,7 @@ export default function CaseStudyTemplate({ data }) {
             {/* ── 07 REFLECTION ───────────────────────────────── */}
             <CaseStudyDocPanel id="cs-reflection" index="07. Reflection" title="Impact & reflection">
               {data.impact?.length > 0 && (
-                <div className="flex flex-wrap gap-10 md:gap-16 mb-10">
+                <div className="flex flex-wrap gap-6 md:gap-16 mb-10">
                   {data.impact.map((stat, idx) => (
                     <div
                       key={idx}

@@ -146,7 +146,7 @@ export const caseStudies = [
       }
     ],
     solution: {
-      video: "/images/loodle-demo.mp4",
+      video: null,
       fallback: "/images/Loodle Hero.png",
       overview: "The Loodle experience is designed to be calm and predictable. Children move through personalized learning modules with gentle positive reinforcement, while parents have a dedicated dashboard to monitor progress and manage sensory preferences without interrupting the learning flow."
     },
@@ -216,7 +216,7 @@ export const caseStudies = [
       }
     ],
     solution: {
-      video: "/images/moneylink-demo.mp4",
+      video: null,
       fallback: "/images/Moneylink Hero.png",
       overview: "I designed MoneyLink to eliminate financial fragmentation. Users can view multi-currency balances, perform instant conversions, and manage investments within a single, high-trust interface that simplifies complex Nigerian financial workflows."
     },
@@ -282,7 +282,7 @@ export const caseStudies = [
       }
     ],
     solution: {
-      video: "/images/shove-demo.mp4",
+      video: null,
       fallback: "/images/shove-hero.png",
       overview: "Shove.bet provides a zero-latency poker experience. By keeping all context and actions on a single immersive table view, players can act quickly and stay in the flow without ever needing to navigate away from the game state."
     },
@@ -358,7 +358,7 @@ export const caseStudies = [
       }
     ],
     solution: {
-      video: "/images/datewave-demo.mp4",
+      video: null,
       fallback: "/images/Datewave 1.png",
       overview: "DateWave shifts dating from swiping to intentional discovery. The experience focuses on values-first filtering and personality-driven profile hierarchies to help users find compatible matches through a structured and meaningful interaction model."
     },
