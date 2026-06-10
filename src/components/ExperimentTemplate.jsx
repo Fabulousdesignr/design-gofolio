@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import AtmosphericBackground from './AtmosphericBackground';
 import Footer from './Footer';
+import Navbar from './Navbar';
 
 export default function ExperimentTemplate({ experiment }) {
   if (!experiment) return null;
@@ -9,23 +9,12 @@ export default function ExperimentTemplate({ experiment }) {
   return (
     <div className="min-h-screen bg-bg-primary text-text-primary">
       <AtmosphericBackground />
-      
-      {/* Custom Minimal Nav for Experiments */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-bg-primary/80 backdrop-blur-md border-b border-white/5">
-        <div className="container-custom flex justify-between items-center py-4">
-          <Link to="/labs" className="font-semibold text-text-secondary opacity-70 hover:opacity-100 hover:text-text-primary transition-all flex items-center gap-2">
-            &larr; Back to Labs
-          </Link>
-          <span className="text-xs font-bold uppercase tracking-widest text-accent">
-            AI Playground
-          </span>
-        </div>
-      </nav>
+      <Navbar />
 
       <main className="pt-32 pb-24">
         {/* Header Section */}
         <header className="container-custom max-w-4xl mx-auto mb-16 text-center scroll-reveal">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent font-bold text-xs uppercase tracking-widest mb-6">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent font-bold text-xs uppercase tracking-widest mb-6 border border-accent/20">
             {experiment.platform}
           </span>
           <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6">
@@ -43,31 +32,33 @@ export default function ExperimentTemplate({ experiment }) {
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 bg-text-primary text-bg-primary px-8 py-4 rounded-full font-bold hover:scale-105 transition-all duration-300"
               >
-                Launch Experiment
-                <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                Launch Product &rarr;
               </a>
             </div>
           )}
         </header>
 
-        {/* Media Showcase */}
+        {/* Primary Media Showcase */}
         <section className="container-custom max-w-6xl mx-auto mb-24 scroll-reveal">
-          <div className="aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden bg-bg-secondary border border-card-border relative group shadow-2xl">
-            {/* If video exists, we would render it here. For now, image placeholder */}
-            <img 
-              src={experiment.image} 
-              alt={`${experiment.title} Preview`}
-              className="w-full h-full object-cover"
-            />
-            
-            {/* Play Button Overlay (for aesthetic/future video integration) */}
-            <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="bg-white/10 backdrop-blur-md p-6 rounded-full border border-white/20 shadow-2xl transform scale-90 group-hover:scale-100 transition-transform duration-500 text-white">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                </svg>
-              </div>
-            </div>
+          <div className="aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden bg-bg-secondary border border-card-border relative shadow-2xl">
+            {experiment.heroVideo ? (
+              <video 
+                src={experiment.heroVideo}
+                poster={experiment.heroImage}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <img 
+                src={experiment.heroImage} 
+                alt={`${experiment.title} Preview`}
+                className="w-full h-full object-cover"
+              />
+            )}
           </div>
         </section>
 
@@ -106,33 +97,70 @@ export default function ExperimentTemplate({ experiment }) {
               <h2 className="text-3xl font-black tracking-tight mb-6 text-text-primary">
                 The Lab Notes
               </h2>
-              <p className="text-text-secondary leading-relaxed text-lg mb-8">
+              <p className="text-text-secondary leading-relaxed text-lg mb-12">
                 {experiment.story}
               </p>
-              
-              <div className="p-8 rounded-2xl bg-gradient-to-br from-bg-secondary to-bg-primary border border-card-border relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-accent/20 text-accent flex items-center justify-center text-sm">💡</span>
-                  Why I built this
-                </h3>
-                <div className="space-y-4">
-                  {experiment.whyIBuiltThis && experiment.whyIBuiltThis.map((paragraph, idx) => (
-                    <p key={idx} className="text-text-secondary leading-relaxed">
-                      {paragraph}
-                    </p>
+
+              {/* Lab Notes Content blocks */}
+              {experiment.labNotes ? (
+                <div className="space-y-10 mt-12">
+                  {experiment.labNotes.map((note, idx) => (
+                    <div key={idx}>
+                      <h3 className="text-xl font-bold mb-3 text-text-primary flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-accent inline-block" />
+                        {note.title}
+                      </h3>
+                      <p className="text-text-secondary leading-relaxed">
+                        {note.content}
+                      </p>
+                    </div>
                   ))}
-                  {(!experiment.whyIBuiltThis) && (
-                    <p className="text-text-secondary leading-relaxed">
-                      This project was born out of a desire to explore how fast AI-assisted prototyping can turn a rough concept into a tangible, emotional experience. It strips away the traditional enterprise constraints to focus purely on interaction, vibe, and immediate user feedback.
-                    </p>
-                  )}
                 </div>
-              </div>
+              ) : (
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-bg-secondary to-bg-primary border border-card-border relative overflow-hidden mt-12">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                  <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-full bg-accent/20 text-accent flex items-center justify-center text-sm">💡</span>
+                    Why I built this
+                  </h3>
+                  <div className="space-y-4">
+                    {experiment.whyIBuiltThis && experiment.whyIBuiltThis.map((paragraph, idx) => (
+                      <p key={idx} className="text-text-secondary leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                    {(!experiment.whyIBuiltThis) && (
+                      <p className="text-text-secondary leading-relaxed">
+                        This project was born out of a desire to explore how fast AI-assisted prototyping can turn a rough concept into a tangible, emotional experience. It strips away the traditional enterprise constraints to focus purely on interaction, vibe, and immediate user feedback.
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           
         </section>
+
+        {/* Dedicated Product Gallery */}
+        {experiment.gallery && experiment.gallery.length > 0 && (
+          <section className="container-custom max-w-5xl mx-auto mt-32 scroll-reveal">
+            <h2 className="text-sm font-bold uppercase tracking-widest text-text-secondary mb-10 text-center">
+              Product Gallery
+            </h2>
+            <div className="space-y-12">
+              {experiment.gallery.map((imgSrc, idx) => (
+                <div key={idx} className="group rounded-3xl overflow-hidden border border-card-border bg-bg-secondary shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_40px_rgba(79,70,229,0.15)] hover:border-accent/40 transition-all duration-500">
+                  <img 
+                    src={imgSrc} 
+                    alt={`${experiment.title} Gallery ${idx + 1}`}
+                    className="w-full h-auto transform transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
       </main>
       

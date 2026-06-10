@@ -1,12 +1,9 @@
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import Stats from '../components/Stats';
 import Projects from '../components/Projects';
-import UIShowcase from '../components/UIShowcase';
-import Process from '../components/Process';
-import Tools from '../components/Tools';
-import Services from '../components/Services';
-import Testimonials from '../components/Testimonials';
+import HomeAILab from '../components/HomeAILab';
+import HomeShowcase from '../components/HomeShowcase';
+import AboutPreview from '../components/AboutPreview';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 import { useScrollReveal } from '../hooks/useScrollReveal';
@@ -15,18 +12,18 @@ export default function Home() {
   useScrollReveal();
 
   return (
-    <div className="min-h-screen">
+    <div className="workspace-canvas min-h-screen">
       <Navbar />
-      <main>
+      <main className="workspace-main">
         <Hero />
-        <Stats />
-        <Projects />
-        <UIShowcase />
-        <Process />
-        <Tools />
-        <Services />
-        <Testimonials />
-        <CTA />
+
+        <div className="workspace-modules">
+          <Projects />
+          <HomeAILab />
+          <HomeShowcase />
+          <AboutPreview />
+          <CTA />
+        </div>
       </main>
       <Footer />
     </div>

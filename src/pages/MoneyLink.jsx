@@ -78,7 +78,7 @@ export default function MoneyLink() {
                 ))}
               </div>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-text-primary mb-8 uppercase leading-[1.05]">
-                MoneyLink — Simplifying Financial Management
+                MoneyLink: Simplifying Financial Management
               </h1>
               <p className="text-xl md:text-2xl text-text-secondary mb-12 font-medium leading-relaxed max-w-2xl">
                 A unified fintech experience that helps Nigerian professionals manage money across multiple platforms without friction.
@@ -108,7 +108,7 @@ export default function MoneyLink() {
             <div className="max-w-3xl mb-20 scroll-reveal">
               <h2 className="text-4xl md:text-5xl font-black text-text-primary mb-8 uppercase tracking-tight">The Problem</h2>
               <p className="text-xl md:text-2xl text-text-secondary leading-relaxed font-medium">
-                Young Nigerian professionals lose <span className="text-text-primary font-bold">₦5,000–₦15,000</span> monthly due to fragmented financial tools and hidden fees.
+                Young Nigerian professionals lose <span className="text-text-primary font-bold">₦5,000 to ₦15,000</span> monthly due to fragmented financial tools and hidden fees.
               </p>
             </div>
             
