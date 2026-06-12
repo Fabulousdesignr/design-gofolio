@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useContactModal } from '../context/ContactModalContext';
 
 export default function MoneyLink() {
   useScrollReveal();
+  const { openModal } = useContactModal();
 
   const metaData = [
     { label: "Role", value: "Product Designer" },
@@ -199,7 +201,7 @@ export default function MoneyLink() {
         {/* IMPACT SECTION */}
         <section className="py-32 bg-text-primary text-bg-primary">
           <div className="container-custom">
-            <h2 className="text-4xl md:text-6xl font-black mb-20 uppercase tracking-tighter text-white">Impact</h2>
+            <h2 className="text-4xl md:text-6xl font-black mb-20 uppercase tracking-tighter text-text-inverse">Impact</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
               {[
                 { val: "62%", label: "Faster Balance Checks" },
@@ -242,7 +244,7 @@ export default function MoneyLink() {
             <div className="flex flex-wrap gap-6 justify-center items-center">
               <a 
                 href="https://calendly.com/" 
-                className="inline-flex items-center gap-3 bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:-translate-y-1 shadow-lg hover:shadow-xl shadow-accent/20"
+                className="inline-flex items-center gap-3 bg-bg-inverse hover:bg-accent-orange text-text-inverse px-8 py-4 rounded-full font-bold text-lg transition-all hover:-translate-y-1 shadow-lg hover:shadow-xl shadow-accent/20"
               >
                 Book a Call
               </a>
@@ -252,12 +254,12 @@ export default function MoneyLink() {
               >
                 <MessageCircle size={22} /> WhatsApp
               </a>
-              <a 
-                href="mailto:contact@example.com" 
-                className="inline-flex items-center gap-3 bg-bg-alt border border-card-border hover:border-accent text-text-primary px-8 py-4 rounded-full font-bold text-lg transition-all hover:-translate-y-1"
+              <button 
+                onClick={openModal}
+                className="bg-bg-primary text-text-primary hover:bg-card-border px-8 py-4 rounded-full font-bold text-lg inline-flex items-center gap-3 transition-colors uppercase tracking-widest"
               >
-                <Mail size={22} /> Email
-              </a>
+                Let's Talk <ArrowUpRight size={20} />
+              </button>
             </div>
           </div>
         </section>

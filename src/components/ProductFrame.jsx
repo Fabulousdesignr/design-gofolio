@@ -14,14 +14,7 @@ export default function ProductFrame({
     <div
       className={`product-frame ${focused ? 'product-frame--focus' : ''} ${className}`.trim()}
     >
-      <div className="product-frame-chrome" aria-hidden="true">
-        <div className="product-frame-dots">
-          <span />
-          <span />
-          <span />
-        </div>
-        <span className="product-frame-label font-mono">{label}</span>
-      </div>
+      {/* Clean Editorial Media Frame (No Chrome) */}
       <div className="product-frame-viewport">
         {src ? (
           isVideo ? (

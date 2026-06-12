@@ -1,7 +1,11 @@
-import { Download, Mail, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import WorkspaceModule from './WorkspaceModule';
+import { useContactModal } from '../context/ContactModalContext';
 
 export default function CTA() {
+  const { openModal } = useContactModal();
+
   return (
     <WorkspaceModule
       id="contact"
@@ -25,12 +29,12 @@ export default function CTA() {
           >
             <MessageCircle size={18} /> WhatsApp
           </a>
-          <a
-            href="mailto:fabianokechukwu6@gmail.com?subject=Portfolio%20Inquiry"
-            className="workspace-btn inline-flex items-center gap-2"
+          <button 
+            onClick={openModal}
+            className="inline-flex items-center gap-3 bg-text-primary text-bg-primary hover:opacity-90 px-10 py-5 rounded-full font-black text-xl uppercase tracking-widest transition-all hover:-translate-y-1 shadow-xl"
           >
-            <Mail size={18} /> Email
-          </a>
+            Let's Talk <ArrowUpRight size={24} />
+          </button>
         </div>
       </div>
     </WorkspaceModule>

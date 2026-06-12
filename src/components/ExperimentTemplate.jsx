@@ -1,29 +1,34 @@
 import { ArrowUpRight } from 'lucide-react';
-import AtmosphericBackground from './AtmosphericBackground';
 import ProductFrame from './ProductFrame';
-import Footer from './Footer';
+import Footer from './editorial/EditorialFooter';
 import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 
 export default function ExperimentTemplate({ experiment }) {
   if (!experiment) return null;
 
   return (
-    <div className="min-h-screen bg-bg-primary text-text-primary">
-      <AtmosphericBackground />
+    <div className="min-h-screen bg-bg-primary transition-colors duration-300">
       <Navbar />
 
       <main className="pt-32 pb-24">
         {/* Header Section */}
-        <header className="container-custom max-w-4xl mx-auto mb-16 text-center scroll-reveal">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent font-bold text-xs uppercase tracking-widest mb-6 border border-accent/20">
-            {experiment.platform}
-          </span>
-          <h1 className="text-detail-title font-black tracking-tighter mb-6 text-text-primary">
-            {experiment.title}
-          </h1>
-          <p className="text-body-base text-text-secondary font-medium max-w-3xl mx-auto">
-            {experiment.description}
-          </p>
+        <header className="max-w-[1400px] mx-auto px-6 md:px-12 mb-16 scroll-reveal fade-up">
+          <Link to="/labs" className="inline-flex items-center gap-2 text-text-secondary hover:text-text-primary mb-12 transition-colors font-medium text-sm">
+            <ArrowLeft size={16} /> Back to AI Labs
+          </Link>
+          <div className="max-w-4xl">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-card-border text-text-primary font-bold text-xs uppercase tracking-widest mb-6">
+              {experiment.platform}
+            </span>
+            <h1 className="edit-title-hero mb-6 text-text-primary">
+              {experiment.title}
+            </h1>
+            <p className="text-xl md:text-2xl text-text-secondary font-medium max-w-[65ch] leading-relaxed">
+              {experiment.description}
+            </p>
+          </div>
           
           {experiment.liveUrl && (
             <div className="mt-10 flex justify-center">
@@ -40,7 +45,7 @@ export default function ExperimentTemplate({ experiment }) {
         </header>
 
         {/* Primary Media Showcase */}
-        <section className="container-custom max-w-6xl mx-auto mb-24 scroll-reveal">
+        <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24 scroll-reveal fade-up">
           <ProductFrame 
             src={experiment.heroVideo || experiment.heroImage}
             fallback={experiment.heroImage}
@@ -51,10 +56,10 @@ export default function ExperimentTemplate({ experiment }) {
         </section>
 
         {/* Storytelling Grid */}
-        <section className="container-custom max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20">
+        <section className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row gap-12 lg:gap-24 relative items-start">
           
           {/* Left Column: Metadata */}
-          <div className="md:col-span-4 space-y-12 scroll-reveal">
+          <div className="w-full lg:w-48 shrink-0 space-y-12 scroll-reveal fade-up sticky top-32">
             <div>
               <h3 className="text-sm font-bold uppercase tracking-widest text-text-secondary mb-4">
                 Core Focus
@@ -80,9 +85,9 @@ export default function ExperimentTemplate({ experiment }) {
           </div>
 
           {/* Right Column: The Story */}
-          <div className="md:col-span-8 space-y-12 scroll-reveal">
-            <div className="prose prose-lg prose-invert max-w-none">
-              <h2 className="text-section-title font-black tracking-tight mb-6 text-text-primary">
+          <div className="flex-1 min-w-0 max-w-3xl space-y-12 scroll-reveal fade-up">
+            <div className="prose-readable">
+              <h2 className="edit-title-section text-text-primary">
                 The Lab Notes
               </h2>
               <p className="text-body-base text-text-secondary mb-12">
@@ -132,8 +137,8 @@ export default function ExperimentTemplate({ experiment }) {
 
         {/* Dedicated Product Gallery */}
         {experiment.gallery && experiment.gallery.length > 0 && (
-          <section className="container-custom max-w-5xl mx-auto mt-32 scroll-reveal">
-            <h2 className="text-sm font-bold uppercase tracking-widest text-text-secondary mb-10 text-center">
+          <section className="max-w-[1400px] mx-auto px-6 md:px-12 mt-32 scroll-reveal fade-up">
+            <h2 className="edit-title-section text-text-primary mb-12">
               Product Gallery
             </h2>
             <div className="space-y-12">

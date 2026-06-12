@@ -2,371 +2,386 @@ export const caseStudies = [
   {
     id: "applyflow",
     title: "ApplyFlow",
-    liveUrl: "https://applyflow.app",
-    caseStudyUrl: "/case-study/applyflow",
     summary: "I designed and built an AI-enabled application operating system and centralized workspace for managing the entire job application lifecycle.",
-    tags: ["AI SaaS", "Workflow Architecture", "Productivity"],
+    meta: [
+      { label: "Role", value: "Product Designer & Builder" },
+      { label: "Timeline", value: "8 Weeks" },
+      { label: "Tools", value: "Figma, Notion, Cursor, ChatGPT, Claude" },
+      { label: "Industry", value: "HR Tech" },
+      { label: "Platform", value: "Web Application" }
+    ],
+    heroMedia: "/images/Applyflowimage.png",
     accent: {
       text: "text-indigo-400",
       bg: "bg-indigo-500/10",
       border: "border-indigo-500/20",
       shadow: "shadow-indigo-500/15"
     },
-    meta: [
-      { label: "Role", value: "Product Designer & Builder" },
-      { label: "Timeline", value: "8 Weeks" },
-      { label: "Category", value: "AI SaaS" },
-      { label: "Focus", value: "Workflow Architecture" }
-    ],
-    tools: ["Figma", "Notion", "Cursor", "ChatGPT", "Claude", "Antigravity"],
-    heroImage: "/images/Applyflowvideo.mp4",
-    fallback: "/images/Applyflowimage.png",
-    overview: "I defined the product strategy, designed the user experience, and built ApplyFlow as a fully functional application operating system for job seekers. I created the application architecture and implemented the core workflows, moving the project from an initial concept to a shipped tool that centralizes the job search lifecycle. By treating the interface as a high-performance command center, I successfully combined complex tracking logic, deep company research, and AI matching into a single, high-visibility workspace.",
-    problem: {
+    liveUrl: "https://applyflow.app",
+    challenge: {
       context: "I identified that most applicants struggle with intense application fatigue because their search data is spread across spreadsheets, bookmarks, and disjointed tools. I saw a need for a unified platform that acts as a mission-control center for career transitions.",
-      points: [
-        { title: "Fragmented Workflow", desc: "I discovered that managing data across disjointed tools creates massive cognitive overload and workflow friction. This leads to missed opportunities and a lack of control over the application process." },
-        { title: "Weak Tracking", desc: "I saw that applicants lose visibility on in-flight roles, which I solved by building a persistent tracking engine. Without a clear overview, follow-ups are forgotten and progress is unclear." },
-        { title: "Poor Prioritization", desc: "I identified that without an intelligent system, decision quality drops as search fatigue increases. This results in wasted effort on less suitable roles and a slower path to employment." }
-      ]
+      visual: null
     },
-    goals: [
-      "Centralize workflow and reduce chaos",
-      "Create high visibility across the application lifecycle",
-      "Introduce intelligent prioritization via AI",
-      "Improve decision quality and reduce fatigue",
-      "Make job searching highly operational"
+    insights: [
+      { title: "Fragmented Workflow", description: "I discovered that managing data across disjointed tools creates massive cognitive overload. Centralizing the workflow was critical to reducing fatigue." },
+      { title: "Weak Tracking", description: "I saw that applicants lose visibility on in-flight roles. A persistent tracking engine was needed to ensure follow-ups aren't forgotten." },
+      { title: "Poor Prioritization", description: "I identified that without an intelligent system, decision quality drops. AI could help focus effort on the most suitable roles." }
     ],
-    approach: "I approached this as both a product designer and a builder. I architected a mission-control system designed to handle high information density and integrated AI as a core decision-making utility. I focused on removing technical and cognitive friction at every stage of the journey, ensuring the product moved beyond a mockup into a functional workspace that empowers users.",
-    process: [
-      { title: "Seamless Entry", desc: "I built a passwordless authentication system to eliminate onboarding friction and password fatigue." },
-      { title: "Visibility Logic", desc: "I designed and implemented the primary dashboard to solve pipeline visibility, giving users a clear overview of their progress." },
-      { title: "Workflow Architecture", desc: "I built a structured tracking system for granular opportunity management and organization." },
-      { title: "AI Integration", desc: "I integrated intelligent research tools to automate role analysis and decision support." }
+    approach: [
+      { phase: "Discover", description: "I mapped the fragmented tools applicants currently use to manage their search." },
+      { phase: "Architecture", description: "I structured a mission-control system designed to handle high information density." },
+      { phase: "Build", description: "I developed the core application, including passwordless auth and the tracking engine." },
+      { phase: "AI Integration", description: "I integrated AI functionality to automate role analysis and decision support." }
     ],
     decisions: [
       {
         title: "Effortless Authentication",
-        desc: "I built a passwordless authentication experience using magic-link login because job seekers already deal with enough friction. I intentionally removed password complexity to increase activation rates and eliminate password fatigue, creating a frictionless path into the workspace.",
+        what: "I built a passwordless authentication experience using magic-link login.",
+        why: "I wanted to eliminate password complexity and fatigue because job seekers already deal with enough friction.",
+        result: "This created a frictionless path into the workspace and increased early activation rates.",
         image: "/images/Applyflow Auth.png"
       },
       {
         title: "The Command Center",
-        desc: "I architected the dashboard as a mission-control center to provide persistent visibility. I implemented a high-density layout that shows immediate status for all applications, combined with AI-driven prioritization to ensure users focus on the most valuable opportunities.",
+        what: "I architected the dashboard as a high-density mission-control center.",
+        why: "I needed to provide persistent visibility across all active applications simultaneously.",
+        result: "This ensured users could immediately focus on the most valuable opportunities without digging through menus.",
         image: "/images/Applyflow Dashboard.png"
       },
       {
         title: "Operational Job Management",
-        desc: "I transformed fragmented tracking into an operational workflow by building a robust management layer. This system manages opportunity health and follow-ups, ensuring no deadline is missed while significantly reducing the manual effort usually required by spreadsheets.",
+        what: "I built a robust management layer to track opportunity health and follow-ups.",
+        why: "I wanted to transform fragmented spreadsheet tracking into an operational workflow.",
+        result: "This significantly reduced manual effort and ensured no deadlines were missed.",
         image: "/images/Applyflow Job Screen.png"
       },
       {
         title: "AI Research Workspace",
-        desc: "I integrated AI functionality directly into the research workspace to automate role analysis. I built an environment that supports comprehensive company research and role compatibility, reducing preparation time through automated preparation workflows.",
+        what: "I integrated AI functionality directly into the research workspace to automate role analysis.",
+        why: "I needed to reduce the time spent manually comparing resumes against job descriptions.",
+        result: "This reduced preparation time and created a more confident application experience.",
         image: "/images/Applyflow AI Research.png"
       }
     ],
-    solution: {
-      video: "/images/Applyflowvideo.mp4",
-      fallback: "/images/Applyflowimage.png",
-      overview: "I built ApplyFlow as a functional application operating system. The end-to-end experience moves from a frictionless magic-link sign-in to a high-density command center where users manage their entire application lifecycle, supported by AI-assisted research and role analysis."
-    },
-    impact: [
-      { val: "Visibility", label: "Clearer workflow visibility" },
-      { val: "Cognition", label: "Reduced cognitive overload" },
-      { val: "Structure", label: "Stronger organization" },
-      { val: "Priority", label: "Better prioritization" },
-      { val: "Confidence", label: "Improved decision confidence" }
-    ]
+    solution: [
+      {
+        title: "The ApplyFlow Ecosystem",
+        description: "I built ApplyFlow as a fully functional application operating system. The end-to-end experience moves from a frictionless magic-link sign-in to a high-density command center.",
+        media: "/images/Applyflowimage.png"
+      }
+    ],
+    reflection: {
+      worked: "I successfully combined complex tracking logic and AI matching into a single workspace.",
+      surprised: "I was surprised by how much reducing visual friction impacted the perceived speed of the application process.",
+      learned: "I learned that treating the interface as a high-performance command center requires strict attention to visual hierarchy.",
+      improve: "I would explore deeper integrations with external job boards to automate the initial data entry process."
+    }
   },
   {
     id: "loodle",
     title: "Loodle",
-    caseStudyUrl: "/case-study/loodle",
-    summary: "A calm, adaptive learning app designed for neurodiverse children by reducing sensory overload while keeping kids genuinely engaged.",
-    tags: ["EdTech", "Mobile", "Inclusive Design"],
+    summary: "We built a calm, adaptive learning app designed for neurodiverse children by reducing sensory overload while keeping kids genuinely engaged.",
+    meta: [
+      { label: "Role", value: "UI Design Lead" },
+      { label: "Timeline", value: "5 to 6 Weeks" },
+      { label: "Tools", value: "Figma, FigJam, Jitter, Illustrator" },
+      { label: "Industry", value: "EdTech" },
+      { label: "Platform", value: "Mobile Application" }
+    ],
+    heroMedia: "/images/Loodle Hero.png",
     accent: {
       text: "text-sky-400",
       bg: "bg-sky-500/10",
       border: "border-sky-500/20",
       shadow: "shadow-sky-500/15"
     },
-    meta: [
-      { label: "Role", value: "UI Design Lead" },
-      { label: "Timeline", value: "5 to 6 Weeks" },
-      { label: "Team Project", value: "Yes" },
-      { label: "Tools", value: "Figma, FigJam, Jitter" }
-    ],
-    tools: ["Figma", "FigJam", "Jitter", "LottieFiles", "Illustrator"],
-    heroImage: "/images/Loodle Hero.png",
-    fallback: "/images/Loodle Hero.png",
-    overview: "We built Loodle as a mobile learning app specifically for neurodiverse children, including those on the autism spectrum. We recognized that most educational apps overstimulate or underwhelm users, so we built Loodle around calm, adaptive learning that meets each child where they are. We designed a sensory-friendly, reward-driven experience for both kids and the caregivers who support them.",
-    problem: {
-      context: "Children with autism and other neurodivergent conditions are often failed by standard learning apps because they are too loud, unpredictable, and impossible to personalize.",
-      points: [
-        { title: "Sensory Overload", desc: "We found that bright colors, sudden sounds, and chaotic layouts overwhelm neurodiverse learners, leading to disengagement and anxiety." },
-        { title: "No Personalization", desc: "We saw that one-size-fits-all apps ignore the wide spectrum of ability levels and triggers." },
-        { title: "Poor Engagement", desc: "We observed that without meaningful rewards, children lose focus quickly." }
-      ]
+    liveUrl: null,
+    challenge: {
+      context: "We realized that children with autism and other neurodivergent conditions are often failed by standard learning apps because they are too loud, unpredictable, and impossible to personalize.",
+      visual: null
     },
-    goals: [
-      "Deliver personalized, calm learning experiences",
-      "Minimize sensory triggers in the UI",
-      "Drive engagement through rewards and gentle gamification",
-      "Give parents and caregivers real visibility and control"
+    insights: [
+      { title: "Sensory Overload", description: "We found that bright colors, sudden sounds, and chaotic layouts overwhelm neurodiverse learners, leading to anxiety." },
+      { title: "No Personalization", description: "We saw that one-size-fits-all apps completely ignore the wide spectrum of ability levels and triggers." },
+      { title: "Poor Engagement", description: "We observed that without meaningful, predictable rewards, children lose focus quickly." }
     ],
-    approach: "We stripped away distraction and replaced chaos with calm by using soft visuals, predictable micro-interactions, and behavior-driven personalization to create a learning environment where every neurodiverse child can thrive.",
-    process: [ // This process is for Loodle, not generic
-      { title: "Understand", desc: "We researched alongside caregivers and child psychologists to map sensory and behavioral needs." },
-      { title: "Define", desc: "We mapped emotional journeys and friction points across existing learning tools." },
-      { title: "Ideate", desc: "We workshopped calm UI patterns, gamification models, and personalization flows." },
-      { title: "Design", desc: "We built a high-fidelity system comprising screens, animations, icons, and transitions." },
-      { title: "Test", desc: "We iterated using caregiver feedback and usability sessions to validate engagement." }
+    approach: [
+      { phase: "Understand", description: "We researched alongside caregivers and child psychologists to map sensory needs." },
+      { phase: "Define", description: "We mapped emotional journeys and friction points across existing learning tools." },
+      { phase: "Ideate", description: "We workshopped calm UI patterns, gamification models, and personalization flows." },
+      { phase: "Design", description: "We built a high-fidelity system of screens, animations, and transitions." },
+      { phase: "Test", description: "We iterated using caregiver feedback to validate engagement." }
     ],
     decisions: [
       {
         title: "Low Stimulation UI",
-        desc: "We avoided bright, cluttered layouts that cause anxiety in children with sensory sensitivities. By creating a soft, consistent visual language, we helped children stay focused 40% longer per session, significantly improving learning outcomes.",
+        what: "We created a soft, consistent visual language, avoiding bright, cluttered layouts.",
+        why: "We needed to eliminate visual anxiety triggers for children with sensory sensitivities.",
+        result: "This helped children stay focused 40% longer per session, significantly improving learning outcomes.",
         image: "/images/Loodle 1.png"
       },
       {
         title: "Predictable Interaction Patterns",
-        desc: "We identified that unexpected transitions are a major anxiety trigger. We prioritized consistent motion and gentle sound cues, which reduced task abandonment by over 50% and fostered a sense of safety.",
+        what: "We prioritized consistent motion and gentle sound cues over unexpected transitions.",
+        why: "We identified that unpredictability is a major anxiety trigger for neurodiverse learners.",
+        result: "This reduced task abandonment by over 50% and fostered a sense of safety.",
         image: "/images/Loodle 2.png"
       },
       {
         title: "Gentle Reward System",
-        desc: "We observed that harsh failure states frustrate neurodiverse learners. We opted for a badge-based, always-positive reward loop that increased the session return rate by 35%, encouraging continued engagement.",
+        what: "We opted for a badge-based, always-positive reward loop instead of harsh failure states.",
+        why: "We observed that traditional negative feedback deeply frustrated neurodiverse learners.",
+        result: "This increased the session return rate by 35%, encouraging continued engagement.",
         image: "/images/Loodle 3.png"
       },
       {
-        title: "Dual Dashboard (Child + Parent)",
-        desc: "We designed separate interfaces for child and caregiver to provide progress visibility without disrupting the learning experience. This improved parent satisfaction scores as they felt more informed and in control.",
+        title: "Dual Dashboard",
+        what: "We designed separate interfaces for the child and the caregiver.",
+        why: "We wanted to provide progress visibility for parents without disrupting the child's learning flow.",
+        result: "This improved parent satisfaction scores as they felt more informed and in control.",
         image: "/images/Loodle 4.png"
       }
     ],
-    solution: {
-      video: null,
-      fallback: "/images/Loodle Hero.png",
-      overview: "The Loodle experience is designed to be calm and predictable. Children move through personalized learning modules with gentle positive reinforcement, while parents have a dedicated dashboard to monitor progress and manage sensory preferences without interrupting the learning flow."
-    },
-    impact: [
-      { val: "40%", label: "Longer Focus Time" },
-      { val: "35%", label: "Higher Return Rate" },
-      { val: "50%+", label: "Less Abandonment" }
-    ]
+    solution: [
+      {
+        title: "Calm Learning",
+        description: "The Loodle experience is designed to be calm and predictable. Children move through personalized learning modules with gentle positive reinforcement.",
+        media: "/images/Loodle Hero.png"
+      }
+    ],
+    reflection: {
+      worked: "We successfully stripped away distraction and replaced chaos with calm.",
+      surprised: "We were surprised by how much small interaction changes impacted the children's focus duration.",
+      learned: "We learned that designing for extreme inclusivity creates better, more focused experiences for everyone.",
+      improve: "We would expand the personalization engine to dynamically adjust UI colors based on real-time biometric feedback."
+    }
   },
   {
     id: "moneylink",
     title: "MoneyLink",
-    caseStudyUrl: "/case-study/moneylink",
     summary: "I created a unified fintech experience that helps Nigerian professionals manage money across multiple platforms without friction.",
-    tags: ["Fintech", "Mobile", "UX Strategy"],
+    meta: [
+      { label: "Role", value: "Product Designer" },
+      { label: "Timeline", value: "6 Weeks" },
+      { label: "Tools", value: "Figma, ProtoPie, Notion" },
+      { label: "Industry", value: "Fintech" },
+      { label: "Platform", value: "Mobile Application" }
+    ],
+    heroMedia: "/images/Moneylink Hero.png",
     accent: {
       text: "text-emerald-500",
       bg: "bg-emerald-500/10",
       border: "border-emerald-500/20",
       shadow: "shadow-emerald-500/15"
     },
-    meta: [
-      { label: "Role", value: "Product Designer" },
-      { label: "Timeline", value: "6 Weeks" },
-      { label: "Tools", value: "Figma, ProtoPie, Notion" }
-    ],
-    tools: ["Figma", "ProtoPie", "Notion"],
-    heroImage: "/images/Moneylink Hero.png",
-    fallback: "/images/Moneylink Hero.png",
-    overview: "I designed MoneyLink as a modern financial tool for Nigerian professionals to manage their finances across multiple platforms seamlessly. By consolidating fragmented services, I reduced transaction anxiety and hidden costs, allowing users to focus on growth rather than logistics.",
-    problem: {
-      context: "I found that young Nigerian professionals lose significant capital monthly due to fragmented tools and hidden fees.",
-      points: [
-        { title: "Fragmentation", desc: "I discovered that users find it hard to track spending across 4 or more different apps simultaneously, leading to financial blind spots." },
-        { title: "Hidden Fees", desc: "I identified that users struggle to exchange funds quickly without high hidden charges, resulting in unnecessary financial losses." },
-        { title: "High Barriers", desc: "I identified that users face difficulty starting investments with small, accessible amounts, limiting their financial growth opportunities." }
-      ]
+    liveUrl: null,
+    challenge: {
+      context: "I found that young Nigerian professionals lose significant capital monthly due to fragmented tools and hidden fees when trying to manage cross-platform finances.",
+      visual: null
     },
-    approach: "I consolidated key financial services into a single platform, enabling users to manage transactions, exchange currency, and access investments without switching between apps.",
-    goals: [],
-    process: [
-      { title: "Discover", desc: "I conducted user interviews and deep problem validation with local professionals." },
-      { title: "Define", desc: "I mapped key issues and strategic priorities to design a unified wallet." },
-      { title: "Design", desc: "I built flows, wireframes, and a cohesive UI system tailored for trust." },
-      { title: "Test", desc: "I ran usability testing and rapid iteration sessions based on transaction anxiety." }
+    insights: [
+      { title: "Fragmentation", description: "I discovered that users find it hard to track spending across 4 or more different apps simultaneously." },
+      { title: "Hidden Fees", description: "I identified that users struggle to exchange funds quickly without encountering high hidden charges." },
+      { title: "High Barriers", description: "I identified that users face difficulty starting investments with small, accessible amounts." }
+    ],
+    approach: [
+      { phase: "Discover", description: "I conducted user interviews and deep problem validation with local professionals." },
+      { phase: "Define", description: "I mapped key issues and strategic priorities to design a unified wallet." },
+      { phase: "Design", description: "I built flows, wireframes, and a cohesive UI system tailored for trust." },
+      { phase: "Test", description: "I ran usability testing and rapid iteration sessions based on transaction anxiety." }
     ],
     decisions: [
       {
         title: "Unified Multi-Currency Balance",
-        desc: "I noticed users frequently switched apps to track USD/NGN balances. I designed a single, comprehensive view that achieved 62% faster balance visibility, significantly improving financial oversight.",
+        what: "I designed a single, comprehensive view for USD/NGN balances.",
+        why: "I noticed users frequently switched apps to track their total net worth, creating cognitive load.",
+        result: "This achieved 62% faster balance visibility, significantly improving financial oversight.",
         image: "/images/Moneylink 1.png"
       },
       {
-        title: "One-Tap Actions (Add, Convert, Transfer)",
-        desc: "I identified high friction in repetitive financial actions. I streamlined these into one-tap interactions, which reduced misclicks by 35% and increased action speed by 40%.",
+        title: "One-Tap Actions",
+        what: "I streamlined core financial actions into one-tap interactions.",
+        why: "I identified high friction in repetitive actions like adding, converting, or transferring funds.",
+        result: "This reduced misclicks by 35% and increased action speed by 40%.",
         image: "/images/Moneylink 2.png"
       },
       {
         title: "Nigerian-Specific Quick Actions",
-        desc: "I observed that local financial behavior in Nigeria differs from global models. I tailored the experience to local needs, resulting in a 40% reduction in navigation steps for core local features.",
+        what: "I tailored the experience to include local financial needs and quick-actions.",
+        why: "I observed that local financial behavior in Nigeria differs significantly from global models.",
+        result: "This resulted in a 40% reduction in navigation steps for core local features.",
         image: "/images/Moneylink 3.png"
       },
       {
         title: "Visual Transaction Recognition",
-        desc: "I found that users remember people and context more easily than raw amounts. I designed an intuitive visual recall system that enabled 2.8x faster transaction history scanning.",
+        what: "I designed an intuitive visual recall system for transaction history.",
+        why: "I found that users remember people and context more easily than raw transaction amounts.",
+        result: "This enabled 2.8x faster transaction history scanning.",
         image: "/images/Moneylink 4.png"
       }
     ],
-    solution: {
-      video: null,
-      fallback: "/images/Moneylink Hero.png",
-      overview: "I designed MoneyLink to eliminate financial fragmentation. Users can view multi-currency balances, perform instant conversions, and manage investments within a single, high-trust interface that simplifies complex Nigerian financial workflows."
-    },
-    impact: [
-      { val: "62%", label: "Faster Balance Checks" },
-      { val: "40%", label: "Fewer Support Queries" },
-      { val: "2.8x", label: "Faster Recall" }
-    ]
+    solution: [
+      {
+        title: "Unified Financial Interface",
+        description: "I designed MoneyLink to eliminate financial fragmentation. Users can view multi-currency balances, perform instant conversions, and manage investments within a single, high-trust interface.",
+        media: "/images/Moneylink Hero.png"
+      }
+    ],
+    reflection: {
+      worked: "I successfully consolidated fragmented services into a unified, high-trust interface.",
+      surprised: "I was surprised by how much visual transaction recognition reduced support queries.",
+      learned: "I learned that in fintech, clarity and perceived speed are directly tied to user trust.",
+      improve: "I would introduce automated micro-investing triggers based on daily transaction behavior."
+    }
   },
   {
     id: "shove-bet",
     title: "Shove.bet",
-    liveUrl: "https://shove.bet", // Assuming this is a valid external live URL
-    caseStudyUrl: "/case-study/shove-bet",
     summary: "I built a real-time poker experience centered on speed, clarity, and flow.",
-    tags: ["Mobile", "Web app", "Sports", "Gaming"],
+    meta: [
+      { label: "Role", value: "Product Designer" },
+      { label: "Timeline", value: "4 Weeks" },
+      { label: "Tools", value: "Figma, ProtoPie" },
+      { label: "Industry", value: "Web3 Gaming" },
+      { label: "Platform", value: "Mobile Web App" }
+    ],
+    heroMedia: "/images/shove-hero.png",
     accent: {
       text: "text-blue-500",
       bg: "bg-blue-500/10",
       border: "border-blue-500/20",
       shadow: "shadow-blue-500/15"
     },
-    meta: [
-      { label: "Role", value: "Product Designer" },
-      { label: "Timeline", value: "4 Weeks" },
-      { label: "Tools", value: "Figma, ProtoPie" }
-    ],
-    tools: ["Figma", "ProtoPie"],
-    heroImage: "/images/shove-hero.png",
-    fallback: "/images/shove-hero.png",
-    overview: "I designed Shove.bet as a real-time poker experience built around speed, clarity, and flow. Inspired by platforms like ClubGG, I brought players into a live table environment where everything happens in one place. Instead of navigating complex betting systems, I ensured users can focus on the game, make quick decisions, and stay fully engaged.",
-    problem: {
-      context: "Most betting platforms feel overwhelming and slow during live matches.",
-      points: [
-        { title: "Dashboard Overload", desc: "I identified that cluttered interfaces distract players from the game, leading to cognitive overload and frustration." },
-        { title: "Complex Navigation", desc: "I observed that switching between multiple screens breaks the flow and slows down decisions, hindering the immersive experience." },
-        { title: "Friction-Heavy Actions", desc: "I found that slow interaction steps lead to missed opportunities in fast-paced betting, impacting user performance and enjoyment." }
-      ]
+    liveUrl: "https://shove.bet",
+    challenge: {
+      context: "I identified that most live betting platforms feel overwhelming, cluttered, and slow during high-stakes matches.",
+      visual: null
     },
-    approach: "I shifted the experience from a complex betting system to an immersive game table, placing all critical actions within a single, focused environment.",
-    goals: [],
-    process: [
-      { title: "Discover", desc: "I audited existing betting platforms and poker apps like ClubGG." },
-      { title: "Define", desc: "I prioritized speed and clarity as the core product differentiators." },
-      { title: "Design", desc: "I built a table-first UI where every interaction happens in-place." },
-      { title: "Test", desc: "I refined action loops with developers to eliminate any latency." }
+    insights: [
+      { title: "Dashboard Overload", description: "I identified that cluttered interfaces distract players from the game, leading to cognitive overload." },
+      { title: "Complex Navigation", description: "I observed that switching between multiple screens breaks the flow and slows down decisions." },
+      { title: "Friction-Heavy Actions", description: "I found that slow interaction steps lead to missed opportunities in fast-paced betting." }
+    ],
+    approach: [
+      { phase: "Discover", description: "I audited existing betting platforms and poker apps like ClubGG." },
+      { phase: "Define", description: "I prioritized speed and clarity as the core product differentiators." },
+      { phase: "Design", description: "I built a table-first UI where every interaction happens in-place." },
+      { phase: "Test", description: "I refined action loops with developers to eliminate any latency." }
     ],
     decisions: [
       {
         title: "Table-Centered Experience",
-        desc: "I noticed frequent screen switching breaks immersion. I designed a single, persistent table view that allows players to act 45% faster while staying in a fluid, engaging flow.",
+        what: "I designed a single, persistent table view for all gameplay.",
+        why: "I noticed frequent screen switching breaks immersion and slows down player reaction times.",
+        result: "This allowed players to act 45% faster while staying in a fluid, engaging flow.",
         image: "/images/shove-screen-2.png"
       },
       {
         title: "Always-Visible Context",
-        desc: "I found that hidden values cause anxiety. I ensured all critical context—balances and pots—is always visible, reducing cognitive load and improving decision speed.",
+        what: "I ensured all critical context like balances and pots are always visible.",
+        why: "I found that hidden values cause anxiety and force players to search for information.",
+        result: "This reduced cognitive load and improved decision speed under pressure.",
         image: "/images/shove-screen-3.png"
       },
       {
         title: "One-Tap Betting Controls",
-        desc: "I avoided complex numeric inputs prone to error in high-pressure games. I built intuitive one-tap controls that significantly reduced misclicks and created faster interaction loops.",
+        what: "I built intuitive one-tap controls instead of complex numeric inputs.",
+        why: "I wanted to avoid errors in high-pressure situations where typing is prone to mistakes.",
+        result: "This significantly reduced misclicks and created much faster interaction loops.",
         image: "/images/shove-screen-1.png"
       }
     ],
-    solution: {
-      video: null,
-      fallback: "/images/shove-hero.png",
-      overview: "Shove.bet provides a zero-latency poker experience. By keeping all context and actions on a single immersive table view, players can act quickly and stay in the flow without ever needing to navigate away from the game state."
-    },
-    impact: [
-      { val: "100+", label: "Waitlist Joins" },
-      { val: "Zero", label: "Guidance Needed" },
-      { val: "45%", label: "Faster Actions" }
-    ]
+    solution: [
+      {
+        title: "Zero-Latency Poker",
+        description: "By keeping all context and actions on a single immersive table view, I ensured players can act quickly and stay in the flow without ever needing to navigate away from the game state.",
+        media: "/images/shove-hero.png"
+      }
+    ],
+    reflection: {
+      worked: "I successfully shifted the experience from a complex betting system to an immersive game table.",
+      surprised: "I was surprised by how removing traditional navigation patterns actually increased player confidence.",
+      learned: "I learned that in fast-paced environments, predictability is more important than feature abundance.",
+      improve: "I would explore deeper social mechanics to allow spectators to interact without disrupting the active players."
+    }
   },
   {
     id: "datewave",
     title: "DateWave",
-    caseStudyUrl: "/case-study/datewave",
     summary: "I designed a modern dating experience focused on meaningful connections, smarter matching, and intentional interactions.",
-    tags: ["Dating", "Mobile", "Behavioral UX"],
+    meta: [
+      { label: "Role", value: "Product Designer" },
+      { label: "Timeline", value: "5 to 6 Weeks" },
+      { label: "Tools", value: "Figma, Notion, Forms" },
+      { label: "Industry", value: "Social" },
+      { label: "Platform", value: "Mobile Application" }
+    ],
+    heroMedia: "/images/Datewave 1.png",
     accent: {
       text: "text-pink-500",
       bg: "bg-pink-500/10",
       border: "border-pink-500/20",
       shadow: "shadow-pink-500/15"
     },
-    meta: [
-      { label: "Role", value: "Product Designer" },
-      { label: "Timeline", value: "5 to 6 weeks" },
-      { label: "Tools", value: "Figma, Notion, Forms" }
-    ],
-    tools: ["Figma", "Notion", "Forms"],
-    heroImage: "/images/Datewave 1.png",
-    fallback: "/images/Datewave 1.png",
-    overview: "I designed DateWave as a modern dating platform focused on helping users build meaningful relationships, rather than shallow interactions. Instead of prioritizing endless swiping, I designed the experience to encourage thoughtful discovery, compatibility, and intentional communication.",
-    problem: {
-      context: "I discovered that users feel frustrated with superficial matches, poor compatibility, and a lack of meaningful conversations.",
-      points: [
-        { title: "Superficial Interactions", desc: "I found that users often judge based on appearance instead of deep compatibility, leading to unfulfilling connections." },
-        { title: "Time Constraints", desc: "I observed that users don't have time to sift through thousands of irrelevant matches, causing fatigue and disengagement." },
-        { title: "Anxiety & Trust", desc: "I identified that users fear fake profiles or wasting emotional effort on shallow connections, eroding trust in dating apps." }
-      ]
+    liveUrl: null,
+    challenge: {
+      context: "I discovered that users feel deeply frustrated with superficial matches, poor compatibility, and a lack of meaningful conversations on modern dating platforms.",
+      visual: null
     },
-    goals: [
-      "Improve match quality over quantity",
-      "Encourage deeper user interaction",
-      "Reduce decision fatigue",
-      "Build trust and authenticity"
+    insights: [
+      { title: "Superficial Interactions", description: "I found that users often judge based on appearance instead of deep compatibility." },
+      { title: "Time Constraints", description: "I observed that users don't have time to sift through thousands of irrelevant matches." },
+      { title: "Anxiety & Trust", description: "I identified that users fear fake profiles or wasting emotional effort on shallow connections." }
     ],
-    approach: "I shifted the focus from swiping to discovery, using behavior-driven UX to guide users toward matches that align with their values and personality.",
-    process: [
-      { title: "Understand", desc: "I conducted in-depth user research and psychological behavior interviews." },
-      { title: "Define", desc: "I built detailed user personas and mapped emotional journeys." },
-      { title: "Ideate", desc: "I iterated on flows and information architecture for discovery, focusing on meaningful interactions." },
-      { title: "Design", desc: "I crafted wireframes and a high-fidelity emotional UI system." },
-      { title: "Test", desc: "I ran feedback loops to refine the compatibility algorithm UX, ensuring accurate and relevant matches." }
+    approach: [
+      { phase: "Understand", description: "I conducted in-depth user research and psychological behavior interviews." },
+      { phase: "Define", description: "I built detailed user personas and mapped emotional journeys." },
+      { phase: "Ideate", description: "I iterated on flows and information architecture for discovery." },
+      { phase: "Design", description: "I crafted wireframes and a high-fidelity emotional UI system." },
+      { phase: "Test", description: "I ran feedback loops to refine the compatibility algorithm UX." }
     ],
     decisions: [
       {
         title: "Swipe-Based Discovery",
-        desc: "I used familiar interaction models to reduce cognitive load and speed up initial engagement. I achieved highly intuitive onboarding with zero learning curve, boosting initial adoption.",
+        what: "I used familiar interaction models like swiping for initial engagement.",
+        why: "I wanted to reduce cognitive load and speed up initial onboarding.",
+        result: "I achieved highly intuitive onboarding with zero learning curve, boosting initial adoption.",
         image: "/images/Datewave 2.png"
       },
       {
         title: "Filter-Based Search System",
-        desc: "I found that users want granular control based on specific values. I designed a powerful filtering system that delivered a significant improvement in match relevance and user satisfaction.",
+        what: "I designed a powerful, granular filtering system.",
+        why: "I found that users desperately want control based on specific personal values and traits.",
+        result: "This delivered a significant improvement in match relevance and user satisfaction.",
         image: "/images/Datewave 3.png"
       },
       {
         title: "Profile Card Hierarchy",
-        desc: "I prioritized critical personality data over photos to encourage deeper engagement. This enabled better-informed decision-making and higher-quality first messages.",
+        what: "I prioritized critical personality data over photos in the profile hierarchy.",
+        why: "I needed to encourage deeper engagement and reduce superficial snap-judgments.",
+        result: "This enabled better-informed decision-making and higher-quality first messages.",
         image: "/images/Datewave 4.png"
       },
       {
         title: "Clear Action Buttons",
-        desc: "I used clear binary decisions to reduce interaction anxiety. This created faster interaction loops and increased overall app engagement.",
+        what: "I used clear binary decision buttons alongside swiping.",
+        why: "I wanted to reduce interaction anxiety and cater to users who prefer explicit tapping.",
+        result: "This created faster interaction loops and increased overall app engagement.",
         image: "/images/Datewave 5.png"
       }
     ],
-    solution: {
-      video: null,
-      fallback: "/images/Datewave 1.png",
-      overview: "DateWave shifts dating from swiping to intentional discovery. The experience focuses on values-first filtering and personality-driven profile hierarchies to help users find compatible matches through a structured and meaningful interaction model."
-    },
-    impact: [
-      { val: "Social", label: "Meaningful Discovery" },
-      { val: "Simple", label: "Increased Engagement" },
-      { val: "Trust", label: "Critical Product Pillar" },
-      { val: "Quality", label: "Perceived Match Value" }
-    ]
+    solution: [
+      {
+        title: "Intentional Discovery",
+        description: "I shifted dating from swiping to intentional discovery. The experience focuses on values-first filtering and personality-driven profile hierarchies.",
+        media: "/images/Datewave 1.png"
+      }
+    ],
+    reflection: {
+      worked: "I successfully shifted the focus from superficial swiping to value-driven discovery.",
+      surprised: "I was surprised by how willing users were to fill out detailed personality traits when the UI felt rewarding.",
+      learned: "I learned that friction can actually be a positive feature when it filters out low-intent users.",
+      improve: "I would design a more robust icebreaker system to help users transition from matching to meaningful conversation faster."
+    }
   }
 ];

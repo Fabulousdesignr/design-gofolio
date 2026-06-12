@@ -1,31 +1,38 @@
+import React from 'react';
 import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Projects from '../components/Projects';
-import HomeAILab from '../components/HomeAILab';
-import HomeShowcase from '../components/HomeShowcase';
-import AboutPreview from '../components/AboutPreview';
-import CTA from '../components/CTA';
-import Footer from '../components/Footer';
+import EditorialHero from '../components/editorial/EditorialHero';
+import ContentSwitcher from '../components/editorial/ContentSwitcher';
+import EditorialFAQ from '../components/editorial/EditorialFAQ';
+import EditorialMessageMe from '../components/editorial/EditorialMessageMe';
+import VisualShowcase from '../components/editorial/VisualShowcase';
+import EditorialFooter from '../components/editorial/EditorialFooter';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+
+import { projects } from '../data/projects';
+import { experiments } from '../data/experiments';
 
 export default function Home() {
   useScrollReveal();
 
   return (
-    <div className="workspace-canvas min-h-screen">
+    <div className="min-h-screen bg-bg-primary text-text-primary transition-colors duration-300">
       <Navbar />
-      <main className="workspace-main">
-        <Hero />
-
-        <div className="workspace-modules">
-          <Projects />
-          <HomeAILab />
-          <HomeShowcase />
-          <AboutPreview />
-          <CTA />
-        </div>
+      <main className="flex-1 flex flex-col">
+        <EditorialHero />
+        
+        {/* The New Horizon Architecture */}
+        <ContentSwitcher />
+        
+        {/* The Closing Funnel */}
+        <EditorialFAQ />
+        <EditorialMessageMe />
+        
+        {/* Cinematic Visual Signature */}
+        <VisualShowcase />
+        
+        {/* Final Minimal Footer */}
+        <EditorialFooter />
       </main>
-      <Footer />
     </div>
   );
 }
