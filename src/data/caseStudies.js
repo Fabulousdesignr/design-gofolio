@@ -17,7 +17,7 @@ export const caseStudies = [
       border: "border-indigo-500/20",
       shadow: "shadow-indigo-500/15"
     },
-    liveUrl: "https://applyflow.app",
+    liveUrl: "https://applyflow-hazel.vercel.app/",
     challenge: {
       context: "I identified that most applicants struggle with intense application fatigue because their search data is spread across spreadsheets, bookmarks, and disjointed tools. I saw a need for a unified platform that acts as a mission-control center for career transitions.",
       visual: null

@@ -2,7 +2,7 @@ export const projects = [
   {
     id: "applyflow",
     title: "ApplyFlow",
-    liveUrl: "",
+    liveUrl: "https://applyflow-hazel.vercel.app/",
     caseStudyUrl: "",
     description: "I designed an intelligent job application operating system that centralizes workflow, research, and AI-driven prioritization to solve the chaos of modern job searching.",
     category: "AI SaaS • Productivity",
