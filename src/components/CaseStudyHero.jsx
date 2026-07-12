@@ -39,6 +39,36 @@ export default function CaseStudyHero({ data }) {
         </div>
       )}
 
+      {(data.keyFeatures || data.businessImpact) && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 scroll-reveal fade-up">
+          {data.keyFeatures && (
+            <div className="p-6 md:p-8 rounded-2xl border border-card-border bg-card">
+              <span className="font-mono text-xs font-bold text-text-secondary tracking-widest uppercase block mb-4">Key Features</span>
+              <div className="flex flex-wrap gap-2">
+                {data.keyFeatures.map((feature) => (
+                  <span key={feature} className="px-3 py-1.5 bg-bg-primary text-text-secondary text-[11px] font-bold tracking-widest uppercase rounded-lg border border-card-border">
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {data.businessImpact && (
+            <div className="p-6 md:p-8 rounded-2xl border border-card-border bg-card">
+              <span className="font-mono text-xs font-bold text-text-secondary tracking-widest uppercase block mb-4">Business Impact</span>
+              <ul className="space-y-3">
+                {data.businessImpact.map((impact) => (
+                  <li key={impact} className="text-text-secondary text-sm leading-relaxed">
+                    {impact}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Hero Media (Massive Edge-to-Edge) */}
       <div className="w-full md:w-[calc(100%+3rem)] md:-ml-6 lg:w-[calc(100%+6rem)] lg:-ml-12 aspect-video md:aspect-[16/9] bg-bg-surface overflow-hidden md:rounded-2xl border-y md:border border-card-border shadow-md scroll-reveal fade-up">
         <ProductFrame

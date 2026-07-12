@@ -16,7 +16,20 @@ import CaseStudySolution from './CaseStudySolution';
 import CaseStudyReflection from './CaseStudyReflection';
 
 /* ── Section registry ──────────────────────────────────────────── */
-function buildSections() {
+function buildSections(data) {
+  if (data?.type === 'shopify') {
+    return [
+      { id: 'cs-hero',       label: 'Overview' },
+      { id: 'cs-challenge',  label: 'Challenge' },
+      { id: 'cs-insights',   label: 'Research' },
+      { id: 'cs-approach',   label: 'Development' },
+      { id: 'cs-decisions',  label: 'Decisions' },
+      { id: 'cs-solution',   label: 'Results' },
+      { id: 'cs-reflection', label: 'Lessons' },
+      { id: 'cs-tech-stack', label: 'Tech Stack' },
+    ];
+  }
+
   return [
     { id: 'cs-hero',       label: 'Overview'   },
     { id: 'cs-challenge',  label: 'Challenge'  },
@@ -45,7 +58,8 @@ export default function CaseStudyTemplate({ data }) {
 
   if (!data) return null;
 
-  const sections = buildSections();
+  const sections = buildSections(data);
+  const isShopify = data.type === 'shopify';
 
   return (
     <div className="min-h-screen bg-bg-primary transition-colors duration-300">
@@ -74,29 +88,41 @@ export default function CaseStudyTemplate({ data }) {
             </EditorialSection>
 
             {/* ── 03 INSIGHTS ─────────────────────────────────── */}
-            <EditorialSection id="cs-insights" title="Key insights">
+            <EditorialSection id="cs-insights" title={isShopify ? 'Research' : 'Key insights'}>
               <CaseStudyInsights data={data} />
             </EditorialSection>
 
             {/* ── 04 APPROACH ─────────────────────────────────── */}
-            <EditorialSection id="cs-approach" title="The approach">
+            <EditorialSection id="cs-approach" title={isShopify ? 'Development' : 'The approach'}>
               <CaseStudyTimeline data={data} />
             </EditorialSection>
 
             {/* ── 05 DECISIONS ────────────────────────────────── */}
-            <EditorialSection id="cs-decisions" title="Product decisions">
+            <EditorialSection id="cs-decisions" title={isShopify ? 'Design decisions' : 'Product decisions'}>
               <CaseStudyDecisions data={data} />
             </EditorialSection>
 
             {/* ── 06 SOLUTION ─────────────────────────────────── */}
-            <EditorialSection id="cs-solution" title="Solution showcase">
+            <EditorialSection id="cs-solution" title={isShopify ? 'Results' : 'Solution showcase'}>
               <CaseStudySolution data={data} />
             </EditorialSection>
 
             {/* ── 07 REFLECTION ───────────────────────────────── */}
-            <EditorialSection id="cs-reflection" title="Impact & reflection">
+            <EditorialSection id="cs-reflection" title={isShopify ? 'Lessons learned' : 'Impact & reflection'}>
               <CaseStudyReflection data={data} />
             </EditorialSection>
+
+            {data.techStack && (
+              <EditorialSection id="cs-tech-stack" title="Tech stack">
+                <div className="flex flex-wrap gap-3">
+                  {data.techStack.map((tool) => (
+                    <span key={tool} className="px-4 py-2 rounded-full border border-card-border bg-bg-alt/40 text-sm font-semibold text-text-primary">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </EditorialSection>
+            )}
           </div>
         </div>
       </main>

@@ -10,6 +10,8 @@ export default function Navbar() {
   const { openModal } = useContactModal();
 
   const navLinks = [
+    { name: 'Work', path: '/#products' },
+    { name: 'Services', path: '/#products' },
     { name: 'About', path: '/about' }
   ];
 
@@ -28,8 +30,14 @@ export default function Navbar() {
 
         {/* Right: Black Pill Button */}
         <div className="hidden md:flex items-center gap-10">
-          <Link 
-            to="/about" 
+          <a href="/#products" className="text-sm md:text-base font-semibold tracking-wide hover:-translate-y-0.5 hover:text-accent-orange transition-all duration-300 text-text-primary">
+            Work
+          </a>
+          <a href="/#products" className="text-sm md:text-base font-semibold tracking-wide hover:-translate-y-0.5 hover:text-accent-orange transition-all duration-300 text-text-primary">
+            Services
+          </a>
+          <Link
+            to="/about"
             className={`text-sm md:text-base font-semibold tracking-wide hover:-translate-y-0.5 hover:text-accent-orange transition-all duration-300 ${location.pathname === '/about' ? 'text-accent-orange' : 'text-text-primary'}`}
           >
             About
@@ -75,14 +83,25 @@ export default function Navbar() {
             
             <nav className="flex flex-col gap-8 text-xl font-bold">
               {navLinks.map(link => (
-                <Link 
-                  key={link.name} 
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={location.pathname === link.path ? 'text-text-primary' : 'text-text-secondary hover:text-text-primary'}
-                >
-                  {link.name}
-                </Link>
+                link.path.startsWith('/#') ? (
+                  <a
+                    key={link.name}
+                    href={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className="text-text-secondary hover:text-text-primary"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={location.pathname === link.path ? 'text-text-primary' : 'text-text-secondary hover:text-text-primary'}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
               <button 
                 onClick={() => {

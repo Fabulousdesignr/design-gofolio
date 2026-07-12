@@ -14,7 +14,7 @@ export default function About() {
   const aboutFaqs = [
     {
       question: "What industries do you work in?",
-      answer: "I focus primarily on fintech, edtech, AI tools, and early-stage startup products. However, my design thinking process allows me to adapt quickly and solve complex problems in almost any domain."
+      answer: "I focus on Shopify, ecommerce, SaaS, AI tools, fintech, edtech, and early-stage startup products. My design thinking process helps me adapt quickly across domains while keeping user needs and business goals connected."
     },
     {
       question: "Do you work remotely?",
@@ -22,19 +22,19 @@ export default function About() {
     },
     {
       question: "How do you approach new products?",
-      answer: "I always start with the business goal and the user problem. Before any interface is drawn, I spend time understanding the system, mapping out logic flows, and ensuring the foundation is structurally sound."
+      answer: "I always start with the business goal and the user problem. Before any interface is drawn, I map the journey, logic flows, conversion moments, and structural decisions that will shape the experience."
     },
     {
       question: "Do you use AI in your workflow?",
-      answer: "Yes. AI plays a massive role in how I execute. I leverage AI tools to accelerate research, quickly iterate on concepts, and prototype faster, allowing me to focus more energy on strategy and product outcomes."
+      answer: "Yes. AI plays a major role in how I execute. I use AI tools to accelerate research, copy exploration, prototyping, frontend iteration, and ecommerce optimization while keeping strategy and judgment human."
     },
     {
       question: "Do you work with startups only?",
-      answer: "While I thrive in the fast-paced, ambiguous environments of early-stage startups, I also enjoy working with established companies looking to redesign legacy systems, launch new features, or scale their design operations."
+      answer: "No. I thrive with early-stage startups, but I also work with ecommerce brands, small businesses, and established companies looking to redesign systems, launch new features, improve websites, or scale their design operations."
     },
     {
       question: "Can you work with developers?",
-      answer: "Absolutely. I don't just design screens; I design systems that can actually be built. I provide highly organized handoffs and work directly with engineering teams to ensure the final product matches the vision."
+      answer: "Absolutely. I don't just design screens; I design systems that can actually be built. I provide organized handoffs, collaborate with engineering teams, and can move into Shopify implementation when the project needs design and build support."
     }
   ];
 
@@ -51,15 +51,15 @@ export default function About() {
             <div className="w-full lg:w-[55%] flex flex-col">
               <span className="text-accent-orange text-[13px] font-bold tracking-widest uppercase mb-6">About Me</span>
               <h1 className="font-serif text-[48px] md:text-[64px] lg:text-[80px] leading-[1.0] text-text-primary tracking-tight mb-8">
-                Product design built on visual thinking.
+                Product design built on visual thinking and ecommerce execution.
               </h1>
               
               <div className="text-[19px] md:text-[21px] text-text-secondary leading-[1.6] flex flex-col gap-6 max-w-xl">
                 <p>
-                  I did not start as a traditional product designer. I started in graphic design, where I learned layout, hierarchy, visual communication, and storytelling. That foundation now shapes how I design digital products.
+                  I did not start as a traditional product designer. I started in graphic design, where I learned layout, hierarchy, visual communication, and storytelling. That foundation now shapes how I design digital products, ecommerce experiences, and Shopify storefronts.
                 </p>
                 <p>
-                  I focus on building simple, intuitive experiences across fintech, edtech, AI tools, and startup products. I care about making products easy to use, visually clear, and useful in real life.
+                  I focus on building simple, intuitive experiences across Shopify, ecommerce, SaaS, AI tools, fintech, edtech, and startup products. I care about making products easy to use, visually clear, conversion-aware, and useful in real life.
                 </p>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function About() {
               <div className="flex flex-col gap-4">
                 <span className="text-accent-orange text-[14px] font-bold tracking-widest uppercase">03 — Business Aligned</span>
                 <p className="text-[24px] md:text-[32px] leading-[1.4] text-text-primary font-medium tracking-tight">
-                  Designing experiences that not only look good but drive conversion, adoption, and growth.
+                  Designing experiences that not only look good but drive conversion, adoption, retention, and growth.
                 </p>
               </div>
             </div>
@@ -125,10 +125,12 @@ export default function About() {
             <div className="w-full lg:w-2/3 flex flex-col">
               {[
                 "UI/UX Design for Web & Mobile",
+                "Shopify Store Design & Setup",
+                "Landing Pages & Ecommerce UX",
                 "Product Design for Startups",
                 "User Flows & Interaction",
                 "Prototyping & Design Systems",
-                "Usability & UX Audits"
+                "Usability & Conversion Audits"
               ].map((service, idx) => (
                 <div key={idx} className="flex items-center justify-between py-8 border-b border-card-border group">
                   <span className="text-[24px] md:text-[28px] font-medium text-text-primary tracking-tight group-hover:text-accent-orange transition-colors duration-300">
@@ -149,7 +151,7 @@ export default function About() {
                 Beyond Design
               </h2>
               <p className="text-[19px] md:text-[21px] text-text-secondary leading-[1.6] max-w-lg">
-                My diverse creative foundation shapes how I think about users, emotions, and experiences, allowing me to design products that feel both functional and deeply human.
+                My diverse creative foundation shapes how I think about users, emotions, buying decisions, and digital experiences, allowing me to design products and stores that feel both functional and deeply human.
               </p>
             </div>
             
@@ -158,7 +160,8 @@ export default function About() {
                 "Storytelling",
                 "Acting",
                 "Tailoring",
-                "Graphic Design"
+                "Graphic Design",
+                "Ecommerce"
               ].map((tag, idx) => (
                 <span 
                   key={idx} 
@@ -176,8 +179,8 @@ export default function About() {
           <div className="max-w-[1400px] mx-auto px-6 md:px-12">
             <ContentCard 
               title="View My Experience"
-              description="For a comprehensive breakdown of my work history, process, and past projects, download my CV."
-              tags={["PRODUCT DESIGN", "STARTUPS", "AI PRODUCTS"]}
+              description="For a comprehensive breakdown of my work history, process, product design experience, and Shopify/ecommerce direction, download my CV."
+              tags={["PRODUCT DESIGN", "SHOPIFY", "STARTUPS"]}
               mediaUrl="/images/My Image.png" 
               actionText="Download CV"
               actionUrl="/My Cv.pdf"
@@ -197,10 +200,10 @@ export default function About() {
         <section className="w-full py-32 md:py-48 bg-card border-t border-card-border text-center px-6">
           <div className="max-w-4xl mx-auto flex flex-col items-center">
             <h2 className="font-serif text-[56px] md:text-[72px] lg:text-[88px] leading-[0.95] text-text-primary tracking-tight mb-8">
-              Let’s build something meaningful.
+              Let's build something meaningful.
             </h2>
             <p className="text-[20px] md:text-[24px] text-text-secondary leading-[1.5] max-w-2xl mx-auto mb-12">
-              I’m open to remote opportunities, startup collaborations, and product conversations with teams building ambitious things.
+              I'm open to Shopify builds, ecommerce website projects, landing pages, startup collaborations, and product conversations with teams building ambitious things.
             </p>
             <button 
               onClick={openModal}

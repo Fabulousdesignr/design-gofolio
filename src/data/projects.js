@@ -1,5 +1,16 @@
 export const projects = [
   {
+    id: "maxmall",
+    title: "Maxmall",
+    liveUrl: "",
+    caseStudyUrl: "",
+    description: "I designed a premium Shopify storefront for a multi-category ecommerce brand, improving product discovery, homepage merchandising, product-page clarity, and the path from browsing to checkout.",
+    category: "Shopify • Ecommerce",
+    image: "/images/Maxmall Hero.png",
+    link: "/case-study/maxmall",
+    featured: true
+  },
+  {
     id: "applyflow",
     title: "ApplyFlow",
     liveUrl: "https://applyflow-hazel.vercel.app/",

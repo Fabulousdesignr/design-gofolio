@@ -4,27 +4,27 @@ import { Plus, Minus } from 'lucide-react';
 const faqs = [
   {
     question: "What kind of products do you work on?",
-    answer: "I mainly work on digital products across SaaS, AI, fintech, productivity, marketplaces, and startup platforms. I enjoy solving complex product problems where strategy and execution matter equally."
+    answer: "I work on SaaS products, mobile and web applications, Shopify stores, ecommerce websites, landing pages, and early-stage startup platforms. I enjoy projects where UX, visual design, business goals, and execution all matter."
   },
   {
-    question: "Do you only design interfaces?",
-    answer: "No. I go beyond interface design. I think deeply about product strategy, user flows, systems design, interaction logic, and business outcomes. My goal is to help build products that work, not just products that look good."
+    question: "Can you design and build Shopify stores?",
+    answer: "Yes. I can help with Shopify store design, theme customization, landing pages, product-page UX, store setup, and conversion-focused improvements using Shopify, Liquid, HTML, CSS, and JavaScript."
   },
   {
     question: "Do you work with early-stage startups?",
-    answer: "Yes. I especially enjoy working with early-stage startups because I love shaping products from zero to one. That includes idea validation, MVP planning, rapid prototyping, and product execution."
+    answer: "Yes. I especially enjoy working with founders and small teams because I can move across strategy, UX, visual design, prototyping, and implementation without needing a large handoff process."
   },
   {
     question: "Do you use AI in your workflow?",
-    answer: "Yes. AI plays a major role in how I work today. I use AI to speed up research, exploration, prototyping, and execution, while still keeping product thinking and human judgment at the center."
+    answer: "Yes. AI plays a major role in how I work today. I use AI to speed up research, exploration, prototyping, copy iteration, and execution, while still keeping product thinking and human judgment at the center."
   },
   {
     question: "Can you work with developers and product teams?",
-    answer: "Absolutely. I work well across cross-functional teams and enjoy collaborating with founders, developers, product managers, and operators to move ideas from concept to launch."
+    answer: "Absolutely. I work well with founders, developers, product managers, and operators. I can provide clean design systems and handoffs, or move closer to implementation when the project needs design and build support."
   },
   {
     question: "Are you available for freelance or full-time roles?",
-    answer: "Yes. I’m open to freelance projects, contract work, startup collaborations, and strong full-time opportunities where I can contribute meaningfully."
+    answer: "Yes. I'm open to freelance projects, Shopify and ecommerce work, contract product design roles, startup collaborations, and strong full-time opportunities where I can contribute meaningfully."
   }
 ];
 
@@ -45,14 +45,14 @@ export default function EditorialFAQ({ faqs: customFaqs }) {
             Frequently Asked Questions
           </h2>
           <p className="text-text-secondary text-[19px] leading-[1.6]">
-            Things people usually want to know before working with me.
+            Things founders, teams, and ecommerce brands usually want to know before working with me.
           </p>
         </div>
 
         <div className="flex flex-col border-t border-card-border">
           {displayFaqs.map((faq, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="border-b border-card-border py-8 cursor-pointer group"
               onClick={() => toggleFAQ(idx)}
             >
@@ -64,7 +64,7 @@ export default function EditorialFAQ({ faqs: customFaqs }) {
                   {openIndex === idx ? <Minus size={24} /> : <Plus size={24} />}
                 </div>
               </div>
-              <div 
+              <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
                   openIndex === idx ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'
                 }`}

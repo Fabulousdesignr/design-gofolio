@@ -1,5 +1,94 @@
 export const caseStudies = [
   {
+    id: "maxmall",
+    type: "shopify",
+    title: "Maxmall",
+    summary: "I designed a premium Shopify storefront for a multi-category ecommerce brand, balancing strong visual merchandising with a clearer path to product discovery, trust, and conversion.",
+    meta: [
+      { label: "Client", value: "Maxmall" },
+      { label: "Role", value: "Product Designer & Shopify Developer" },
+      { label: "Industry", value: "Ecommerce / Retail" },
+      { label: "Platform", value: "Shopify Store" },
+      { label: "Tools", value: "Figma, Shopify, Liquid, HTML, CSS, JavaScript, AI tools" },
+      { label: "Live Store", value: "Not available" }
+    ],
+    heroMedia: "/images/Maxmall Hero.png",
+    accent: {
+      text: "text-orange-500",
+      bg: "bg-orange-500/10",
+      border: "border-orange-500/20",
+      shadow: "shadow-orange-500/15"
+    },
+    liveUrl: null,
+    challenge: {
+      context: "Maxmall needed an ecommerce experience that could make a broad product catalog feel easier to shop. The main challenge was turning a generic storefront pattern into a premium, conversion-focused Shopify experience with clearer hierarchy, stronger trust signals, and product pages that help shoppers make faster decisions.",
+      visual: null
+    },
+    insights: [
+      { title: "Discovery Needed Structure", description: "A multi-category store can overwhelm shoppers quickly, so the homepage and navigation needed clearer entry points into key collections and offers." },
+      { title: "Trust Drives Checkout Intent", description: "For a retail brand, shoppers need immediate confidence around product quality, delivery, returns, and support before they move toward checkout." },
+      { title: "Product Pages Carry Revenue", description: "The product detail page needed stronger image hierarchy, benefit-led content, and cleaner purchase actions to reduce hesitation." }
+    ],
+    approach: [
+      { phase: "Overview", description: "Defined the store goals, customer journey, catalog structure, and core conversion moments." },
+      { phase: "Research", description: "Reviewed ecommerce patterns, competitor stores, merchandising flows, and friction points in product discovery." },
+      { phase: "Design", description: "Created a premium storefront direction in Figma with clear sections for discovery, trust, offers, and featured products." },
+      { phase: "Development", description: "Translated the design direction into a Shopify-ready theme structure using Liquid, HTML, CSS, and JavaScript." },
+      { phase: "Optimization", description: "Refined page hierarchy, responsive behavior, and conversion details across homepage and product pages." }
+    ],
+    decisions: [
+      {
+        title: "Conversion-Focused Homepage",
+        what: "I structured the homepage around hero merchandising, featured collections, social proof, and high-intent product paths.",
+        why: "The store needed to help shoppers quickly understand what Maxmall sells and where to go next without scanning through a cluttered catalog.",
+        result: "The experience became easier to browse, with stronger first-impression clarity and more obvious routes into shopping.",
+        image: "/images/Maxmall 1.png"
+      },
+      {
+        title: "Clear Collection Entry Points",
+        what: "I designed category and collection sections that make the catalog feel organized and purposeful.",
+        why: "Multi-category ecommerce stores often lose shoppers when the navigation feels too broad or visually flat.",
+        result: "Shoppers can move from homepage intent to relevant product groups with less friction.",
+        image: "/images/Maxmall 2.png"
+      },
+      {
+        title: "Product Page Trust Layer",
+        what: "I prioritized product imagery, concise benefits, clear variant selection, delivery cues, and a more visible add-to-cart path.",
+        why: "Product pages are where uncertainty becomes abandonment, so the layout needed to answer shopper questions before checkout.",
+        result: "The product page communicates value faster and creates a more confident purchase decision.",
+        image: "/images/Maxmall 3.png"
+      },
+      {
+        title: "Responsive Shopify Build",
+        what: "I planned the interface for Shopify theme implementation across desktop and mobile, including reusable sections and practical content blocks.",
+        why: "A beautiful design only matters if the brand can maintain it after launch and keep adding products without breaking the experience.",
+        result: "The store direction supports repeatable merchandising, cleaner editing, and a more scalable ecommerce workflow.",
+        image: "/images/Maxmall 4.png"
+      }
+    ],
+    solution: [
+      {
+        title: "Premium Shopify Storefront",
+        description: "The final direction combines product design thinking with Shopify execution: clear navigation, conversion-focused landing sections, cleaner product pages, and a visual system that feels premium without getting in the shopper's way.",
+        media: "/images/Maxmall Hero.png"
+      },
+      {
+        title: "Ecommerce UX Details",
+        description: "Key features include collection-led browsing, stronger product presentation, trust-building content blocks, responsive section planning, and checkout-oriented calls to action.",
+        media: "/images/Maxmall 5.png"
+      }
+    ],
+    reflection: {
+      worked: "The strongest part of the project was combining UX hierarchy with Shopify constraints, so the store could feel premium while staying practical to build and manage.",
+      surprised: "Small details like section order, button placement, and product information hierarchy had a large effect on how trustworthy the store felt.",
+      learned: "Shopify work benefits from the same product thinking as SaaS: every page needs a job, every section needs a reason, and every interaction should reduce hesitation.",
+      improve: "With live store data, I would run heatmaps and conversion tests on homepage sections, product-page content, and add-to-cart behavior."
+    },
+    techStack: ["Figma", "Shopify", "Liquid", "HTML", "CSS", "JavaScript", "AI-assisted research, copy, and implementation workflows"],
+    keyFeatures: ["Premium homepage merchandising", "Collection-led product discovery", "Conversion-focused product pages", "Trust and delivery cues", "Responsive Shopify theme sections"],
+    businessImpact: ["Improved perceived brand quality", "Reduced shopping friction", "Clearer route from homepage to product pages", "A more maintainable ecommerce foundation"]
+  },
+  {
     id: "applyflow",
     title: "ApplyFlow",
     summary: "I designed and built an AI-enabled application operating system and centralized workspace for managing the entire job application lifecycle.",
