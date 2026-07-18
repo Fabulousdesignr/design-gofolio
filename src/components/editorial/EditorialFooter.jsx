@@ -28,9 +28,9 @@ export default function EditorialFooter() {
         <div className="w-full flex flex-col md:flex-row items-center justify-between pt-8 border-t border-card-border text-sm text-text-secondary font-medium">
           <p>© {new Date().getFullYear()} Godwin. All rights reserved.</p>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-text-primary transition-colors">Twitter</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-text-primary transition-colors">LinkedIn</a>
-            <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="hover:text-text-primary transition-colors">Behance</a>
+            <a href="https://x.com/fabulousdesignr" target="_blank" rel="noopener noreferrer" className="hover:text-text-primary transition-colors">Twitter</a>
+            <a href="https://www.linkedin.com/in/godwinokechukwu/" target="_blank" rel="noopener noreferrer" className="hover:text-text-primary transition-colors">LinkedIn</a>
+            <a href="https://www.behance.net/fabianokechukwu" target="_blank" rel="noopener noreferrer" className="hover:text-text-primary transition-colors">Behance</a>
           </div>
         </div>
 

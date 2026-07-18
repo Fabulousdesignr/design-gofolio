@@ -13,28 +13,24 @@ export default function About() {
 
   const aboutFaqs = [
     {
-      question: "What industries do you work in?",
-      answer: "I focus on Shopify, ecommerce, SaaS, AI tools, fintech, edtech, and early-stage startup products. My design thinking process helps me adapt quickly across domains while keeping user needs and business goals connected."
+      question: "How does your design background help you as a PM?",
+      answer: "It acts as a rapid validation loop. Instead of writing long PRDs in isolation, I can map complex customer journeys, prototype high-fidelity workflows, and align engineering and stakeholders visually. This visual clarity eliminates execution ambiguity, speeds up handoffs, and ensures we build the right things first."
     },
     {
-      question: "Do you work remotely?",
-      answer: "Yes. I am based in Nigeria, but I work with teams and founders globally. I am highly comfortable managing timezone overlaps, asynchronous communication, and remote collaboration workflows."
+      question: "What is your approach to product prioritization?",
+      answer: "I prioritize based on user feedback, business impact, and engineering effort. I focus heavily on proving high-risk assumptions with the minimum viable effort. For instance, on Shyne, I deferred complex marketplace features to focus entirely on improving onboarding completion and portfolio publishing success."
     },
     {
-      question: "How do you approach new products?",
-      answer: "I always start with the business goal and the user problem. Before any interface is drawn, I map the journey, logic flows, conversion moments, and structural decisions that will shape the experience."
+      question: "How do you collaborate with engineering teams?",
+      answer: "I speak their language. Having worked with frontend frameworks like React and Next.js, and having built scaleable design systems, I structure product requirements to be build-aware. I identify structural edge cases early, reducing development rework and keeping execution aligned with timelines."
     },
     {
-      question: "Do you use AI in your workflow?",
-      answer: "Yes. AI plays a major role in how I execute. I use AI tools to accelerate research, copy exploration, prototyping, frontend iteration, and ecommerce optimization while keeping strategy and judgment human."
+      question: "Do you use AI in your product workflow?",
+      answer: "Yes, as an accelerant. I use AI tools (Claude, Cursor, Gemini, ChatGPT) to synthesize large sets of competitor data, draft product documentation, explore copy iterations, and build functional prototypes for early user validation."
     },
     {
-      question: "Do you work with startups only?",
-      answer: "No. I thrive with early-stage startups, but I also work with ecommerce brands, small businesses, and established companies looking to redesign systems, launch new features, improve websites, or scale their design operations."
-    },
-    {
-      question: "Can you work with developers?",
-      answer: "Absolutely. I don't just design screens; I design systems that can actually be built. I provide organized handoffs, collaborate with engineering teams, and can move into Shopify implementation when the project needs design and build support."
+      question: "What types of products do you specialize in?",
+      answer: "I specialize in AI-enabled tools, SaaS products, marketplaces, and fintech applications. I thrive in early-stage environments where customer discovery and rapid iteration are required to go from concept to product-market fit."
     }
   ];
 
@@ -51,15 +47,15 @@ export default function About() {
             <div className="w-full lg:w-[55%] flex flex-col">
               <span className="text-accent-orange text-[13px] font-bold tracking-widest uppercase mb-6">About Me</span>
               <h1 className="font-serif text-[48px] md:text-[64px] lg:text-[80px] leading-[1.0] text-text-primary tracking-tight mb-8">
-                Product design built on visual thinking and ecommerce execution.
+                Product strategy built on user insights and rapid prototyping.
               </h1>
               
               <div className="text-[19px] md:text-[21px] text-text-secondary leading-[1.6] flex flex-col gap-6 max-w-xl">
                 <p>
-                  I did not start as a traditional product designer. I started in graphic design, where I learned layout, hierarchy, visual communication, and storytelling. That foundation now shapes how I design digital products, ecommerce experiences, and Shopify storefronts.
+                  I am a Product Manager with 10 years of design experience, including 4 years in Product Design. I bridge the gap between user problems, engineering capabilities, and business outcomes to build products that users love and adopt.
                 </p>
                 <p>
-                  I focus on building simple, intuitive experiences across Shopify, ecommerce, SaaS, AI tools, fintech, edtech, and startup products. I care about making products easy to use, visually clear, conversion-aware, and useful in real life.
+                  My design background is my competitive execution advantage. It allows me to rapidly prototype product concepts, validate hypotheses with real users, align cross-functional teams visually, and build scalable design systems that drastically reduce development overhead.
                 </p>
               </div>
             </div>
@@ -71,7 +67,6 @@ export default function About() {
                   alt="Godwin O." 
                   className="w-full h-full object-cover"
                 />
-                {/* Subtle overlay tint matching homepage portrait */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-accent-orange/10 to-transparent opacity-60 mix-blend-overlay"></div>
               </div>
             </div>
@@ -79,34 +74,34 @@ export default function About() {
           </div>
         </section>
 
-        {/* 2. MY DESIGN PHILOSOPHY */}
+        {/* 2. MY PRODUCT PHILOSOPHY */}
         <section className="w-full py-24 md:py-32 bg-card border-y border-card-border">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row gap-16 lg:gap-24">
             <div className="w-full lg:w-1/3">
               <h2 className="font-serif text-[40px] md:text-[48px] leading-[1.1] text-text-primary tracking-tight sticky top-32">
-                My Design Philosophy
+                My Product Philosophy
               </h2>
             </div>
             
             <div className="w-full lg:w-2/3 flex flex-col gap-16 md:gap-24">
               <div className="flex flex-col gap-4">
-                <span className="text-accent-orange text-[14px] font-bold tracking-widest uppercase">01 — User First</span>
+                <span className="text-accent-orange text-[14px] font-bold tracking-widest uppercase">01 — Solve the Right Problem</span>
                 <p className="text-[24px] md:text-[32px] leading-[1.4] text-text-primary font-medium tracking-tight">
-                  Understanding the human behind the screen to build natural, empathetic flows.
+                  Doing deep customer discovery and research first to ensure we solve high-value customer struggles.
                 </p>
               </div>
               
               <div className="flex flex-col gap-4">
-                <span className="text-accent-orange text-[14px] font-bold tracking-widest uppercase">02 — Simplify Complexity</span>
+                <span className="text-accent-orange text-[14px] font-bold tracking-widest uppercase">02 — Validate Assumptions First</span>
                 <p className="text-[24px] md:text-[32px] leading-[1.4] text-text-primary font-medium tracking-tight">
-                  Turning complicated systems into clear, actionable, and minimal interfaces.
+                  Using high-fidelity interactive prototypes to test workflows and gather early signal before committing engineering resources.
                 </p>
               </div>
               
               <div className="flex flex-col gap-4">
-                <span className="text-accent-orange text-[14px] font-bold tracking-widest uppercase">03 — Business Aligned</span>
+                <span className="text-accent-orange text-[14px] font-bold tracking-widest uppercase">03 — Focus on Activation & Growth</span>
                 <p className="text-[24px] md:text-[32px] leading-[1.4] text-text-primary font-medium tracking-tight">
-                  Designing experiences that not only look good but drive conversion, adoption, retention, and growth.
+                  Optimizing the customer onboarding journey and core loops to drive adoption, user retention, and monetization.
                 </p>
               </div>
             </div>
@@ -118,19 +113,19 @@ export default function About() {
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row gap-16 lg:gap-24">
             <div className="w-full lg:w-1/3">
               <h2 className="font-serif text-[40px] md:text-[48px] leading-[1.1] text-text-primary tracking-tight sticky top-32">
-                What I Help Teams Do
+                Core Competencies
               </h2>
             </div>
             
             <div className="w-full lg:w-2/3 flex flex-col">
               {[
-                "UI/UX Design for Web & Mobile",
-                "Shopify Store Design & Setup",
-                "Landing Pages & Ecommerce UX",
-                "Product Design for Startups",
-                "User Flows & Interaction",
-                "Prototyping & Design Systems",
-                "Usability & Conversion Audits"
+                "Product Strategy & Roadmapping",
+                "Customer Discovery & User Research",
+                "MVP Definition & Scope Management",
+                "Growth Experimentation & Funnel Analysis",
+                "Cross-Functional Team Collaboration",
+                "Design Systems & Usability Audits",
+                "AI Product Strategy & Prototyping"
               ].map((service, idx) => (
                 <div key={idx} className="flex items-center justify-between py-8 border-b border-card-border group">
                   <span className="text-[24px] md:text-[28px] font-medium text-text-primary tracking-tight group-hover:text-accent-orange transition-colors duration-300">
@@ -143,25 +138,28 @@ export default function About() {
           </div>
         </section>
 
-        {/* 4. BEYOND DESIGN */}
+        {/* 4. SKILLS & KNOWLEDGE */}
         <section className="w-full py-24 md:py-32 bg-card border-y border-card-border">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             <div className="w-full lg:w-1/2 flex flex-col">
               <h2 className="font-serif text-[40px] md:text-[48px] leading-[1.1] text-text-primary tracking-tight mb-8">
-                Beyond Design
+                Execution Toolkit
               </h2>
               <p className="text-[19px] md:text-[21px] text-text-secondary leading-[1.6] max-w-lg">
-                My diverse creative foundation shapes how I think about users, emotions, buying decisions, and digital experiences, allowing me to design products and stores that feel both functional and deeply human.
+                My multidisciplinary toolkit spans product management frameworks, customer research methods, design systems, and developer-aligned technical skills.
               </p>
             </div>
             
             <div className="w-full lg:w-1/2 flex flex-wrap gap-4">
               {[
-                "Storytelling",
-                "Acting",
-                "Tailoring",
-                "Graphic Design",
-                "Ecommerce"
+                "Product Strategy",
+                "Growth Experiments",
+                "Customer Discovery",
+                "Product Analytics",
+                "Figma",
+                "Design Systems",
+                "React / Next.js",
+                "AI Workflows"
               ].map((tag, idx) => (
                 <span 
                   key={idx} 
@@ -178,9 +176,9 @@ export default function About() {
         <section className="w-full py-24 md:py-32 bg-bg-primary">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12">
             <ContentCard 
-              title="View My Experience"
-              description="For a comprehensive breakdown of my work history, process, product design experience, and Shopify/ecommerce direction, download my CV."
-              tags={["PRODUCT DESIGN", "SHOPIFY", "STARTUPS"]}
+              title="Professional Work & Experience"
+              description="For a comprehensive breakdown of my work history, product strategy execution, team leadership, and validation achievements, view my full resume below or download my CV."
+              tags={["PRODUCT STRATEGY", "GROWTH PM", "AI MVPS"]}
               mediaUrl="/images/My Image.png" 
               actionText="Download CV"
               actionUrl="/My Cv.pdf"
@@ -200,10 +198,10 @@ export default function About() {
         <section className="w-full py-32 md:py-48 bg-card border-t border-card-border text-center px-6">
           <div className="max-w-4xl mx-auto flex flex-col items-center">
             <h2 className="font-serif text-[56px] md:text-[72px] lg:text-[88px] leading-[0.95] text-text-primary tracking-tight mb-8">
-              Let's build something meaningful.
+              Let's build products people love using.
             </h2>
             <p className="text-[20px] md:text-[24px] text-text-secondary leading-[1.5] max-w-2xl mx-auto mb-12">
-              I'm open to Shopify builds, ecommerce website projects, landing pages, startup collaborations, and product conversations with teams building ambitious things.
+              I am open to growth product manager positions, startup product collaborations, and product conversations with teams building ambitious things.
             </p>
             <button 
               onClick={openModal}

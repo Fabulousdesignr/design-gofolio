@@ -7,7 +7,7 @@ export default function EditorialMessageMe() {
   const contactMethods = [
     {
       title: "Email Me",
-      description: "For Shopify builds, product design work, project details, and long-form discussions.",
+      description: "For career opportunities, startup collaborations, and product discussions.",
       icon: <Mail size={24} className="text-text-primary" />,
       action: openModal,
       isModal: true,
@@ -15,14 +15,14 @@ export default function EditorialMessageMe() {
     },
     {
       title: "Message on WhatsApp",
-      description: "For quick chats, casual introductions, and rapid communication.",
+      description: "For quick introductions, feedback exchange, and casual chats.",
       icon: <MessageCircle size={24} className="text-text-primary" />,
       action: "https://wa.me/2348123456789",
       actionText: "Start a chat"
     },
     {
       title: "Book a Call",
-      description: "Schedule a 30-minute discovery call to discuss your store, website, or product needs.",
+      description: "Schedule a 30-minute discovery call to discuss product strategy and growth.",
       icon: <Calendar size={24} className="text-text-primary" />,
       action: "https://calendly.com",
       actionText: "Find a time"
@@ -37,20 +37,12 @@ export default function EditorialMessageMe() {
         <div className="w-full lg:w-[45%] flex flex-col">
           <span className="text-accent-orange text-[13px] font-bold tracking-widest uppercase mb-4">Let's Talk</span>
           <h2 className="font-serif text-[48px] md:text-[64px] lg:text-[80px] leading-[1.0] text-text-primary tracking-tight mb-8">
-            Message Me
+            Get in touch.
           </h2>
           <p className="text-text-secondary text-[20px] md:text-[22px] leading-[1.5] mb-12 max-w-lg font-medium">
-            If you need a Shopify store, ecommerce website, landing page, or product experience designed with clarity and built with care, let's talk.
+            Have a product idea, hiring opportunity, or challenge worth solving?
+            I'd love to hear about it.
           </p>
-
-          <div className="prose prose-lg text-text-secondary">
-            <p className="mb-6 leading-[1.7]">
-              I work with founders, ecommerce brands, startups, and teams building meaningful products across Shopify, SaaS, AI, fintech, and digital platforms.
-            </p>
-            <p className="leading-[1.7]">
-              Whether you need product strategy, UX direction, Shopify development, conversion-focused pages, or design execution, I'm always open to thoughtful conversations and exciting ideas.
-            </p>
-          </div>
         </div>
 
         <div className="w-full lg:w-[55%] flex flex-col gap-6 justify-center">
