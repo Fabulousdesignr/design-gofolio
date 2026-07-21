@@ -1,6 +1,7 @@
 const MODULE_SHORTCUTS = [
   { href: '#work', label: 'Work' },
-  { href: '#ai-lab', label: 'AI Lab' },
+  { href: '#ai-lab', label: 'AI Products' },
+  { href: '#launch-pages', label: 'Launch' },
   { href: '#about', label: 'About' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -23,9 +24,9 @@ export default function Hero() {
             <h1 className="workspace-deck-title">
               I design and build products people actually use
             </h1>
-            <p className="workspace-deck-role">Product designer · AI-assisted builder</p>
-            <p className="text-lg md:text-xl text-text-secondary mb-10 max-w-2xl leading-relaxed md:leading-[1.6]">
-              I built this curated workspace to showcase my flagship case studies, AI experiments, and product explorations, built with clarity, craft, and intentional product thinking.
+            <p className="workspace-deck-role">Product Designer · AI-assisted builder</p>
+            <p className="workspace-deck-lead">
+              This is my portfolio. It shows the work I've done — the case studies, the AI products I've built, and the things I've shipped. Everything here is meant to show how I think and what I can do.
             </p>
 
             <nav className="workspace-module-tabs" aria-label="Workspace modules">
@@ -37,8 +38,8 @@ export default function Hero() {
             </nav>
 
             <div className="flex flex-wrap gap-3 mt-8">
-              <a href="/#work" className="workspace-btn-primary">
-                Open featured work
+              <a href="/#work" className="workspace-btn workspace-btn--primary">
+                See my work
               </a>
             </div>
           </div>

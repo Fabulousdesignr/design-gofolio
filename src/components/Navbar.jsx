@@ -1,7 +1,65 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { useContactModal } from '../context/ContactModalContext';
-import ThemeToggle from './ThemeToggle';
-const links = [['Work', '/#work'], ['How I Think', '/#thinking'], ['Experience', '/#experience'], ['Writing', '/#writing'], ['Teaching', '/#teaching'], ['About', '/about']];
-export default function Navbar() { const [open, setOpen] = useState(false); const { openModal } = useContactModal(); return <nav className="absolute top-0 inset-x-0 z-50"><div className="max-w-[1400px] mx-auto px-6 md:px-12 h-24 flex items-center justify-between"><Link to="/" className="text-xl md:text-2xl font-serif tracking-tight">Godwin Okechukwu</Link><div className="hidden md:flex gap-7 items-center">{links.map(([n, p]) => <a key={n} href={p} className="text-sm font-semibold hover:text-accent-orange">{n}</a>)}<ThemeToggle/><button onClick={openModal} className="rounded-full bg-bg-inverse text-text-inverse px-5 py-2.5 text-sm font-semibold">Let's talk</button></div><div className="md:hidden flex gap-3 items-center"><ThemeToggle/><button onClick={()=>setOpen(true)}><Menu/></button></div></div>{open && <div className="fixed inset-0 bg-black/40 flex justify-end md:hidden" onClick={()=>setOpen(false)}><div className="w-4/5 bg-bg-primary p-8" onClick={e=>e.stopPropagation()}><button className="float-right" onClick={()=>setOpen(false)}><X/></button><div className="pt-16 flex flex-col gap-7">{links.map(([n,p])=><a key={n} href={p} onClick={()=>setOpen(false)} className="text-xl font-semibold">{n}</a>)}<button onClick={openModal} className="text-left text-xl font-semibold">Let's talk</button></div></div></div>}</nav>; }
+import { useWorkspaceNav } from '../hooks/useWorkspaceNav';
+
+const HOME_MODULES = [
+  { id: 'work', label: 'Work', href: '/#work' },
+  { id: 'ai-lab', label: 'AI Products', href: '/#ai-lab' },
+  { id: 'launch-pages', label: 'Launch', href: '/#launch-pages' },
+  { id: 'about', label: 'About', href: '/#about' },
+];
+
+export default function Navbar({ isCaseStudy = false }) {
+  const activeModule = useWorkspaceNav(HOME_MODULES.map((m) => m.id));
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+        isCaseStudy ? 'bg-bg-primary/90 border-b border-card-border' : 'workspace-nav'
+      }`}
+    >
+      <div className="container-wide flex justify-between items-center py-3 md:py-3.5">
+        <div className="flex items-center gap-6 md:gap-8">
+          {isCaseStudy ? (
+            <Link
+              to="/"
+              className="font-semibold text-text-secondary opacity-80 hover:opacity-100 hover:text-text-primary transition-all flex items-center gap-2 text-sm"
+            >
+              &larr; Back
+            </Link>
+          ) : (
+            <Link to="/" className="workspace-nav-mark">
+              <span className="text-xl font-extrabold tracking-tighter text-text-primary">G.O</span>
+              <span className="workspace-nav-sub">Design workspace</span>
+            </Link>
+          )}
+        </div>
+
+        <div className="flex items-center gap-4 md:gap-6">
+          {!isCaseStudy && (
+            <div className="workspace-nav-tabs" role="tablist" aria-label="Modules">
+              {HOME_MODULES.map((mod) => (
+                <a
+                  key={mod.id}
+                  href={mod.href}
+                  role="tab"
+                  aria-selected={activeModule === mod.id}
+                  className={`workspace-nav-tab ${activeModule === mod.id ? 'is-active' : ''}`}
+                >
+                  {mod.label}
+                </a>
+              ))}
+            </div>
+          )}
+
+          <div className="flex items-center gap-3 md:gap-4">
+            {!isCaseStudy && (
+              <a href="/#contact" className="workspace-btn workspace-btn--primary hidden sm:inline-flex">
+                Contact
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+}

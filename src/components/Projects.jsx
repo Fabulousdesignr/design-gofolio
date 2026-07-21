@@ -8,7 +8,7 @@ export default function Projects() {
       id="work"
       index={1}
       title="Featured work"
-      subtitle="I led these flagship case studies, focusing on product thinking, interface craft, and shipped outcomes."
+      subtitle="Here are the main projects I've worked on. For each one, I'll walk you through the problem, what I did, and how it turned out."
       layout="wide"
     >
       <div className="workspace-work-stack">

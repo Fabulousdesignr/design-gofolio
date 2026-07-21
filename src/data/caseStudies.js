@@ -1,99 +1,376 @@
-const pmAccent = { text: 'text-accent-orange', bg: 'bg-orange-500/10', border: 'border-orange-500/20', shadow: 'shadow-orange-500/15' };
-
 export const caseStudies = [
   {
-    id: 'shyne', title: 'Shyne', type: 'pm', label: 'Flagship product · Early-stage MVP',
-    summary: 'Defining an AI-powered portfolio platform that helps African creatives turn scattered work into a credible professional presence.',
-    heroMedia: '/images/Ui 8.png', liveUrl: 'https://www.shyne.africa', accent: pmAccent,
-    meta: [{ label: 'Role', value: 'Co-Founder & Growth Product Manager' }, { label: 'Stage', value: 'MVP' }, { label: 'Market', value: 'African creative economy' }, { label: 'Team', value: 'Founder, developers & collaborators' }],
-    sections: [
-      ['The Problem', 'Many African creatives rely on social profiles and scattered links to show their work, making it difficult to present themselves professionally, build credibility, and attract opportunities. Creative academies also struggle to help graduates maintain an online presence after completing training.'],
-      ['Business Context', 'The opportunity was to create a subscription platform for individuals while building a longer-term institution product for creative academies. Resources were limited, so the MVP needed to prove the highest-risk assumption: will creatives publish a portfolio when setup is genuinely easy?'],
-      ['Users & Goals', 'Primary users were African creatives, students in creative academies, and independent digital professionals. Their goal was a professional online presence without having to become a web designer. The business goal was a repeatable path to portfolio creation, publishing, and subscription adoption.'],
-      ['Research & Insights', 'I reviewed Behance, Dribbble, Wix, Carrd, Framer, Notion Sites, and specialist portfolio builders; spoke with creatives and academy owners; and observed how people currently share work. Three patterns were clear: people did not want to design a site, speed mattered more than customization during onboarding, and academies needed an easier way to manage graduate portfolios.'],
-      ['Hypothesis', 'If Shyne guided users from their existing work to a publishable portfolio with AI assistance and clear templates, more users would reach their first meaningful product moment than with a blank-canvas portfolio builder.'],
-      ['Product Strategy & MVP Decisions', 'I concentrated the MVP on AI-assisted onboarding, templates, portfolio publishing, and responsive output. I intentionally delayed marketplace, messaging, analytics, and community features. This traded breadth for a clearer activation loop and protected a small engineering team from building engagement features before the creation workflow was validated.'],
-      ['Prioritization & Roadmap', 'The roadmap moved in three steps: first, help individuals create and publish; second, validate institution workflows after academy demand emerged; third, consider opportunity and networking layers only after portfolio creation was reliable. Customer feedback, business leverage, and implementation effort were the decision criteria.'],
-      ['Success Metrics', 'The MVP success metrics are onboarding completion, activation rate, published-portfolio rate, and time to publish. The next dashboard will also track retention, AI-assisted versus manual onboarding performance, and institution adoption.'],
-      ['Execution & Collaboration', 'I owned product strategy, discovery, roadmap decisions, and the design system, partnering with developers on delivery and using early user feedback to refine the experience. AI tools supported research synthesis, documentation, ideation, and rapid prototyping; they did not replace customer judgement.'],
-      ['Outcome', 'Discovery validated demand with both creatives and institutions, and changed the product thesis from an individual portfolio tool to a platform with institution-partnership potential. The work established a focused MVP direction rather than overstating unmeasured commercial results.'],
-      ['Retrospective & Next Opportunities', 'The strongest decision was treating publishing—not customization—as the core job to be done. Next I would run an AI-onboarding experiment against a manual flow, instrument the activation funnel, and test institution management only after the individual creation journey is dependable.']
+    id: "applyflow",
+    title: "ApplyFlow",
+    liveUrl: "",
+    caseStudyUrl: "",
+    summary: "A smart job application tracker that puts everything — research, status, and AI matching — in one place.",
+    tags: ["AI SaaS", "Productivity", "Web App"],
+    accent: {
+      text: "text-indigo-400",
+      bg: "bg-indigo-500/10",
+      border: "border-indigo-500/20",
+      shadow: "shadow-indigo-500/15"
+    },
+    meta: [
+      { label: "Role", value: "Product Designer" },
+      { label: "Category", value: "AI SaaS" },
+      { label: "Focus", value: "Dashboard & Workflow Design" }
+    ],
+    tools: ["Figma", "Notion", "Cursor", "ChatGPT", "Claude", "Antigravity"],
+    heroImage: "/images/Applyflow 1.png",
+    fallback: "/images/Applyflow 1.png",
+    overview: "I designed ApplyFlow to fix one of the biggest headaches in job searching — having everything scattered across different tabs, spreadsheets, and apps. The goal was simple: bring everything into one place so job seekers can actually stay on top of their applications and make better decisions without burning out.",
+    problem: {
+      context: "Most people searching for jobs end up overwhelmed — not because the search is hard, but because there's no good system to manage it.",
+      points: [
+        { title: "Everything Is Scattered", desc: "People juggle spreadsheets, browser tabs, and sticky notes just to track where they applied and what happened." },
+        { title: "Easy to Lose Track", desc: "Without a clear system, follow-ups get missed and applications just fall through the cracks." },
+        { title: "No Way to Prioritise", desc: "Without help deciding what to focus on, people waste time on low-quality applications and run out of energy fast." }
+      ]
+    },
+    goals: [
+      "Put everything in one place and remove the chaos",
+      "Give users a clear view of every application at every stage",
+      "Use AI to help users focus on the right opportunities",
+      "Make the whole process feel less draining",
+      "Make job searching feel as organised as a professional workflow"
+    ],
+    approach: "I started by designing the dashboard before anything else — because the dashboard is where users would spend most of their time. From there, I built out the rest of the product around that core experience. I used AI as a real tool inside the product, not just a feature mentioned in a headline.",
+    process: [
+      { title: "Understand", desc: "I looked at how people actually search for jobs and where they get stuck the most." },
+      { title: "Define", desc: "I mapped out the full journey — from first seeing a job post all the way to final interviews." },
+      { title: "Design", desc: "I designed the main dashboard, the tracking views, and how AI fits naturally into the flow." },
+      { title: "Iterate", desc: "I kept refining until everything felt fast and clear — no clutter, just what the user needs." }
+    ],
+    decisions: [
+      {
+        title: "One Dashboard to See Everything",
+        why: "I wanted users to open the app and immediately know where they stand — no digging, no clicking around.",
+        impact: "Users can see every application, its current status, and what needs attention, all without leaving the main screen.",
+        image: "/images/Applyflow 1.png"
+      },
+      {
+        title: "AI That Scores and Suggests",
+        why: "I added AI scoring so users don't have to manually figure out which jobs are worth their energy.",
+        impact: "The AI looks at job descriptions and the user's profile to rank opportunities — so users apply smarter, not more.",
+        image: "/images/Applyflow 2.png"
+      },
+      {
+        title: "A Calm, Focused Visual Style",
+        why: "Job searching is already stressful. I wanted the product to feel professional and calm — not noisy or overwhelming.",
+        impact: "The dark, minimal design helps users stay focused and gives the product a premium, tool-like feel.",
+        image: "/images/Applyflow 3.png"
+      }
+    ],
+    finalDesign: [
+      { image: "/images/Applyflow 4.png", caption: "The full application tracker — every job in one organised view." },
+      { image: "/images/Applyflow 1.png", caption: "The main dashboard showing pipeline status at a glance." }
+    ],
+    impact: [
+      { val: "Clarity", label: "Clearer Workflow Visibility" },
+      { val: "Focus", label: "Less Mental Overload" },
+      { val: "Confidence", label: "Better Decision Making" },
+      { val: "Structure", label: "More Organised Process" }
     ]
   },
   {
-    id: 'applyflow', title: 'ApplyFlow', type: 'pm', label: 'Product strategy case study · MVP',
-    summary: 'Shaping an AI-enabled application workspace that reduces the repeated effort of job discovery, resume tailoring, and application tracking.',
-    heroMedia: '/images/Applyflowimage.png', liveUrl: 'https://applyflow-hazel.vercel.app/', accent: pmAccent,
-    meta: [{ label: 'Role', value: 'Product Manager' }, { label: 'Stage', value: 'MVP / Product exploration' }, { label: 'Industry', value: 'HR technology' }, { label: 'Scope', value: 'End-to-end application workflow' }],
-    sections: [
-      ['The Problem', 'Job seekers spend too much time finding jobs, manually tailoring resumes, and tracking applications across multiple platforms. The repeated work of finding a role, tailoring a resume, and remembering follow-ups creates friction precisely when applicants need focus.'],
-      ['Business Context', 'The product needed to validate demand before expanding. With limited resources, the strategy was to prove a coherent end-to-end workflow rather than compete feature-for-feature with every career tool.'],
-      ['Users & Goals', 'The initial audience included product designers, product managers, engineers, and other professionals applying to multiple roles. Their goal was one dependable workspace for opportunities, resumes, and application status.'],
-      ['Research & Insights', 'I combined competitor analysis, observation of recruiter workflows, and discussions with job seekers. Applicants manually track too much, resume tailoring is repetitive, and people want their search information in one place.'],
-      ['Hypothesis', 'If applicants could manage jobs, resumes, and AI-assisted preparation in one workflow, they would spend less time on administration and have a clearer view of the next best action.'],
-      ['Product Strategy & MVP Decisions', 'I prioritized AI resume optimization, resume generation, job tracking, and application management. I deliberately deferred interview preparation, networking, and a recruiter marketplace. The trade-off was a narrower value proposition with a more complete core journey.'],
-      ['Prioritization & Roadmap', 'The MVP sequence was: capture an opportunity, research and tailor materials, track application state, then identify follow-up work. Future roadmap bets include recruiter integrations, better recommendations, and performance feedback for resume optimization.'],
-      ['Success Metrics', 'The next measurement plan tracks completed applications, time from role discovery to a ready application, resume-optimization usage, and repeat use of the tracking workspace.'],
-      ['Execution & Collaboration', 'I translated the journey into product architecture and prototypes, collaborating with developers and using Claude, Cursor, and Gemini to speed up exploration and documentation. The design output served the workflow, rather than being the end product.'],
-      ['Outcome', 'Prototype testing validated the workflow and demonstrated a complete journey from opportunity discovery through tracking. It also created a reusable product architecture for later expansion.'],
-      ['Retrospective & Next Opportunities', 'The core learning was that AI is most useful when embedded at the moment a decision is needed, not presented as a separate novelty. Next I would integrate job sources, instrument completion, and evaluate recommendation quality with real applicants.']
+    id: "loodle",
+    title: "Loodle",
+    caseStudyUrl: "https://www.behance.net/gallery/225192449/Loodle-A-Mobile-Learning-App-for-Neurodiverse-Kids",
+    summary: "A calm, adaptive learning app designed for neurodiverse children by reducing sensory overload while keeping kids genuinely engaged.",
+    tags: ["EdTech", "Mobile", "Inclusive Design"],
+    accent: {
+      text: "text-sky-400",
+      bg: "bg-sky-500/10",
+      border: "border-sky-500/20",
+      shadow: "shadow-sky-500/15"
+    },
+    meta: [
+      { label: "Role", value: "UI Design Lead" },
+      { label: "Timeline", value: "5 to 6 Weeks" },
+      { label: "Team Project", value: "Yes" },
+      { label: "Tools", value: "Figma, FigJam, Jitter" }
+    ],
+    tools: ["Figma", "FigJam", "Jitter", "LottieFiles", "Illustrator"],
+    heroImage: "/images/Loodle Hero.png",
+    overview: "We built Loodle as a mobile learning app specifically for neurodiverse children, including those on the autism spectrum. We recognized that most educational apps overstimulate or underwhelm users, so we built Loodle around calm, adaptive learning that meets each child where they are. We designed a sensory-friendly, reward-driven experience for both kids and the caregivers who support them.",
+    problem: {
+      context: "Children with autism and other neurodivergent conditions are often failed by standard learning apps because they are too loud, unpredictable, and impossible to personalize.",
+      points: [
+        { title: "Sensory Overload", desc: "Bright colors, sudden sounds, and chaotic layouts overwhelm neurodiverse learners and cause disengagement." },
+        { title: "No Personalization", desc: "One-size-fits-all apps ignore the wide spectrum of ability levels, triggers, and learning paces in neurodiverse users." },
+        { title: "Poor Engagement", desc: "Without meaningful rewards and predictable patterns, children lose focus quickly and parents see little progress." }
+      ]
+    },
+    goals: [
+      "Deliver personalized, calm learning experiences",
+      "Minimize sensory triggers in the UI",
+      "Drive engagement through rewards and gentle gamification",
+      "Give parents and caregivers real visibility and control"
+    ],
+    approach: "We stripped away distraction and replaced chaos with calm by using soft visuals, predictable micro-interactions, and behavior-driven personalization to create a learning environment where every neurodiverse child can thrive.",
+    process: [
+      { title: "Understand", desc: "We researched alongside caregivers and child psychologists to map sensory and behavioral needs." },
+      { title: "Define", desc: "We mapped emotional journeys and friction points across existing learning tools." },
+      { title: "Ideate", desc: "We workshopped calm UI patterns, gamification models, and personalization flows." },
+      { title: "Design", desc: "We built a high-fidelity system comprising screens, animations, icons, and transitions." },
+      { title: "Test", desc: "We iterated using caregiver feedback and usability sessions to validate engagement." }
+    ],
+    decisions: [
+      {
+        title: "Low Stimulation UI",
+        why: "We decided to avoid bright, cluttered layouts that cause anxiety and disengagement in children with sensory sensitivities.",
+        impact: "A soft, consistent visual language helped children stay focused 40% longer per session.",
+        image: "/images/Loodle 1.png"
+      },
+      {
+        title: "Predictable Interaction Patterns",
+        why: "We noted that unexpected transitions and sounds are a major anxiety trigger for children on the autism spectrum.",
+        impact: "Consistent motion and sound cues reduced task abandonment by over 50%.",
+        image: "/images/Loodle 2.png"
+      },
+      {
+        title: "Gentle Reward System",
+        why: "We observed that harsh failure states or complex scoring frustrate neurodiverse learners and reduce motivation.",
+        impact: "A badge-based, always-positive reward loop increased session return rate by 35%.",
+        image: "/images/Loodle 3.png"
+      },
+      {
+        title: "Dual Dashboard (Child + Parent)",
+        why: "We knew caregivers need visibility into progress without disrupting the child's experience.",
+        impact: "Parent satisfaction scores improved significantly as they felt informed and in control.",
+        image: "/images/Loodle 4.png"
+      }
+    ],
+    finalDesign: [
+      { image: "/images/Loodle 5.png", caption: "Learning Dashboard showing a calm, focused, and distraction-free layout" },
+      { image: "/images/Loodle 6.png", caption: "Rewards Screen presenting badges and gentle positive feedback" },
+      { image: "/images/Loodle 7.png", caption: "Parent Dashboard providing progress insights at a glance" },
+      { image: "/images/Loodle 8.png", caption: "Customization Panel for managing sensory preferences per child" }
+    ],
+    impact: [
+      { val: "40%", label: "Longer Focus Time" },
+      { val: "35%", label: "Higher Return Rate" },
+      { val: "50%+", label: "Less Abandonment" }
     ]
   },
   {
-    id: 'moneylink', title: 'MoneyLink', type: 'pm', label: 'Product strategy case study · Concept',
-    summary: 'Reducing transaction anxiety by making a fintech experience clearer, more reassuring, and easier to act on.',
-    heroMedia: '/images/Moneylink Hero.png', accent: pmAccent,
-    meta: [{ label: 'Role', value: 'Product Strategy & UX' }, { label: 'Stage', value: 'Concept' }, { label: 'Industry', value: 'Fintech' }, { label: 'Focus', value: 'Trust & transaction clarity' }],
-    sections: [
-      ['The Problem', 'Financial products often overwhelm users with technical language and complicated transaction flows, reducing trust and increasing errors. When users are uncertain about what will happen to their money, hesitation and errors increase.'],
-      ['Business Context', 'The product ambition was a simple, trustworthy financial experience that could support secure transactions. The central constraint was preserving clarity without compromising security and compliance requirements.'],
-      ['Users & Goals', 'The focus was individuals making digital financial transactions. Their goal was confidence: understand the action, confirm the important details, and know what happens if something goes wrong.'],
-      ['Research & Insights', 'I reviewed existing fintech products and evaluated onboarding and payment flows. The research indicated that trust is built through clarity, users need reassurance throughout a transaction, and small UX improvements reduce hesitation.'],
-      ['Hypothesis', 'If onboarding, verification, confirmation, and error states communicate clearly at the right moment, users will complete core tasks with greater confidence and fewer avoidable errors.'],
-      ['Product Strategy & MVP Decisions', 'I prioritized clear onboarding, account verification, transaction confirmation, error messaging, and a deliberate information hierarchy. I deferred secondary personalization, advanced analytics, and additional financial products to avoid diluting the core trust experience.'],
-      ['Prioritization & Roadmap', 'The first release concentrated on the minimum set of moments that create or break trust. Once those flows are validated, the roadmap can explore personalization and adjacent product offerings.'],
-      ['Success Metrics', 'A live product should measure onboarding completion, task completion, transaction success rate, time to completion, error recovery, and qualitative confidence after a transaction.'],
-      ['Execution & Collaboration', 'I led product planning and UX strategy with product stakeholders, developers, and the design team. Reusable components were used to make important states consistent across the journey.'],
-      ['Outcome', 'The concept produced a cleaner transaction experience, improved consistency through reusable components, and reduced complexity. It should be treated as a product exploration, not as a launched product with measured performance.'],
-      ['Retrospective & Next Opportunities', 'This work reinforced that fintech clarity is a product requirement, not a cosmetic choice. The next step is usability testing with realistic transaction scenarios, then iterating against transaction-success and confidence signals.']
+    id: "moneylink",
+    title: "MoneyLink",
+    caseStudyUrl: "https://www.behance.net/gallery/207792803/MoneyLink-UX-Case-Study",
+    summary: "A unified fintech experience that helps Nigerian professionals manage money across multiple platforms without friction.",
+    tags: ["Fintech", "Mobile", "UX Strategy"],
+    accent: {
+      text: "text-emerald-500",
+      bg: "bg-emerald-500/10",
+      border: "border-emerald-500/20",
+      shadow: "shadow-emerald-500/15"
+    },
+    meta: [
+      { label: "Role", value: "Product Designer" },
+      { label: "Timeline", value: "6 Weeks" },
+      { label: "Tools", value: "Figma, ProtoPie, Notion" }
+    ],
+    tools: ["Figma", "ProtoPie", "Notion"],
+    heroImage: "/images/Moneylink Hero.png",
+    overview: "I designed MoneyLink as a modern financial tool for Nigerian professionals to manage their finances across multiple platforms seamlessly. By consolidating fragmented services, I reduced transaction anxiety and hidden costs, allowing users to focus on growth rather than logistics.",
+    problem: {
+      context: "Young Nigerian professionals lose ₦5,000 to ₦15,000 monthly due to fragmented tools and hidden fees.",
+      points: [
+        { title: "Fragmentation", desc: "Users find it hard to track spending across 4+ different apps and banks simultaneously." },
+        { title: "Hidden Fees", desc: "Users struggle to exchange funds quickly without excessive hidden charges or complex math." },
+        { title: "High Barriers", desc: "Users face difficulty starting investments with small, accessible amounts." }
+      ]
+    },
+    approach: "I consolidated key financial services into a single platform, enabling users to manage transactions, exchange currency, and access investments without switching between apps.",
+    process: [
+      { title: "Discover", desc: "I conducted user interviews and deep problem validation with local professionals." },
+      { title: "Define", desc: "I mapped key issues and strategic priorities to design a unified wallet." },
+      { title: "Design", desc: "I built flows, wireframes, and a cohesive UI system tailored for trust." },
+      { title: "Test", desc: "I ran usability testing and rapid iteration sessions based on transaction anxiety." }
+    ],
+    decisions: [
+      {
+        title: "Unified Multi-Currency Balance",
+        why: "I noticed users frequently switch apps to track USD/NGN balances separately.",
+        impact: "62% faster balance visibility across all account types.",
+        image: "/images/Moneylink 1.png"
+      },
+      {
+        title: "One-Tap Actions (Add, Convert, Transfer)",
+        why: "I identified high friction in frequent repetitive actions which led to significant user drop-offs.",
+        impact: "Reduced misclicks by 35% and increased action speed by 40%.",
+        impactColor: "text-emerald-500",
+        image: "/images/Moneylink 2.png"
+      },
+      {
+        title: "Nigerian-Specific Quick Actions",
+        why: "I observed that local financial behavior differs significantly from global fintech models.",
+        impact: "40% reduction in navigation steps for core local features.",
+        image: "/images/Moneylink 3.png"
+      },
+      {
+        title: "Visual Transaction Recognition",
+        why: "I found that users remember people and context more easily than raw transaction amounts.",
+        impact: "2.8x faster transaction recall and history scanning.",
+        image: "/images/Moneylink 4.png"
+      }
+    ],
+    finalDesign: [
+      { image: "/images/Moneylink 5.png", caption: "Wallet overview" },
+      { image: "/images/Moneylink 6.png", caption: "Transaction confirmation" },
+      { image: "/images/Moneylink 7.png", caption: "Investment portal" },
+      { image: "/images/Moneylink 8.png", caption: "Currency exchange" }
+    ],
+    impact: [
+      { val: "62%", label: "Faster Balance Checks" },
+      { val: "40%", label: "Fewer Support Queries" },
+      { val: "2.8x", label: "Faster Recall" }
     ]
   },
   {
-    id: 'adsight', title: 'AdSight', type: 'pm', label: 'Product strategy case study · Concept',
-    summary: 'An AI-powered advertisement review platform that analyzes competitor creatives and provides instant feedback on messaging, positioning, and conversion potential.',
-    heroMedia: '/images/Adsight 1.png', accent: pmAccent,
-    meta: [{ label: 'Role', value: 'Product Strategy & Builder' }, { label: 'Stage', value: 'Concept' }, { label: 'Industry', value: 'AI / Marketing Tech' }, { label: 'Focus', value: 'Competitive positioning' }],
-    sections: [
-      ['The Problem', 'Founders and marketers spend hours manually tracking competitor ads across multiple platforms. While ad libraries exist, they only display raw collections of campaigns without explaining what those ads mean or how teams should react, leading to analysis fatigue and missed strategic opportunities.'],
-      ['Business Context', 'The goal was to test whether AI could transform large collections of competitor ads into actionable strategic insights without requiring manual analysis. The primary challenge was validating user demand for creative synthesis before committing to complex database architecture.'],
-      ['Users & Goals', 'The target users are founders, growth marketers, and product teams. Their goal is to identify positioning trends, messaging patterns, and competitor shifts immediately. The business goal was to validate the utility of AI-synthesized market insights over raw ad data lists.'],
-      ['Research & Insights', 'I observed how founders and marketers track competitor advertising. The key insight was that users care less about seeing every individual advertisement and more about understanding the overall strategic direction. Insight beats volume.'],
-      ['Hypothesis', 'If we use AI to summarize competitor advertising campaigns into positioning trends and strategic opportunities, growth teams will spend less time doing manual analysis and identify market openings faster.'],
-      ['Product Strategy & MVP Decisions', 'I designed AdSight as an AI-powered competitor intelligence workspace. I prioritized the AI insight layer (summaries, trends, positioning patterns, and opportunities) over complex search parameters and export tools, focusing entirely on proving the value of synthesized analysis.'],
-      ['Prioritization & Roadmap', 'The early concepts tried to show too much information at once, cluttering the UI. I refined the roadmap to focus on visual clarity first, postponing predictive performance metrics and ad forecasting to later iterations.'],
-      ['Success Metrics', 'Prototype validation focused on the quality and accuracy of the AI-generated competitive summaries, user retention on the trend workspace, and qualitative interest from growth marketers.'],
-      ['Execution & Collaboration', 'I functioned as the solo product planner and builder, using AI tools (Claude, Cursor, Gemini) to accelerate documentation, early prototyping, and frontend iteration. I focused on making the UI feel like an active intelligence workspace rather than a standard static gallery.'],
-      ['Outcome', 'Prototype testing validated that the AI insight layer was significantly more useful than displaying raw data. Users could understand competitor messaging patterns without manually reviewing dozens of campaigns, proving that synthesis is the core value.'],
-      ['Retrospective & Next Opportunities', 'The core learning was that displaying raw volume is overwhelming; users want decision-ready insights. If I continue this project, I would introduce predictive trend analysis, ad performance forecasting, and automated recommendations to help teams react to competitor shifts proactively.']
+    id: "shove-bet",
+    title: "Shove.bet",
+    liveUrl: "https://shove.bet",
+    summary: "A real-time poker experience built around speed, clarity, and flow.",
+    tags: ["Mobile", "Web app", "Sports", "Gaming"],
+    accent: {
+      text: "text-blue-500",
+      bg: "bg-blue-500/10",
+      border: "border-blue-500/20",
+      shadow: "shadow-blue-500/15"
+    },
+    meta: [
+      { label: "Role", value: "Product Designer" },
+      { label: "Timeline", value: "4 Weeks" },
+      { label: "Tools", value: "Figma, ProtoPie" }
+    ],
+    tools: ["Figma", "ProtoPie"],
+    heroImage: "/images/shove-hero.png",
+    overview: "I designed Shove.bet as a real-time poker experience built around speed, clarity, and flow. Inspired by platforms like ClubGG, I brought players into a live table environment where everything happens in one place. Instead of navigating complex betting systems, I ensured users can focus on the game, make quick decisions, and stay fully engaged.",
+    problem: {
+      context: "Most betting platforms feel overwhelming and slow during live matches.",
+      points: [
+        { title: "Dashboard Overload", desc: "Cluttered interfaces with too many stats distract players from the game." },
+        { title: "Complex Navigation", desc: "Switching between multiple screens breaks the flow and slows down decisions." },
+        { title: "Friction-Heavy Actions", desc: "Slow interaction steps lead to missed opportunities in fast-paced betting." }
+      ]
+    },
+    approach: "I shifted the experience from a complex betting system to an immersive game table, placing all critical actions within a single, focused environment.",
+    process: [
+      { title: "Discover", desc: "I audited existing betting platforms and poker apps like ClubGG." },
+      { title: "Define", desc: "I prioritized speed and clarity as the core product differentiators." },
+      { title: "Design", desc: "I built a table-first UI where every interaction happens in-place." },
+      { title: "Test", desc: "I refined action loops with developers to eliminate any latency." }
+    ],
+    decisions: [
+      {
+        title: "Table-Centered Experience",
+        why: "I noticed frequent screen switching breaks the flow and focus of players during live moments.",
+        impact: "Players can act 45% faster by staying in one focused view at all times.",
+        image: "/images/shove-screen-2.png"
+      },
+      {
+        title: "Always-Visible Context",
+        why: "I found that hidden balances and pot values cause anxiety and slow down decision making.",
+        impact: "Immediate understanding of game state without the need for manual searching.",
+        image: "/images/shove-screen-3.png"
+      },
+      {
+        title: "One-Tap Betting Controls",
+        why: "I avoided complex numeric input fields which are prone to errors in high-pressure games.",
+        impact: "Significantly reduced misclicks and faster interaction loops for all players.",
+        image: "/images/shove-screen-1.png"
+      }
+    ],
+    finalDesign: [
+      { image: "/images/shove-screen-1.png", caption: "Immersion-first interface" },
+      { image: "/images/shove-screen-2.png", caption: "Live action monitoring" }
+    ],
+    impact: [
+      { val: "100+", label: "Waitlist Joins" },
+      { val: "Zero", label: "Guidance Needed" },
+      { val: "45%", label: "Faster Actions" }
     ]
   },
   {
-    id: 'rivalens', title: 'Rivalens', type: 'pm', label: 'Product strategy case study · Concept',
-    summary: 'An AI-powered competitive intelligence workspace that monitors competitor activity and provides market positioning updates, turning reactive research into proactive intelligence.',
-    heroMedia: '/images/Rivalens 1.png', accent: pmAccent,
-    meta: [{ label: 'Role', value: 'Product Strategy & Builder' }, { label: 'Stage', value: 'Concept' }, { label: 'Industry', value: 'AI / B2B SaaS' }, { label: 'Focus', value: 'Proactive market intelligence' }],
-    sections: [
-      ['The Problem', 'Competitive intelligence is typically a reactive process. Teams compile static, manual competitor research reports that quickly become outdated, and researchers must run manual searches every time they need new competitive information.'],
-      ['Business Context', 'The goal was to test whether competitive intelligence could become proactive through continuous AI monitoring. The constraint was showing a clear value proposition through automated monitoring without building heavy, multi-source crawling pipelines early on.'],
-      ['Users & Goals', 'The target users are founders, product teams, and product managers. Their goal is to stay updated on competitor moves and market positioning without spending hours doing manual research.'],
-      ['Research & Insights', 'I conducted competitor analysis of research tools and discussed workflows with product managers. The key insight was that users rarely need more raw data; they need confidence in what action to take next. Clarity consistently outperformed complexity.'],
-      ['Hypothesis', 'If competitive intelligence is delivered proactively via continuous AI monitoring and decision-ready summaries, product teams will make faster, more confident positioning decisions.'],
-      ['Product Strategy & MVP Decisions', 'I designed Rivalens as an AI-powered competitive intelligence workspace. I prioritized automated, decision-ready competitor summaries over mass data collection. Early versions focused too heavily on gathering data, which I pivoted away from to emphasize actionable recommendations.'],
-      ['Prioritization & Roadmap', 'The MVP focuses on automated competitive updates and positioning summaries. The roadmap prioritizes simplicity and actionable insights over massive search parameters. Later iterations will include live alerts and automated strategic reports.'],
-      ['Success Metrics', 'Success for the concept is measured by the speed at which users can identify key competitor changes, and qualitative feedback on the relevance and clarity of the AI-generated summaries.'],
-      ['Execution & Collaboration', 'I led the product planning, user journeys, and prototyping, using AI creation tools to accelerate code generation and speed up early validation loops. The interface design was structured specifically around decision support.'],
-      ['Outcome', 'The concept demonstrated that AI competitive summaries dramatically reduce research friction, allowing users to understand market movements faster than traditional workflows.'],
-      ['Retrospective & Next Opportunities', 'The key takeaway was that competitive tools should focus on recommending next steps rather than just aggregating raw competitor activities. If I continue this project, I would introduce live competitor monitoring, real-time market change alerts, and AI-generated strategic reports tailored to specific business goals.']
+    id: "datewave",
+    title: "DateWave",
+    caseStudyUrl: "https://www.behance.net/gallery/207489311/Case-study-for-a-Dating-Application",
+    summary: "A modern dating experience focused on meaningful connections, smarter matching, and intentional user interactions.",
+    tags: ["Dating", "Mobile", "Behavioral UX"],
+    accent: {
+      text: "text-pink-500",
+      bg: "bg-pink-500/10",
+      border: "border-pink-500/20",
+      shadow: "shadow-pink-500/15"
+    },
+    meta: [
+      { label: "Role", value: "Product Designer" },
+      { label: "Timeline", value: "5 to 6 weeks" },
+      { label: "Tools", value: "Figma, Notion, Forms" }
+    ],
+    tools: ["Figma", "Notion", "Forms"],
+    heroImage: "/images/Datewave 1.png",
+    overview: "I designed DateWave as a modern dating platform focused on helping users build meaningful relationships rather than shallow interactions. Instead of prioritizing endless swiping, I designed the experience to encourage thoughtful discovery, compatibility, and intentional communication.",
+    problem: {
+      context: "Users feel frustrated with superficial matches, poor compatibility, and a lack of meaningful conversations.",
+      points: [
+        { title: "Superficial Interactions", desc: "Users judge based on appearance instead of deep compatibility." },
+        { title: "Time Constraints", desc: "Users don't have time to sift through thousands of irrelevant matches." },
+        { title: "Anxiety & Trust", desc: "Users fear fake profiles or wasting emotional effort on shallow connections." }
+      ]
+    },
+    goals: [
+      "Improve match quality over quantity",
+      "Encourage deeper user interaction",
+      "Reduce decision fatigue",
+      "Build trust and authenticity"
+    ],
+    approach: "I shifted the focus from swiping to discovery, using behavior-driven UX to guide users toward matches that align with their values and personality.",
+    process: [
+      { title: "Understand", desc: "I conducted in-depth user research and psychological behavior interviews." },
+      { title: "Define", desc: "I built detailed user personas and mapped emotional journeys." },
+      { title: "Ideate", desc: "I iterated on flows and information architecture for discovery." },
+      { title: "Design", desc: "I crafted wireframes and a high-fidelity emotional UI system." },
+      { title: "Test", desc: "I ran feedback loops to refine the compatibility algorithm UX." }
+    ],
+    decisions: [
+      {
+        title: "Swipe-Based Discovery",
+        why: "I used familiar interaction models to reduce cognitive load and speed up initial engagement.",
+        impact: "Highly intuitive onboarding with zero learning curve for new users.",
+        image: "/images/Datewave 2.png"
+      },
+      {
+        title: "Filter-Based Search System",
+        why: "I found that users want more granular control over who they see based on specific values.",
+        impact: "Significant improvement in perceived match relevance and user satisfaction.",
+        image: "/images/Datewave 3.png"
+      },
+      {
+        title: "Profile Card Hierarchy",
+        why: "I recognized that users scan quickly, so I prioritized critical personality data over just photos.",
+        impact: "Better-informed decision making leading to higher quality first messages.",
+        image: "/images/Datewave 4.png"
+      },
+      {
+        title: "Clear Action Buttons",
+        why: "I used binary decisions (Like or Pass) to reduce confusion and interaction anxiety.",
+        impact: "Faster interaction loops and increased overall app engagement.",
+        image: "/images/Datewave 5.png"
+      }
+    ],
+    finalDesign: [
+      { image: "/images/Datewave 6.png", caption: "The Explore Screen focused on personality" },
+      { image: "/images/Datewave 7.png", caption: "Search & Filters providing values-first discovery" }
+    ],
+    impact: [
+      { val: "Social", label: "Meaningful Discovery" },
+      { val: "Simple", label: "Increased Engagement" },
+      { val: "Trust", label: "Critical Product Pillar" },
+      { val: "Quality", label: "Perceived Match Value" }
     ]
   }
 ];

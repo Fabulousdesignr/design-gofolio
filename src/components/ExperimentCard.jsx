@@ -3,18 +3,20 @@ import { ArrowUpRight, Play } from 'lucide-react';
 
 export default function ExperimentCard({ experiment, workspaceSurface = false }) {
   const surfaceClass = workspaceSurface
-    ? 'workspace-work-row workspace-tile-interactive'
-    : 'card-hover-system';
+    ? 'workspace-tile workspace-tile-interactive'
+    : 'bg-card border border-card-border hover:border-accent/50 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)]';
 
   return (
-    <div className={`group relative overflow-hidden ${surfaceClass}`}>
+    <div
+      className={`group relative rounded-2xl overflow-hidden transition-all duration-300 ${surfaceClass}`}
+    >
       <Link to={`/ai-playground/${experiment.slug}`} className="block relative aspect-video overflow-hidden">
         <div
           className={`absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-transparent z-10 transition-opacity duration-300 ${workspaceSurface ? 'opacity-50 group-hover:opacity-35' : 'opacity-60 group-hover:opacity-40'}`}
         />
 
         <img
-          src={experiment.heroImage}
+          src={experiment.image}
           alt={experiment.title}
           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
         />
@@ -43,7 +45,7 @@ export default function ExperimentCard({ experiment, workspaceSurface = false })
         </div>
       </Link>
 
-      <div className="card-padding relative z-20">
+      <div className="p-8 relative z-20">
         <div className="flex justify-between items-start mb-4">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest text-accent mb-2 block">
