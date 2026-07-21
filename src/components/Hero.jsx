@@ -55,7 +55,7 @@ export default function Hero() {
             </div>
             <div className="relative w-full aspect-[4/5] overflow-hidden">
               <img
-                src="/images/My Image.jpeg"
+                src="/images/My Image.png"
                 alt="Godwin O."
                 className="absolute inset-0 w-full h-full object-cover"
               />

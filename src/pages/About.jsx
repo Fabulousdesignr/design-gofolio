@@ -29,7 +29,7 @@ export default function About() {
               </p>
             </div>
             <div className="relative aspect-square lg:aspect-[4/5] bg-bg-alt rounded-[48px] border border-card-border overflow-hidden shadow-2xl group">
-              <img src="/images/My Image.jpeg" alt="Godwin" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="/images/My Image.png" alt="Godwin" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent opacity-30 group-hover:opacity-50 transition-opacity duration-700 pointer-events-none"></div>
             </div>
           </div>

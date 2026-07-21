@@ -38,7 +38,7 @@ export default function AboutPreview() {
           </div>
           <div className="relative aspect-square overflow-hidden">
             <img
-              src="/images/My Image.jpeg"
+              src="/images/My Image.png"
               alt="Godwin O."
               className="absolute inset-0 w-full h-full object-cover"
             />
