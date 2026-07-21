@@ -4,7 +4,7 @@ import { useWorkspaceNav } from '../hooks/useWorkspaceNav';
 const HOME_MODULES = [
   { id: 'work', label: 'Work', href: '/#work' },
   { id: 'ai-lab', label: 'AI Products', href: '/#ai-lab' },
-  { id: 'launch-pages', label: 'Launch', href: '/#launch-pages' },
+  { id: 'launch-pages', label: 'Pages', href: '/#launch-pages' },
   { id: 'about', label: 'About', href: '/#about' },
 ];
 

@@ -1,7 +1,7 @@
 const MODULE_SHORTCUTS = [
   { href: '#work', label: 'Work' },
   { href: '#ai-lab', label: 'AI Products' },
-  { href: '#launch-pages', label: 'Launch' },
+  { href: '#launch-pages', label: 'Pages' },
   { href: '#about', label: 'About' },
   { href: '#contact', label: 'Contact' },
 ];
