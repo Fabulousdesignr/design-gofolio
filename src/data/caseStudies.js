@@ -18,8 +18,8 @@ export const caseStudies = [
       { label: "Focus", value: "Dashboard & Workflow Design" }
     ],
     tools: ["Figma", "Notion", "Cursor", "ChatGPT", "Claude", "Antigravity"],
-    heroImage: "/images/Applyflow 1.png",
-    fallback: "/images/Applyflow 1.png",
+    heroImage: "/images/Applyflow Dashboard.png",
+    fallback: "/images/Applyflow Dashboard.png",
     overview: "I designed ApplyFlow to fix one of the biggest headaches in job searching — having everything scattered across different tabs, spreadsheets, and apps. The goal was simple: bring everything into one place so job seekers can actually stay on top of their applications and make better decisions without burning out.",
     problem: {
       context: "Most people searching for jobs end up overwhelmed — not because the search is hard, but because there's no good system to manage it.",
@@ -48,24 +48,24 @@ export const caseStudies = [
         title: "One Dashboard to See Everything",
         why: "I wanted users to open the app and immediately know where they stand — no digging, no clicking around.",
         impact: "Users can see every application, its current status, and what needs attention, all without leaving the main screen.",
-        image: "/images/Applyflow 1.png"
+        image: "/images/Applyflow Dashboard.png"
       },
       {
         title: "AI That Scores and Suggests",
         why: "I added AI scoring so users don't have to manually figure out which jobs are worth their energy.",
         impact: "The AI looks at job descriptions and the user's profile to rank opportunities — so users apply smarter, not more.",
-        image: "/images/Applyflow 2.png"
+        image: "/images/Applyflow AI Research.png"
       },
       {
         title: "A Calm, Focused Visual Style",
         why: "Job searching is already stressful. I wanted the product to feel professional and calm — not noisy or overwhelming.",
         impact: "The dark, minimal design helps users stay focused and gives the product a premium, tool-like feel.",
-        image: "/images/Applyflow 3.png"
+        image: "/images/Applyflow Auth.png"
       }
     ],
     finalDesign: [
-      { image: "/images/Applyflow 4.png", caption: "The full application tracker — every job in one organised view." },
-      { image: "/images/Applyflow 1.png", caption: "The main dashboard showing pipeline status at a glance." }
+      { image: "/images/Applyflow Job Screen.png", caption: "The full application tracker — every job in one organised view." },
+      { image: "/images/Applyflow Dashboard.png", caption: "The main dashboard showing pipeline status at a glance." }
     ],
     impact: [
       { val: "Clarity", label: "Clearer Workflow Visibility" },
