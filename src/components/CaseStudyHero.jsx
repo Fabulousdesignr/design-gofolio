@@ -72,8 +72,8 @@ export default function CaseStudyHero({ data }) {
       {/* Hero Media (Massive Edge-to-Edge) */}
       <div className="w-full md:w-[calc(100%+3rem)] md:-ml-6 lg:w-[calc(100%+6rem)] lg:-ml-12 aspect-video md:aspect-[16/9] bg-bg-surface overflow-hidden md:rounded-2xl border-y md:border border-card-border shadow-md scroll-reveal fade-up">
         <ProductFrame
-          src={data.heroMedia}
-          fallback={data.heroMedia}
+          src={data.heroMedia || data.heroImage}
+          fallback={data.fallback || data.heroImage}
           alt={`${data.title} preview`}
           label={data.title}
           className="w-full h-full border-none shadow-none rounded-none"

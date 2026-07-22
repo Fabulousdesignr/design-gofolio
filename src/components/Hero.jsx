@@ -1,3 +1,5 @@
+import { ArrowUpRight } from 'lucide-react';
+
 const MODULE_SHORTCUTS = [
   { href: '#work', label: 'Work' },
   { href: '#ai-lab', label: 'AI Products' },
@@ -16,9 +18,19 @@ export default function Hero() {
               <strong>Workspace</strong> / Godwin O.
             </p>
 
-            <div className="workspace-status">
-              <span className="workspace-status-dot" aria-hidden="true" />
-              Available for new projects · GMT+1
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <div className="workspace-status">
+                <span className="workspace-status-dot" aria-hidden="true" />
+                Available for new projects · GMT+1
+              </div>
+              <a
+                href="https://gofolio.site"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20 transition-all hover:scale-105"
+              >
+                Switch to PM Portfolio <ArrowUpRight size={13} />
+              </a>
             </div>
 
             <h1 className="workspace-deck-title">

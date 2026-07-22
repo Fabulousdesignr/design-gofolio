@@ -54,5 +54,17 @@ export const projects = [
     image: "/images/Datewave Hero.png",
     link: "/case-study/datewave",
     featured: false
+  },
+  {
+    id: "maxmall",
+    title: "Maxmall",
+    liveUrl: "",
+    caseStudyUrl: "",
+    description: "I designed and optimized a high-converting Shopify ecommerce experience for Maxmall, focusing on streamlined product discovery, clear visual hierarchy, and frictionless checkout.",
+    category: "Shopify • Ecommerce",
+    image: "/images/Maxmall Hero.png",
+    fallback: "/images/Maxmall 1.png",
+    link: "",
+    featured: false
   }
 ];

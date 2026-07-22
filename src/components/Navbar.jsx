@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
 import { useWorkspaceNav } from '../hooks/useWorkspaceNav';
 
 const HOME_MODULES = [
@@ -52,6 +53,15 @@ export default function Navbar({ isCaseStudy = false }) {
           )}
 
           <div className="flex items-center gap-3 md:gap-4">
+            <a
+              href="https://gofolio.site"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-full bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20 transition-all"
+            >
+              PM Portfolio <ArrowUpRight size={13} />
+            </a>
+
             {!isCaseStudy && (
               <a href="/#contact" className="workspace-btn workspace-btn--primary hidden sm:inline-flex">
                 Contact

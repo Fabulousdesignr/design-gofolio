@@ -62,13 +62,25 @@ export default function SelectedWork() {
                 style={{ transitionDelay: `${(idx % 2) * 100}ms` }}
               >
                 <Link to={project.link} className="group block flex-1 flex flex-col">
-                  {/* Image */}
+                  {/* Image / Media */}
                   <div className="w-full aspect-[4/3] bg-bg-surface overflow-hidden rounded-2xl mb-6 border border-card-border shadow-sm group-hover:shadow-md transition-all duration-300">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                    />
+                    {project.image && project.image.toLowerCase().endsWith('.mp4') ? (
+                      <video
+                        src={project.image}
+                        poster={project.fallback}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <img
+                        src={project.fallback || project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                      />
+                    )}
                   </div>
 
                   {/* Meta */}

@@ -16,7 +16,7 @@ export default function ExperimentCard({ experiment, workspaceSurface = false })
         />
 
         <img
-          src={experiment.image}
+          src={experiment.heroImage || experiment.image}
           alt={experiment.title}
           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
         />

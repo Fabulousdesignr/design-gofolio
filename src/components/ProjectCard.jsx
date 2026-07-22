@@ -50,11 +50,23 @@ export default function ProjectCard({ project, workspaceSurface = false, index }
       <div
         className={`overflow-hidden bg-bg-alt relative ${featured ? 'lg:w-[60%] aspect-video lg:aspect-auto' : 'w-full aspect-[16/10]'}`}
       >
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
+        {image && image.toLowerCase().endsWith('.mp4') ? (
+          <video
+            src={image}
+            poster={fallback}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        ) : (
+          <img
+            src={fallback || image}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        )}
       </div>
 
       <div className={`p-8 sm:p-10 flex flex-col justify-center ${featured ? 'lg:w-[40%]' : 'flex-grow'}`}>

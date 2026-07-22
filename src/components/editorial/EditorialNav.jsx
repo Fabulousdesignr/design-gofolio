@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { useContactModal } from '../../context/ContactModalContext';
 import ThemeToggle from '../ThemeToggle';
 
@@ -34,12 +34,21 @@ export default function EditorialNav() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href="https://gofolio.site"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-full bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20 transition-all"
+            >
+              PM Portfolio <ArrowUpRight size={13} />
+            </a>
             <div className="hidden md:flex items-center gap-8 text-[14px]">
-            <ThemeToggle />
-            <button onClick={openModal} className="text-text-primary hover:opacity-70 transition-opacity font-bold">
-              Message Me
-            </button>
-          </div>
+              <ThemeToggle />
+              <button onClick={openModal} className="text-text-primary hover:opacity-70 transition-opacity font-bold">
+                Message Me
+              </button>
+            </div>
+          </nav>
 
           {/* Mobile Menu Button & Toggle */}
           <div className="md:hidden flex items-center gap-4">
@@ -80,6 +89,15 @@ export default function EditorialNav() {
                   {link.label}
                 </Link>
               ))}
+              <a
+                href="https://gofolio.site"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="inline-flex items-center gap-1.5 text-accent font-semibold"
+              >
+                PM Portfolio <ArrowUpRight size={18} />
+              </a>
               <button 
                 onClick={() => {
                   openModal();

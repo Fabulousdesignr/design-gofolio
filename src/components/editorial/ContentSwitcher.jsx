@@ -67,7 +67,7 @@ export default function ContentSwitcher() {
           tags={exp.focus.slice(0, 2)}
           mediaUrl={exp.heroVideo || exp.heroImage}
           actionText={exp.liveUrl ? "Visit experiment" : "View details"}
-          actionUrl={exp.liveUrl || `/experiments/${exp.slug}`}
+          actionUrl={exp.liveUrl || `/ai-playground/${exp.slug}`}
           reverse={idx % 2 !== 0}
         />
       ))}

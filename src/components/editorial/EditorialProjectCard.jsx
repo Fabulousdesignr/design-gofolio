@@ -32,11 +32,23 @@ export default function EditorialProjectCard({ projects }) {
               >
                 <Link to={`/case-study/${project.id}`} className="group block w-full">
                   <div className={`w-full ${imageAspect} bg-bg-surface overflow-hidden rounded-xl md:rounded-2xl mb-6 md:mb-8 border border-card-border shadow-sm`}>
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                    />
+                    {project.image && project.image.toLowerCase().endsWith('.mp4') ? (
+                      <video
+                        src={project.image}
+                        poster={project.fallback}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <img 
+                        src={project.fallback || project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      />
+                    )}
                   </div>
                   <div className="flex flex-col gap-3">
                     <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4">

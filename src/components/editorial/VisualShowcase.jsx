@@ -158,12 +158,6 @@ export default function VisualShowcase() {
           <ChevronRight size={24} />
         </button>
       </div>
-      
-      {/* Noise Texture Overlay for Cinematic Feel */}
-      <div 
-        className="absolute inset-0 opacity-[0.04] pointer-events-none mix-blend-overlay"
-        style={{ backgroundImage: 'url("/images/noise.png")', backgroundSize: '100px' }}
-      />
     </section>
   );
 }
