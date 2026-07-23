@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Projects from '../components/Projects';
+import ShopifyExperience from '../components/ShopifyExperience';
 import HomeAILab from '../components/HomeAILab';
 import HomeLaunchPages from '../components/HomeLaunchPages';
 import AboutPreview from '../components/AboutPreview';
@@ -19,6 +20,7 @@ export default function Home() {
 
         <div className="workspace-modules">
           <Projects />
+          <ShopifyExperience />
           <HomeAILab />
           <HomeLaunchPages />
           <AboutPreview />

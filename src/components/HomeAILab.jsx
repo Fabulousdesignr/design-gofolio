@@ -12,7 +12,7 @@ export default function HomeAILab() {
   return (
     <WorkspaceModule
       id="ai-lab"
-      index={2}
+      index={3}
       variant="ai"
       title="AI Lab"
       subtitle="I built these fast AI-assisted experiments to explore interfaces, tools, and concepts outside enterprise constraints."

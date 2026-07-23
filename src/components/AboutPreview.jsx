@@ -9,18 +9,16 @@ export default function AboutPreview() {
       index={5}
       variant="about"
       title="About"
-      subtitle="I am a product designer with a visual foundation, building clear, useful digital experiences."
+      subtitle="Product Designer creating AI tools, SaaS platforms, Shopify stores, and digital products."
       layout="compact"
     >
       <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
         <div>
-          <p className="text-base md:text-lg text-text-secondary font-medium leading-relaxed mb-5 max-w-xl">
-            I started in graphic design, where I learned layout, hierarchy, and visual clarity. That
-            foundation shapes how I design digital products today.
+          <p className="text-base md:text-lg text-text-secondary font-medium leading-relaxed mb-4 max-w-xl">
+            I'm a Product Designer with nearly a decade of experience designing AI products, SaaS platforms, Shopify storefronts, and conversion-focused digital experiences.
           </p>
-          <p className="text-base md:text-lg text-text-secondary font-medium leading-relaxed mb-8 max-w-xl">
-            I focus on fintech, edtech, and ecommerce, and I am increasingly working on AI-assisted product
-            interfaces. I believe in designing software that respects the user's time and attention.
+          <p className="text-base md:text-lg text-text-secondary font-medium leading-relaxed mb-6 max-w-xl">
+            I solve complex problems through strategy, clean UX, and close engineering collaboration — turning raw ideas into products people actually use.
           </p>
           <Link to="/about" className="workspace-btn workspace-btn--primary inline-flex items-center gap-2">
             Read full story <ArrowUpRight size={16} />
@@ -34,7 +32,7 @@ export default function AboutPreview() {
               <span />
               <span />
             </div>
-            <span>Operator</span>
+            <span>Profile</span>
           </div>
           <div className="relative aspect-square overflow-hidden">
             <img

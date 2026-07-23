@@ -6,16 +6,14 @@ import ScrollToTop from './components/ScrollToTop';
 import Experiments from './pages/Experiments';
 import ExperimentDetail from './pages/ExperimentDetail';
 import { ContactModalProvider } from './context/ContactModalContext';
-import { ThemeProvider } from './context/ThemeContext';
 import ContactModal from './components/ContactModal';
 
 function App() {
   return (
-    <ThemeProvider>
-      <ContactModalProvider>
-        <Router>
-          <ScrollToTop />
-          <ContactModal />
+    <ContactModalProvider>
+      <Router>
+        <ScrollToTop />
+        <ContactModal />
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -27,8 +25,7 @@ function App() {
           <Route path="*" element={<Home />} />
         </Routes>
       </Router>
-      </ContactModalProvider>
-    </ThemeProvider>
+    </ContactModalProvider>
   );
 }
 

@@ -42,7 +42,7 @@ export default function HomeLaunchPages() {
   return (
     <WorkspaceModule
       id="launch-pages"
-      index={3}
+      index={4}
       variant="launch"
       title="Landing Pages & Websites"
       subtitle="I design landing pages and full websites that look great and get people to act — built for real products with real goals."

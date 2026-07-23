@@ -19,13 +19,13 @@ export default function About() {
                 Godwin O.
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-text-primary mb-10 leading-[1.1] uppercase">
-                Product Designer with roots in graphic design
+                Product Designer. Nearly a decade of digital product experience.
               </h1>
               <p className="text-lg md:text-xl text-text-secondary font-medium leading-relaxed mb-6 max-w-xl">
-                I started in graphic design, which taught me how to think about layout, visual order, and what makes something easy to look at. That background still shapes everything I design today.
+                I'm a Product Designer with nearly a decade of experience building AI tools, SaaS platforms, fintech applications, and Shopify stores.
               </p>
               <p className="text-lg md:text-xl text-text-secondary font-medium leading-relaxed max-w-xl">
-                Now I focus on building simple, easy-to-use digital products — mostly in fintech, edtech, and ecommerce. I care about making things that are clear, honest, and actually helpful in people's day-to-day lives.
+                I turn complex technical requirements into intuitive, high-converting digital products through strategy, rapid prototyping, and close developer collaboration.
               </p>
             </div>
             <div className="relative aspect-square lg:aspect-[4/5] bg-bg-alt rounded-[48px] border border-card-border overflow-hidden shadow-2xl group">
@@ -73,8 +73,12 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { text: "UI/UX Design for Web & Mobile", icon: <Smartphone size={24} /> },
-              { text: "Product Design for Startups", icon: <Lightbulb size={24} /> },
-              { text: "User Flows & Interaction", icon: <Layout size={24} /> },
+              { text: "Product Design for Startups & Scale-ups", icon: <Lightbulb size={24} /> },
+              { text: "Shopify Storefront & Ecommerce UX", icon: <Globe size={24} /> },
+              { text: "AI Product Design & Workflow Integration", icon: <Cpu size={24} /> },
+              { text: "SaaS Dashboards & Internal Tools", icon: <Layout size={24} /> },
+              { text: "Fintech & Mobile Banking Design", icon: <Smartphone size={24} /> },
+              { text: "Conversion Rate Optimization (CRO)", icon: <Target size={24} /> },
               { text: "Prototyping & Design Systems", icon: <Layers size={24} /> },
               { text: "Usability & UX Audits", icon: <Search size={24} /> }
             ].map((item, idx) => (

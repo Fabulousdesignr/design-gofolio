@@ -1,11 +1,21 @@
 import { ArrowUpRight } from 'lucide-react';
 
+const SKILL_TAGS = [
+  'Product Design',
+  'UX / UI',
+  'Shopify',
+  'Ecommerce',
+  'AI-Assisted Workflows',
+  'Design Systems',
+  'CRO',
+  'Product Strategy',
+];
+
 const MODULE_SHORTCUTS = [
-  { href: '#work', label: 'Work' },
+  { href: '#work', label: 'Featured Work' },
+  { href: '#shopify', label: 'Shopify & Ecommerce' },
   { href: '#ai-lab', label: 'AI Products' },
-  { href: '#launch-pages', label: 'Pages' },
   { href: '#about', label: 'About' },
-  { href: '#contact', label: 'Contact' },
 ];
 
 export default function Hero() {
@@ -18,7 +28,7 @@ export default function Hero() {
               <strong>Workspace</strong> / Godwin O.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 mb-4">
+            <div className="flex flex-wrap items-center gap-3 mb-6">
               <div className="workspace-status">
                 <span className="workspace-status-dot" aria-hidden="true" />
                 Available for new projects · GMT+1
@@ -34,14 +44,21 @@ export default function Hero() {
             </div>
 
             <h1 className="workspace-deck-title">
-              I design and build products people actually use
+              Product Designer building AI products, Shopify stores, SaaS platforms, and digital experiences people actually use.
             </h1>
-            <p className="workspace-deck-role">Product Designer · AI-assisted builder</p>
+            <p className="workspace-deck-role">Product Designer · UX/UI · Ecommerce · AI-Assisted Builder</p>
             <p className="workspace-deck-lead">
-              This is my portfolio. It shows the work I've done — the case studies, the AI products I've built, and the things I've shipped. Everything here is meant to show how I think and what I can do.
+              I design across the full digital product spectrum — from AI-powered SaaS tools and fintech dashboards to Shopify storefronts and conversion-focused landing pages. I pair deep user research with product strategy and modern design systems to create experiences that look great and actually drive results.
             </p>
 
-            <nav className="workspace-module-tabs" aria-label="Workspace modules">
+            {/* Skill tags */}
+            <div className="flex flex-wrap gap-2 mt-5">
+              {SKILL_TAGS.map((tag) => (
+                <span key={tag} className="hero-skill-tag">{tag}</span>
+              ))}
+            </div>
+
+            <nav className="workspace-module-tabs mt-6" aria-label="Workspace modules">
               {MODULE_SHORTCUTS.map((tab) => (
                 <a key={tab.href} href={tab.href} className="workspace-module-tab">
                   {tab.label}
@@ -50,8 +67,11 @@ export default function Hero() {
             </nav>
 
             <div className="flex flex-wrap gap-3 mt-8">
-              <a href="/#work" className="workspace-btn workspace-btn--primary">
+              <a href="#work" className="workspace-btn workspace-btn--primary">
                 See my work
+              </a>
+              <a href="#shopify" className="workspace-btn">
+                Shopify work
               </a>
             </div>
           </div>
@@ -68,7 +88,7 @@ export default function Hero() {
             <div className="relative w-full aspect-[4/5] overflow-hidden">
               <img
                 src="/images/My Image.png"
-                alt="Godwin O."
+                alt="Godwin O. — Product Designer"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>

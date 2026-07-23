@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { useContactModal } from '../../context/ContactModalContext';
-import ThemeToggle from '../ThemeToggle';
 
 export default function EditorialNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,16 +42,14 @@ export default function EditorialNav() {
               PM Portfolio <ArrowUpRight size={13} />
             </a>
             <div className="hidden md:flex items-center gap-8 text-[14px]">
-              <ThemeToggle />
               <button onClick={openModal} className="text-text-primary hover:opacity-70 transition-opacity font-bold">
                 Message Me
               </button>
             </div>
           </nav>
 
-          {/* Mobile Menu Button & Toggle */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
-            <ThemeToggle />
             <button 
               onClick={() => setIsOpen(true)}
               className="text-text-primary p-2 -mr-2"
