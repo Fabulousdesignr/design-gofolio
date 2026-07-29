@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
+import Work from './pages/Work';
 import CaseStudyDetail from './pages/CaseStudyDetail';
 import ScrollToTop from './components/ScrollToTop';
 import Experiments from './pages/Experiments';
@@ -17,6 +18,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/work" element={<Work />} />
           <Route path="/about" element={<About />} />
           <Route path="/labs" element={<Experiments />} />
           <Route path="/case-study/:slug" element={<CaseStudyDetail />} />

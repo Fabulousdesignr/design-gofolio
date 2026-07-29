@@ -1,31 +1,25 @@
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Projects from '../components/Projects';
-import ShopifyExperience from '../components/ShopifyExperience';
-import HomeAILab from '../components/HomeAILab';
-import HomeLaunchPages from '../components/HomeLaunchPages';
-import AboutPreview from '../components/AboutPreview';
-import CTA from '../components/CTA';
-import Footer from '../components/Footer';
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import Navbar from '../components/v2/Navbar';
+import Hero from '../components/v2/Hero';
+import Services from '../components/v2/Services';
+import FeaturedWork from '../components/v2/FeaturedWork';
+import Process from '../components/v2/Process';
+import AboutSection from '../components/v2/AboutSection';
+import Testimonials from '../components/v2/Testimonials';
+import ContactSection from '../components/v2/ContactSection';
+import Footer from '../components/v2/Footer';
 
 export default function Home() {
-  useScrollReveal();
-
   return (
-    <div className="workspace-canvas min-h-screen">
+    <div className="bg-[#09090b] text-white min-h-screen selection:bg-indigo-500 selection:text-white">
       <Navbar />
-      <main className="workspace-main">
+      <main>
         <Hero />
-
-        <div className="workspace-modules">
-          <Projects />
-          <ShopifyExperience />
-          <HomeAILab />
-          <HomeLaunchPages />
-          <AboutPreview />
-          <CTA />
-        </div>
+        <Services />
+        <FeaturedWork />
+        <Process />
+        <AboutSection />
+        <Testimonials />
+        <ContactSection />
       </main>
       <Footer />
     </div>
