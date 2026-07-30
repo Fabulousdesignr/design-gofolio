@@ -63,6 +63,8 @@ export default function Hero() {
               <img
                 src="/images/My Image.png"
                 alt="Godwin O. — Senior Product Designer"
+                fetchPriority="high"
+                decoding="sync"
                 className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-[1.02]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent opacity-80" />

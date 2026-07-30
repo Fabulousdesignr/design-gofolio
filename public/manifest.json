@@ -1,0 +1,17 @@
+{
+  "short_name": "Godwin O.",
+  "name": "Godwin Okechukwu — Product Designer",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "description": "Portfolio of Godwin Okechukwu, Product Designer specializing in AI Products, Shopify & Ecommerce storefronts, SaaS platforms, and digital experiences."
+}

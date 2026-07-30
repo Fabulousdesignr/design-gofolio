@@ -4,6 +4,7 @@ import { ArrowUpRight, ExternalLink, Filter } from 'lucide-react';
 import Navbar from '../components/v2/Navbar';
 import Footer from '../components/v2/Footer';
 import { projects } from '../data/projects';
+import { usePrefetch } from '../hooks/usePrefetch';
 
 const CATEGORIES = [
   { id: 'all', label: 'All Projects' },
@@ -14,6 +15,7 @@ const CATEGORIES = [
 
 export default function Work() {
   const [activeTab, setActiveTab] = useState('all');
+  const { onMouseEnter } = usePrefetch();
 
   const filteredProjects = activeTab === 'all'
     ? projects
@@ -83,6 +85,8 @@ export default function Work() {
                       <img
                         src={image || fallback}
                         alt={title}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                       />
                     )}
@@ -119,6 +123,7 @@ export default function Work() {
                       {isInternal ? (
                         <Link
                           to={targetUrl}
+                          onMouseEnter={onMouseEnter}
                           className="inline-flex items-center gap-1 text-xs font-semibold text-white group-hover:text-indigo-400 transition-colors"
                         >
                           Case Study <ArrowUpRight size={13} />

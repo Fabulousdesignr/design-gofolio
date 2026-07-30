@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { useContactModal } from '../../context/ContactModalContext';
+import { usePrefetch } from '../../hooks/usePrefetch';
 
 export default function Navbar({ isCaseStudy = false }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { openModal } = useContactModal();
   const location = useLocation();
+  const { onMouseEnter } = usePrefetch();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +36,7 @@ export default function Navbar({ isCaseStudy = false }) {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Brand logo */}
-        <Link to="/" className="group flex items-center gap-2.5">
+        <Link to="/" onMouseEnter={onMouseEnter} className="group flex items-center gap-2.5">
           <span className="w-8 h-8 rounded-lg bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-white font-extrabold text-xs tracking-tight group-hover:border-indigo-500/50 group-hover:bg-indigo-500/10 transition-all">
             GO
           </span>
@@ -50,6 +52,7 @@ export default function Navbar({ isCaseStudy = false }) {
               <Link
                 key={link.label}
                 to={link.href}
+                onMouseEnter={onMouseEnter}
                 className="text-xs font-medium text-white/70 hover:text-white px-3 py-1 rounded-full hover:bg-white/[0.06] transition-all"
               >
                 {link.label}
