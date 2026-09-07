@@ -71,7 +71,7 @@ export default function Hero() {
               
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-zinc-900/80 backdrop-blur-md border border-white/[0.1]">
                 <div className="text-xs font-semibold text-white tracking-wide uppercase mb-0.5">Godwin O.</div>
-                <div className="text-xs text-white/60">Product Designer · UX/UI · Ecommerce · AI Tools</div>
+                <div className="text-xs text-white/60">Product Designer · UX/UI · Gaming · AI Tools</div>
               </div>
             </div>
           </div>
@@ -83,11 +83,13 @@ export default function Hero() {
           <div className="flex flex-wrap gap-x-8 gap-y-2 text-white/60">
             <span>SaaS Platforms</span>
             <span>·</span>
+            <span>Gaming Products</span>
+            <span>·</span>
             <span>Fintech UX</span>
             <span>·</span>
             <span>AI Product Workflows</span>
             <span>·</span>
-            <span>Shopify & CRO</span>
+            <span>Shopify &amp; CRO</span>
             <span>·</span>
             <span>Design Systems</span>
           </div>

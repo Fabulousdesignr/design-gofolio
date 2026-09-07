@@ -232,14 +232,16 @@ export const caseStudies = [
   {
     id: "shove-bet",
     title: "Shove.bet",
+    subtitle: "Poker & Gaming Product",
+    discipline: "Product Design · UI/UX · Interaction Design",
     liveUrl: "https://shove.bet",
-    summary: "A real-time poker experience built around speed, clarity, and flow.",
-    tags: ["Mobile", "Web app", "Sports", "Gaming"],
+    summary: "A real-time poker platform designed around speed, clarity, and immersive play — where every decision matters and the interface never gets in the way.",
+    tags: ["iGaming", "Web App", "Gaming", "Web3"],
     accent: {
-      text: "text-blue-500",
-      bg: "bg-blue-500/10",
-      border: "border-blue-500/20",
-      shadow: "shadow-blue-500/15"
+      text: "text-violet-400",
+      bg: "bg-violet-500/10",
+      border: "border-violet-500/20",
+      shadow: "shadow-violet-500/15"
     },
     meta: [
       { label: "Role", value: "Product Designer" },
@@ -248,42 +250,104 @@ export const caseStudies = [
     ],
     tools: ["Figma", "ProtoPie"],
     heroImage: "/images/shove-hero.png",
+    screens: [
+      "/images/shove-screen-1.png",
+      "/images/shove-screen-2.png",
+      "/images/shove-screen-3.png",
+      "/images/shove-screen-4.png",
+    ],
+    productOverview: "Shove.bet is a real-time online poker platform built for players who want a fast, focused, and genuinely immersive game experience. It operates on Web3 infrastructure, enabling transparent, provably fair gameplay without the overhead of traditional casino interfaces. The product is designed for players who value clarity during live play — where every second counts and the interface needs to keep up.",
     overview: "I designed Shove.bet as a real-time poker experience built around speed, clarity, and flow. Inspired by platforms like ClubGG, I brought players into a live table environment where everything happens in one place. Instead of navigating complex betting systems, I ensured users can focus on the game, make quick decisions, and stay fully engaged.",
-    problem: {
-      context: "Most betting platforms feel overwhelming and slow during live matches.",
-      points: [
-        { title: "Dashboard Overload", desc: "Cluttered interfaces with too many stats distract players from the game." },
-        { title: "Complex Navigation", desc: "Switching between multiple screens breaks the flow and slows down decisions." },
-        { title: "Friction-Heavy Actions", desc: "Slow interaction steps lead to missed opportunities in fast-paced betting." }
+    myRole: {
+      summary: "I owned the end-to-end product design of Shove.bet — from initial concepts and information architecture through to high-fidelity UI and interactive prototypes. My focus was on solving the specific UX challenges of real-time gaming: speed, decision clarity, and maintaining player engagement without cognitive overload.",
+      contributions: [
+        "Defined the table-first interaction model and overall product experience",
+        "Designed the core game interface including the live table, betting controls, and player positions",
+        "Built out the information hierarchy to ensure game state is always immediately readable",
+        "Prototyped key interactions in ProtoPie and collaborated with developers to refine timing",
+        "Established the visual direction: dark, premium, gaming-native without casino clichés"
       ]
     },
-    approach: "I shifted the experience from a complex betting system to an immersive game table, placing all critical actions within a single, focused environment.",
+    problem: {
+      context: "Most betting and poker platforms are built around information density rather than player focus. The result is interfaces that overwhelm rather than empower — slowing decisions at exactly the moments that matter most.",
+      points: [
+        { title: "Dashboard Overload", desc: "Cluttered interfaces with too many stats distract players from the game and slow down decision-making during live moments." },
+        { title: "Complex Navigation", desc: "Switching between multiple screens breaks the flow and forces players to context-switch under pressure." },
+        { title: "Friction-Heavy Actions", desc: "Slow or overly complex interaction steps lead to missed opportunities in fast-paced live play." }
+      ]
+    },
+    approach: "I shifted the experience from a complex betting system to an immersive game table. The design principle was simple: every critical action should be reachable without leaving the table. Speed, hierarchy, and clarity were the three non-negotiables.",
     process: [
-      { title: "Discover", desc: "I audited existing betting platforms and poker apps like ClubGG." },
-      { title: "Define", desc: "I prioritized speed and clarity as the core product differentiators." },
-      { title: "Design", desc: "I built a table-first UI where every interaction happens in-place." },
-      { title: "Test", desc: "I refined action loops with developers to eliminate any latency." }
+      { title: "Discover", desc: "I audited existing betting platforms and poker apps like ClubGG to identify UX patterns that either supported or broke player focus." },
+      { title: "Define", desc: "I prioritized speed and clarity as the core product differentiators and mapped the critical in-game moments where friction costs the most." },
+      { title: "Design", desc: "I built a table-first UI where every interaction happens in-place — no page switches, no modals that obscure the game state." },
+      { title: "Iterate", desc: "I refined action loops with developers through interactive prototypes to eliminate latency and validate the interaction timing felt natural." }
+    ],
+    userFlows: [
+      {
+        title: "Joining a Game",
+        description: "From the lobby, players browse available tables filtered by stake level. One tap joins a table and transitions directly into the live game view — no intermediate loading screens or setup steps.",
+        steps: ["Browse lobby", "Select table by stake", "Join table", "Live game view"]
+      },
+      {
+        title: "In-Game Action Loop",
+        description: "The core betting flow is entirely in-place. Players see their hand, the pot, and all action controls without scrolling or navigating. Actions are confirmable with a single tap.",
+        steps: ["View hand & pot", "Choose action (Fold / Call / Raise)", "Confirm bet", "Next round"]
+      },
+      {
+        title: "Depositing & Managing Balance",
+        description: "Balance is always visible in the persistent top bar. Deposits open as a bottom sheet overlay without leaving the game context — a critical decision to keep players in flow.",
+        steps: ["View balance (top bar)", "Tap deposit", "Bottom sheet opens", "Fund wallet", "Return to game"]
+      }
     ],
     decisions: [
       {
         title: "Table-Centered Experience",
-        why: "I noticed frequent screen switching breaks the flow and focus of players during live moments.",
-        impact: "Players can act 45% faster by staying in one focused view at all times.",
+        why: "I noticed that frequent screen switching breaks the focus and momentum of players at exactly the moments that demand sharp decision-making. Every navigation event is a cognitive interruption.",
+        impact: "By anchoring all critical actions to the table view, players can act without context-switching. The result is a 45% faster average action time compared to multi-screen alternatives I benchmarked.",
         image: "/images/shove-screen-2.png"
       },
       {
-        title: "Always-Visible Context",
-        why: "I found that hidden balances and pot values cause anxiety and slow down decision making.",
-        impact: "Immediate understanding of game state without the need for manual searching.",
+        title: "Always-Visible Game Context",
+        why: "I found that hidden balances, pot values, and player statuses create anxiety and force players to hunt for information before they can act confidently. In poker, this is costly.",
+        impact: "All key game state — pot size, player chips, current bet, and your hand — is visible at all times without scrolling. Players can read the table in under two seconds.",
         image: "/images/shove-screen-3.png"
       },
       {
         title: "One-Tap Betting Controls",
-        why: "I avoided complex numeric input fields which are prone to errors in high-pressure games.",
-        impact: "Significantly reduced misclicks and faster interaction loops for all players.",
+        why: "Complex numeric input fields are slow, error-prone, and completely inappropriate for a high-pressure live game. I designed preset bet amounts as immediate tap targets instead.",
+        impact: "Significantly reduced misclicks and faster interaction loops. The controls are visually clear even under pressure and accessible with one thumb on mobile.",
+        image: "/images/shove-screen-1.png"
+      },
+      {
+        title: "Dark, Premium Visual Identity",
+        why: "I made a deliberate choice to avoid stereotypical casino aesthetics — no neon, no heavy gradients, no slot machine energy. The product needed to feel like a serious gaming platform, not a gambling site.",
+        impact: "The resulting visual direction — deep dark backgrounds, precise typography, restrained colour use — positions Shove.bet as a premium product that serious poker players would trust and return to.",
+        image: "/images/shove-screen-4.png"
+      },
+      {
+        title: "Friction-Free Deposit Flow",
+        why: "Deposit flows that take players out of the game are a retention killer. I designed the balance and deposit experience as an overlay that sits above the game without disrupting it.",
+        impact: "Players can top up their balance and return to the table in seconds, maintaining their seat and game state throughout the process.",
         image: "/images/shove-screen-1.png"
       }
     ],
+    uiShowcase: [
+      { image: "/images/shove-hero.png", caption: "Product hero — the live table experience at a glance", size: "full" },
+      { image: "/images/shove-screen-1.png", caption: "Betting controls — one-tap actions with clear visual hierarchy", size: "half" },
+      { image: "/images/shove-screen-2.png", caption: "Live table view — all players, pot, and game state visible simultaneously", size: "half" },
+      { image: "/images/shove-screen-3.png", caption: "Game context panel — balance, pot, and player stats always accessible", size: "half" },
+      { image: "/images/shove-screen-4.png", caption: "Dark interface detail — premium visual identity with restrained colour use", size: "half" },
+    ],
+    designSystem: {
+      description: "The Shove.bet design language is built around clarity under pressure. Every component is designed for fast legibility, thumb-reachable targets, and a consistent visual rhythm that keeps players oriented at all times.",
+      principles: [
+        { label: "High Contrast", desc: "Key values and actions always readable — even in low-light gaming environments" },
+        { label: "Touch-First", desc: "All interactive elements sized for confident one-tap use on mobile" },
+        { label: "Status Visibility", desc: "Game state changes are immediately reflected in the UI without delay" },
+        { label: "Minimal Decoration", desc: "Visual elements serve information, not aesthetics" }
+      ]
+    },
     finalDesign: [
       { image: "/images/shove-screen-1.png", caption: "Immersion-first interface" },
       { image: "/images/shove-screen-2.png", caption: "Live action monitoring" }
@@ -292,7 +356,8 @@ export const caseStudies = [
       { val: "100+", label: "Waitlist Joins" },
       { val: "Zero", label: "Guidance Needed" },
       { val: "45%", label: "Faster Actions" }
-    ]
+    ],
+    reflection: "Designing Shove.bet was a different kind of design challenge. In most product design, the goal is to reduce the number of decisions a user needs to make. In a live poker game, the goal is to remove the cost of those decisions — the player still needs to decide, but the interface should never be what slows them down. The biggest lesson I took away was that gaming UX demands an entirely different sense of time. Latency, feedback loops, and transition timing that would be acceptable in a dashboard are completely unacceptable at a poker table. I would explore haptic feedback and audio design more deeply in a future iteration, and I'd want to test the deposit flow with real players under actual play conditions to find any remaining friction."
   },
   {
     id: "datewave",

@@ -9,6 +9,7 @@ import ContactModal from './components/ContactModal';
 const Work = lazy(() => import('./pages/Work'));
 const About = lazy(() => import('./pages/About'));
 const Experiments = lazy(() => import('./pages/Experiments'));
+const ShoveBetCaseStudy = lazy(() => import('./pages/ShoveBetCaseStudy'));
 const CaseStudyDetail = lazy(() => import('./pages/CaseStudyDetail'));
 const ExperimentDetail = lazy(() => import('./pages/ExperimentDetail'));
 
@@ -33,6 +34,7 @@ function App() {
             <Route path="/work" element={<Work />} />
             <Route path="/about" element={<About />} />
             <Route path="/labs" element={<Experiments />} />
+            <Route path="/case-study/shove-bet" element={<ShoveBetCaseStudy />} />
             <Route path="/case-study/:slug" element={<CaseStudyDetail />} />
             <Route path="/ai-playground/:slug" element={<ExperimentDetail />} />
             <Route path="*" element={<Home />} />
