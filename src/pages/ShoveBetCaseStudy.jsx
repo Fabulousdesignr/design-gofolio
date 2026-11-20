@@ -81,7 +81,7 @@ export default function ShoveBetCaseStudy() {
 
   const {
     title, subtitle, discipline, liveUrl, summary,
-    productOverview, myRole, problem, approach, process,
+    productOverview, myRole, problem, approach,
     userFlows, decisions, uiShowcase, designSystem, reflection,
     impact, meta, tools, screens,
   } = data;

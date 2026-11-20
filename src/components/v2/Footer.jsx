@@ -1,60 +1,104 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
+import { site, socialLinks } from '../../data/site';
+
+const SITEMAP = [
+  { label: 'Home', to: '/' },
+  { label: 'Work', to: '/work' },
+  { label: 'About', to: '/about' },
+  { label: 'Capabilities', to: '/capabilities' },
+  { label: 'Contact', to: '/contact' },
+];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="py-12 border-t border-white/[0.08] bg-[#09090b]">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/50">
-        <div className="flex items-center gap-3">
-          <Link to="/" className="w-7 h-7 rounded-lg bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-white font-extrabold text-[11px] tracking-tight">
-            GO
-          </Link>
-          <span>&copy; {currentYear} Godwin Okechukwu. All rights reserved.</span>
+    <footer className="border-t border-line bg-bg-primary">
+      <div className="site-shell py-14 md:py-16">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Link to="/" className="inline-flex items-center gap-3">
+              <span className="flex h-8 w-8 items-center justify-center border border-line-strong font-mono text-[10px] text-text-primary">
+                GO
+              </span>
+              <span className="text-sm font-semibold text-text-primary">{site.name}</span>
+            </Link>
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-text-secondary">
+              {site.role}. {site.supporting}.
+            </p>
+            <a
+              href={`mailto:${site.email}`}
+              className="mt-6 inline-flex items-center gap-2 text-sm text-text-primary transition-colors hover:text-signal"
+            >
+              {site.email}
+              <ArrowUpRight size={14} aria-hidden="true" />
+            </a>
+          </div>
+
+          <div className="md:col-span-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-text-tertiary">
+              Pages
+            </p>
+            <ul className="mt-5 space-y-3">
+              {SITEMAP.map((item) => (
+                <li key={item.to}>
+                  <Link
+                    to={item.to}
+                    className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="md:col-span-2">
+            <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-text-tertiary">
+              Elsewhere
+            </p>
+            <ul className="mt-5 space-y-3">
+              {socialLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="md:col-span-2">
+            <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-text-tertiary">
+              Current
+            </p>
+            <p className="mt-5 flex items-start gap-2 text-sm leading-relaxed text-text-secondary">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-signal" aria-hidden="true" />
+              Open to AI product and product engineering roles.
+            </p>
+            <a
+              href={site.links.cv}
+              download
+              className="mt-3 inline-flex text-sm text-text-secondary transition-colors hover:text-text-primary"
+            >
+              Download CV
+            </a>
+          </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-6">
-          <a
-            href="https://www.linkedin.com/in/godwinokechukwu/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://x.com/fabulousdesignr"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-          >
-            Twitter
-          </a>
-          <a
-            href="https://dribbble.com/Mr_Fabulous"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-          >
-            Dribbble
-          </a>
-          <a
-            href="https://www.behance.net/fabianokechukwu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-          >
-            Behance
-          </a>
-          <a
-            href="https://gofolio.site"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-indigo-400 hover:text-indigo-300 font-medium transition-colors"
-          >
-            PM Portfolio <ArrowUpRight size={12} />
-          </a>
+        <div className="mt-14 flex flex-col gap-3 border-t border-line pt-6 text-xs text-text-tertiary sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            &copy; {year} {site.name}. All rights reserved.
+          </p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.12em]">
+            {site.location} · Built with React
+          </p>
         </div>
       </div>
     </footer>

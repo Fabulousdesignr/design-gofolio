@@ -1,36 +1,36 @@
-import { Layers, ShoppingBag, Cpu } from 'lucide-react';
+import { Globe, ShoppingBag, Layers } from 'lucide-react';
 
 const SERVICES = [
   {
+    icon: Globe,
+    title: 'Website & Landing Page Design',
+    description: 'Clear, high-impact websites and launch pages that explain what a product does and give visitors a reason to act.',
+    highlights: ['Landing Pages', 'Marketing Websites', 'Responsive Design', 'Visual Design'],
+  },
+  {
     icon: Layers,
-    title: 'Product Design & SaaS',
-    description: 'End-to-end UX/UI design for complex web applications, fintech tools, and SaaS dashboards. I turn multi-step workflows into intuitive, human experiences.',
-    highlights: ['Design Systems', 'Fintech & Mobile UX', 'Information Architecture', 'User Testing & Iteration'],
+    title: 'Digital Product & UI Design',
+    description: 'Interfaces for SaaS, AI, fintech and mobile products, from first flows to polished, system-driven screens in Figma.',
+    highlights: ['SaaS & AI Interfaces', 'Fintech & Mobile UI', 'Design Systems', 'Prototyping'],
   },
   {
     icon: ShoppingBag,
-    title: 'Shopify & Ecommerce',
-    description: 'High-converting Shopify storefronts engineered for product discovery, checkout speed, and brand storytelling.',
-    highlights: ['Storefront Redesign', 'CRO & Landing Pages', 'Custom Themes', 'Mobile Checkout UX'],
-  },
-  {
-    icon: Cpu,
-    title: 'AI Workflows & Strategy',
-    description: 'Designing AI features that enhance user productivity rather than adding gimmick noise. Seamless integration of LLM tools and intelligent automation.',
-    highlights: ['AI Dashboard UX', 'Copilot Interface Design', 'Prompt-to-Action Flows', 'AI-assisted Development'],
+    title: 'Ecommerce & Shopify Storefronts',
+    description: 'Storefronts built for product discovery, checkout speed and clear catalog navigation.',
+    highlights: ['Storefront Design', 'Product Pages', 'Mobile Checkout UX', 'Catalog Navigation'],
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 border-b border-white/[0.06] bg-zinc-950/40">
+    <section className="py-24 border-b border-white/[0.06] bg-zinc-950/40">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-2xl mb-16">
           <h2 className="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-3">
-            Core Expertise
+            Capabilities
           </h2>
           <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
-            How I add value to your product team.
+            One designer for your website and product.
           </h3>
         </div>
 

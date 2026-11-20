@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 
-export default function LazySection({ children, minHeight = '300px', rootMargin = '300px' }) {
+// `id` goes on the wrapper (not the lazy child) so in-page anchors such as #services
+// resolve even before the section has been rendered.
+export default function LazySection({ children, id, minHeight = '300px', rootMargin = '300px' }) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -23,7 +25,11 @@ export default function LazySection({ children, minHeight = '300px', rootMargin 
   }, [isVisible, rootMargin]);
 
   return (
-    <div ref={ref} style={{ minHeight: isVisible ? 'auto' : minHeight }}>
+    <div
+      id={id}
+      ref={ref}
+      style={{ minHeight: isVisible ? 'auto' : minHeight, scrollMarginTop: id ? '4rem' : undefined }}
+    >
       {isVisible ? children : null}
     </div>
   );

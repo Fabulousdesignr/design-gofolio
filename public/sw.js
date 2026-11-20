@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gofolio-v1';
+const CACHE_NAME = 'gofolio-v2';
 
 const STATIC_ASSETS = [
   '/',

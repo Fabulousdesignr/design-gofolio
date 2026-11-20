@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+﻿import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function ContentCard({ title, description, tags, mediaUrl, actionText, actionUrl, secondaryActionText, secondaryActionUrl, actionStyle = 'button', actionDownload, secondaryActionDownload, reverse }) {

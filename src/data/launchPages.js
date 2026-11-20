@@ -1,9 +1,9 @@
 export const launchPages = [
   {
     id: "shyne",
-    title: "Shyne",
-    category: "Launch Page",
-    description: "A bold launch page for a premium haircare brand — designed to drive sign-ups and create an immediate first impression.",
+    title: "Shyne Africa",
+    category: "Website Design",
+    description: "I designed the website for Shyne Africa.",
     image: "/images/Shyne.png",
     link: ""
   },
@@ -11,7 +11,7 @@ export const launchPages = [
     id: "rivalens",
     title: "Rivalens",
     category: "Launch Page",
-    description: "A competitive esports platform landing page built around energy, speed, and conversion.",
+    description: "An AI competitive-intelligence product, presented through a clean, founder-ready interface.",
     image: "/images/Rivalens 1.png",
     link: ""
   }

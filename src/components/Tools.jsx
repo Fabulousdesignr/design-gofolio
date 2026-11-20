@@ -1,5 +1,5 @@
 import { tools } from '../data/tools';
-import { Layout, MessageSquare, Zap, Cpu, Sparkles, Pencil } from 'lucide-react';
+import { Layout, MessageSquare, Zap, Sparkles, Pencil } from 'lucide-react';
 
 export default function Tools() {
   // Map categories to simple icons

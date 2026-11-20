@@ -1,5 +1,4 @@
-import React from 'react';
-
+﻿
 export default function EditorialProcess() {
   const steps = [
     { num: '01', title: 'Discover' },

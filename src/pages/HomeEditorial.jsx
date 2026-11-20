@@ -1,5 +1,4 @@
-import React from 'react';
-import '../editorial.css';
+﻿import '../editorial.css';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 // Editorial Components

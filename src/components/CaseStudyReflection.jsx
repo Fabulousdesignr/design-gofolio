@@ -1,5 +1,4 @@
-import React from 'react';
-import { CheckCircle, AlertTriangle, Lightbulb, Zap } from 'lucide-react';
+﻿import { CheckCircle, AlertTriangle, Lightbulb, Zap } from 'lucide-react';
 
 export default function CaseStudyReflection({ data }) {
   if (!data.reflection) return null;

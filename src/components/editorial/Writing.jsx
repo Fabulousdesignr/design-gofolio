@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowUpRight, Clock } from 'lucide-react';
+﻿import { ArrowUpRight, Clock } from 'lucide-react';
 
 const articles = [
   {

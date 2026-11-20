@@ -1,5 +1,4 @@
-import React from 'react';
-
+﻿
 export default function CaseStudyInsights({ data }) {
   if (!data.insights || data.insights.length === 0) return null;
   const { accent } = data;

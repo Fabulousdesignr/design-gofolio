@@ -1,8 +1,8 @@
 # Godwin (Fabulous Designer)
 
-Product Designer building AI-powered digital products that solve real business and user problems.
+Multidisciplinary Web, Visual and Product Designer with 10 years of design experience, designing websites and digital products for SaaS, fintech, AI, healthcare and education.
 
-I design, prototype, and increasingly build intelligent products that combine great UX, strong product thinking, and modern AI workflows.
+I design websites, landing pages and digital products, and I am increasingly interested in AI-powered products, modern web experiences and design engineering.
 
 ---
 
@@ -10,17 +10,17 @@ I design, prototype, and increasingly build intelligent products that combine gr
 
 Hi, I’m Godwin.
 
-I am a Product Designer with 4+ years of design experience focused on creating intuitive, scalable, and impactful digital experiences.
+I am a Web, Visual and Product Designer with 10 years of overall design experience, including 4 years in product design. I have worked across SaaS, fintech, AI, healthcare and education.
 
-My background started in visual and UI design, but over time I became deeply interested in product strategy, systems thinking, and how great products actually get built.
+My background started in visual design, and over time I expanded into web design and product design, with a growing interest in how great products actually get built.
 
 Today, I operate at the intersection of:
 
-- Product Design  
-- UX Strategy  
-- AI Workflows  
-- Rapid Prototyping  
-- Frontend Product Thinking  
+- Web and Landing Page Design  
+- Visual Design  
+- Product and UI Design  
+- AI-powered Products  
+- Design Engineering  
 
 I care deeply about building products that are not only visually polished but also useful, scalable, and aligned with business goals.
 
@@ -28,7 +28,7 @@ I care deeply about building products that are not only visually polished but al
 
 ## What I Do
 
-I help startups and teams transform ideas into usable products through:
+I help startups and teams turn ideas into clear websites and usable products through:
 
 - Product strategy  
 - UX research  
@@ -148,17 +148,17 @@ That is the kind of work I enjoy most.
 
 I am currently focused on:
 
-- Product Design roles  
-- Founding Designer opportunities  
-- AI-native product teams  
-- Remote startup opportunities  
+- Web Designer, Visual Designer and Product Designer roles  
+- Freelance projects with founders and teams  
+- AI and SaaS companies  
+- Remote and international opportunities  
 - Design Engineer-adjacent roles  
 
 ---
 
 ## Let’s Connect
 
-If you are building something meaningful and need a designer who understands users, products, and modern AI workflows, I would love to connect.
+If you are building something meaningful and need a designer who can work across web, visual and product design, I would love to connect.
 
 ### Links
 Portfolio: https://www.gofolio.site/  
@@ -168,4 +168,4 @@ LinkedIn: https://www.linkedin.com/in/godwinokechukwu/
 ---
 
 Built by **Godwin (Fabulous Designer)**  
-Product Designer • AI Product Builder
+Web Designer • Visual Designer • Product Designer

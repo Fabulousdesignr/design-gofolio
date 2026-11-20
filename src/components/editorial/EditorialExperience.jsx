@@ -1,25 +1,25 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 
 const experiences = [
   {
-    year: '2024 → Present',
+    year: '2024 â†’ Present',
     company: 'Shyne / Karatek Solutions',
     role: 'Co-Founder & Growth Product Manager',
     desc: 'Own the product strategy and roadmap for Shyne, an AI-powered portfolio platform built for African creatives. Led customer discovery through structured interviews and market research to validate user problems and shape the MVP. Prioritized onboarding and activation features, designed monetization loops, and worked closely with engineers to ship iterative updates. Created a scalable design system that cut development handoff time significantly.',
     tags: ['Product Strategy', 'Customer Discovery', 'Roadmapping', 'AI Products'],
   },
   {
-    year: '2022 → Present',
+    year: '2022 â†’ Present',
     company: 'Independent Product Work',
     role: 'Product Manager & Designer',
     desc: 'Manage strategy and execution for multiple AI, fintech, and SaaS products from discovery through MVP delivery. Define customer workflows, feature priorities, and roadmaps across B2B and consumer contexts. Build rapid prototypes to validate assumptions before engineering investment. Partner with developers to translate business goals into shipped software.',
     tags: ['SaaS', 'Fintech', 'Prototyping', 'Validation'],
   },
   {
-    year: '2018 → 2022',
+    year: '2018 â†’ 2022',
     company: 'Mr Fabulous Skill Acquisition',
     role: 'Founder & Lead Design Mentor',
-    desc: 'Founded a design education program that mentored over 500 aspiring designers in visual hierarchy, information architecture, and product flows. Built the visual and product thinking foundations that now power my PM execution — using high-fidelity communication to eliminate ambiguity between product and engineering.',
+    desc: 'Founded a design education program that mentored over 500 aspiring designers in visual hierarchy, information architecture, and product flows. Built the visual and product thinking foundations that now power my PM execution â€” using high-fidelity communication to eliminate ambiguity between product and engineering.',
     tags: ['Leadership', 'Education', 'Mentorship', '500+ Learners'],
   },
 ];
@@ -57,7 +57,7 @@ function ExperienceEntry({ exp, index, activeIndex, onClick }) {
         {exp.year}
       </span>
 
-      {/* Company + Role — always visible */}
+      {/* Company + Role â€” always visible */}
       <h3
         className={`font-bold tracking-tight transition-all duration-300 ${
           isActive
@@ -76,7 +76,7 @@ function ExperienceEntry({ exp, index, activeIndex, onClick }) {
         {exp.role}
       </p>
 
-      {/* Description — only when active */}
+      {/* Description â€” only when active */}
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out ${
           isActive ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
@@ -139,7 +139,7 @@ export default function EditorialExperience() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-          {/* Left — Timeline */}
+          {/* Left â€” Timeline */}
           <div className="w-full lg:w-[55%] relative">
             {/* Rail line */}
             <div className="absolute left-[5px] top-2 bottom-2 w-px bg-card-border" />
@@ -162,7 +162,7 @@ export default function EditorialExperience() {
             </div>
           </div>
 
-          {/* Right — Sticky summary callout */}
+          {/* Right â€” Sticky summary callout */}
           <div className="w-full lg:w-[45%] lg:sticky lg:top-32 self-start">
             <div className="bg-bg-surface border border-card-border rounded-3xl p-8 md:p-10 transition-all duration-500">
               <span className="text-[11px] font-bold text-accent-orange tracking-widest uppercase block mb-4">

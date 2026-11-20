@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import { useEffect, useRef, useState } from 'react';
 
 const journey = [
   {
@@ -20,14 +20,14 @@ const journey = [
     headline: '500+ Designers Mentored.',
     title: '1-on-1 Career Mentorship',
     role: 'Product & Design Mentor',
-    desc: 'Expanded mentorship beyond cohorts into personalized career guidance for over 500 learners and career switchers across virtual and in-person programs — helping them map trajectories, structure portfolios, and land roles in product design.',
+    desc: 'Expanded mentorship beyond cohorts into personalized career guidance for over 500 learners and career switchers across virtual and in-person programs â€” helping them map trajectories, structure portfolios, and land roles in product design.',
   },
   {
     year: '2025',
     headline: 'Back in the Room.',
     title: 'Kuagi Workshop',
     role: 'In-Person Workshop Lead',
-    desc: 'Delivered an interactive, hands-on product design and strategy workshop for local professionals. Covered user research frameworks, prototype validation, and product thinking — making abstract PM concepts tangible for beginners.',
+    desc: 'Delivered an interactive, hands-on product design and strategy workshop for local professionals. Covered user research frameworks, prototype validation, and product thinking â€” making abstract PM concepts tangible for beginners.',
   },
 ];
 
@@ -95,7 +95,7 @@ export default function TeachingCommunity() {
                     }`}
                   />
 
-                  {/* Year — large typographic anchor */}
+                  {/* Year â€” large typographic anchor */}
                   <div className="flex items-baseline gap-5 mb-4">
                     <span className="font-serif text-[64px] md:text-[96px] lg:text-[120px] leading-[1] font-bold text-text-primary/10 select-none tracking-tight">
                       {item.year}

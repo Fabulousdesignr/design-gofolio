@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { experiments } from '../data/experiments';
 import ExperimentTemplate from '../components/ExperimentTemplate';
 import { useScrollReveal } from '../hooks/useScrollReveal';

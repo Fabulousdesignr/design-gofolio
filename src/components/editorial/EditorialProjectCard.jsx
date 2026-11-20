@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 
 export default function EditorialProjectCard({ projects }) {
   // Flagship products for the 100/60/40 asymmetrical showcase

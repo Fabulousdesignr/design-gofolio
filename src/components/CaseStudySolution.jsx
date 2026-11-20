@@ -1,5 +1,4 @@
-import React from 'react';
-import ProductFrame from './ProductFrame';
+﻿import ProductFrame from './ProductFrame';
 
 export default function CaseStudySolution({ data }) {
   if (!data.solution || data.solution.length === 0) return null;

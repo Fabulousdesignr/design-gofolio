@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowUpRight, Download, Mail, MessageCircle, Layout, Zap, Search, Target, PenTool, CheckCircle, PlayCircle, Film, Image } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Mail, MessageCircle, Layout, Zap, Search, Target, PenTool, CheckCircle, PlayCircle, Film, Image } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -12,13 +12,13 @@ function buildRailSections(data) {
   return [
     { id: 'cs-hero', label: 'Project' },
     data.overview ? { id: 'cs-overview', label: 'Overview' } : null,
+    { id: 'cs-solution', label: 'Final Execution' },
     { id: 'cs-problem', label: 'Problem' },
     data.goals ? { id: 'cs-goals', label: 'Goals' } : null,
     { id: 'cs-approach', label: 'Approach' },
     { id: 'cs-process', label: 'Process' },
     { id: 'cs-decisions', label: 'Decisions' },
-    { id: 'cs-solution', label: 'Solution' },
-    { id: 'cs-impact', label: 'Impact' },
+    { id: 'cs-impact', label: 'Outcomes' },
   ].filter(Boolean);
 }
 
@@ -87,7 +87,18 @@ export default function CaseStudyTemplate({ data }) {
               </CaseStudyDocPanel>
             )}
 
-            <CaseStudyDocPanel id="cs-problem" index="03. Problem" title="The problem">
+            <CaseStudyDocPanel id="cs-solution" index="03. Final Execution" title="Final execution">
+            <div className="space-y-12">
+              {data.finalDesign.map((item, idx) => (
+                <div key={idx} className="scroll-reveal fade-up">
+                  <ProductFrame src={item.image} fallback={item.fallback} alt={item.caption} label={item.caption} />
+                  <p className="mt-3 text-sm text-text-secondary">{item.caption}</p>
+                </div>
+              ))}
+            </div>
+            </CaseStudyDocPanel>
+
+            <CaseStudyDocPanel id="cs-problem" index="04. Problem" title="The problem / opportunity">
               <p className="text-lg md:text-xl text-text-secondary leading-relaxed font-medium mb-10 max-w-3xl">
                 {data.problem.context}
               </p>
@@ -110,7 +121,7 @@ export default function CaseStudyTemplate({ data }) {
             </CaseStudyDocPanel>
 
             {data.goals && (
-              <CaseStudyDocPanel id="cs-goals" index="04. Goals" title="Product goals">
+              <CaseStudyDocPanel id="cs-goals" index="05. Goals" title="Goals">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
                   {data.goals.map((goal, idx) => (
                     <div
@@ -125,7 +136,7 @@ export default function CaseStudyTemplate({ data }) {
               </CaseStudyDocPanel>
             )}
 
-            <CaseStudyDocPanel id="cs-approach" index="05. Approach" title="The approach">
+            <CaseStudyDocPanel id="cs-approach" index="06. Approach" title="Design approach">
               <p className="text-lg md:text-2xl text-text-secondary leading-relaxed font-medium max-w-3xl">
                 {data.approach}
               </p>
@@ -145,7 +156,7 @@ export default function CaseStudyTemplate({ data }) {
               )}
             </CaseStudyDocPanel>
 
-            <CaseStudyDocPanel id="cs-process" index="06. Process" title="Design process">
+            <CaseStudyDocPanel id="cs-process" index="07. Process" title="Process">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {data.process.map((step, idx) => {
                   const icons = [<Search size={20} />, <Target size={20} />, <PenTool size={20} />, <Layout size={20} />, <CheckCircle size={20} />];
@@ -160,7 +171,7 @@ export default function CaseStudyTemplate({ data }) {
               </div>
             </CaseStudyDocPanel>
 
-            <CaseStudyDocPanel id="cs-decisions" index="07. Decisions" title="Key design decisions">
+            <CaseStudyDocPanel id="cs-decisions" index="08. Decisions" title="Key design decisions">
             <div className="space-y-16">
               {data.decisions.map((decision, idx) => (
                 <div key={idx} className="scroll-reveal fade-up border-t border-card-border pt-12 first:border-0 first:pt-0">
@@ -188,18 +199,7 @@ export default function CaseStudyTemplate({ data }) {
             </div>
             </CaseStudyDocPanel>
 
-            <CaseStudyDocPanel id="cs-solution" index="08. Solution" title="The solution">
-            <div className="space-y-12">
-              {data.finalDesign.map((item, idx) => (
-                <div key={idx} className="scroll-reveal fade-up">
-                  <ProductFrame src={item.image} fallback={item.fallback} alt={item.caption} label={item.caption} />
-                  <p className="mt-3 text-sm text-text-secondary">{item.caption}</p>
-                </div>
-              ))}
-            </div>
-            </CaseStudyDocPanel>
-
-            <CaseStudyDocPanel id="cs-impact" index="09. Impact" title="Impact & takeaways">
+            <CaseStudyDocPanel id="cs-impact" index="09. Outcomes" title="Outcomes & takeaways">
             <div className="flex flex-wrap gap-10 md:gap-14">
               {data.impact.map((stat, idx) => (
                 <div key={idx} className="min-w-[120px]">
@@ -272,7 +272,7 @@ export default function CaseStudyTemplate({ data }) {
 
             <CaseStudyDocPanel index="12. Contact" title="Work together">
               <p className="text-text-secondary mb-6 max-w-xl">
-                Open to product design collaborations, roles, and ambitious builds.
+                Open to web, visual and product design roles, and to freelance projects with founders and teams.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
@@ -294,7 +294,7 @@ export default function CaseStudyTemplate({ data }) {
 
             <div className="pt-4 pb-8 text-center">
               <Link to="/" className="workspace-open-link inline-flex items-center gap-2 justify-center">
-                <ArrowLeft size={18} /> Back to workspace
+                <ArrowLeft size={18} /> Back to home
               </Link>
             </div>
           </div>

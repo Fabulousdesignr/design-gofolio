@@ -1,5 +1,4 @@
-import React from 'react';
-import { Mail, MessageCircle, Calendar, ArrowRight } from 'lucide-react';
+﻿import { Mail, MessageCircle, Calendar, ArrowRight } from 'lucide-react';
 import { useContactModal } from '../../context/ContactModalContext';
 
 export default function EditorialMessageMe() {

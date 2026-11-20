@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const showcaseImages = [
@@ -70,9 +70,9 @@ export default function VisualShowcase() {
 
           const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
-          let transform = '';
-          let opacity = 0;
-          let blur = 'blur(0px)';
+          let transform;
+          let opacity;
+          let blur;
           let zIndex = 10 - Math.abs(offset);
           let isActive = offset === 0;
           let boxShadow = isActive 

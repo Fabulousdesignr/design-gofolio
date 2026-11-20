@@ -1,8 +1,5 @@
-import { ArrowLeft, ArrowUpRight, ExternalLink } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import CTA from '../components/CTA';
-import Footer from '../components/Footer';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { caseStudies } from '../data/caseStudies';
 

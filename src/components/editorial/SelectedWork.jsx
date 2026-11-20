@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { projects } from '../../data/projects';
 
@@ -20,7 +19,7 @@ export default function SelectedWork() {
         </div>
 
         <div className="flex flex-col gap-16 md:gap-20">
-          {/* Flagship — Shyne (full width) */}
+          {/* Flagship â€” Shyne (full width) */}
           {shyne && (
             <div className="w-full scroll-reveal fade-up">
               <Link to={shyne.link} className="group block w-full">
@@ -39,7 +38,7 @@ export default function SelectedWork() {
                       </h3>
                       <span className="edit-label">{shyne.category}</span>
                     </div>
-                    {/* Tagline — problem→outcome */}
+                    {/* Tagline â€” problemâ†’outcome */}
                     <p className="text-text-primary/80 text-base md:text-lg leading-relaxed font-medium mb-2">
                       {shyne.tagline}
                     </p>
@@ -91,7 +90,7 @@ export default function SelectedWork() {
                     <span className="edit-label">{project.category}</span>
                   </div>
 
-                  {/* Tagline — the WHY to click */}
+                  {/* Tagline â€” the WHY to click */}
                   <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-6 flex-1">
                     {project.tagline}
                   </p>

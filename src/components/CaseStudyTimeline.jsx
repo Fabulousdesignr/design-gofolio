@@ -1,6 +1,4 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
-
+﻿
 export default function CaseStudyTimeline({ data }) {
   if (!data.approach || data.approach.length === 0) return null;
   const { accent } = data;

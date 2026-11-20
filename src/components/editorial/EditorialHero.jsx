@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+﻿import { ArrowRight } from 'lucide-react';
 import { useContactModal } from '../../context/ContactModalContext';
 
 export default function EditorialHero() {
@@ -22,7 +21,7 @@ export default function EditorialHero() {
         <div className="flex flex-col gap-8 max-w-lg">
           <p className="text-[17px] md:text-[19px] text-text-secondary leading-[1.6]">
             Turning customer problems into measurable business outcomes.<br />
-            <span className="text-text-primary/60 text-[15px] font-medium tracking-wide">Growth Product Manager · AI · Fintech · SaaS</span>
+            <span className="text-text-primary/60 text-[15px] font-medium tracking-wide">Growth Product Manager Â· AI Â· Fintech Â· SaaS</span>
           </p>
 
           <div className="flex flex-wrap items-center gap-4">

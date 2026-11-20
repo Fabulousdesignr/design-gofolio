@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowUpRight, Download, Mail, MessageCircle, Layout, Zap, Search, Target, PenTool, CheckCircle } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, MessageCircle, Layout, Search, Target, PenTool, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';

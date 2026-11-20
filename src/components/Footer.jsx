@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start gap-2">
           <h3 className="text-2xl font-black tracking-tighter text-text-primary">G.O</h3>
           <p className="text-text-secondary text-sm font-medium">
-            &copy; {currentYear} Godwin. All rights reserved.
+            &copy; {currentYear} Godwin Okechukwu. All rights reserved.
           </p>
         </div>
         

@@ -1,5 +1,4 @@
-import React from 'react';
-import { projects } from '../../data/projects';
+﻿import { projects } from '../../data/projects';
 
 export default function DigitalCommerce() {
   const shopifyWork = projects.find(p => p.id === 'maxmall');
@@ -28,7 +27,7 @@ export default function DigitalCommerce() {
             </div>
           </div>
 
-          {/* Image — subdued */}
+          {/* Image â€” subdued */}
           <div className="w-full lg:w-[45%] aspect-[4/3] rounded-2xl overflow-hidden border border-card-border bg-bg-surface opacity-70 hover:opacity-90 transition-opacity duration-300">
             <img
               src={shopifyWork.image}

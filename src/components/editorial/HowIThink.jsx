@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 
 const principles = [
   {
@@ -15,7 +14,7 @@ const principles = [
   {
     num: '02',
     title: 'Prioritization',
-    body: "I prioritize opportunities based on user impact, business value, and implementation effort. My goal isn't shipping more features — it's shipping the right ones that move both customer outcomes and company goals forward.",
+    body: "I prioritize opportunities based on user impact, business value, and implementation effort. My goal isn't shipping more features â€” it's shipping the right ones that move both customer outcomes and company goals forward.",
     projects: [
       { label: 'ApplyFlow', id: 'applyflow' },
       { label: 'Shyne', id: 'shyne' },
@@ -55,7 +54,7 @@ export default function HowIThink() {
             How I Think
           </h2>
           <p className="text-xl md:text-2xl text-text-secondary leading-relaxed font-medium">
-            The principles that drive every product decision I make — in my own words.
+            The principles that drive every product decision I make â€” in my own words.
           </p>
         </div>
 
@@ -77,7 +76,7 @@ export default function HowIThink() {
                 </h3>
               </div>
 
-              {/* Body — personal voice */}
+              {/* Body â€” personal voice */}
               <p className="text-text-secondary leading-[1.75] text-[16px] flex-1">
                 {item.body}
               </p>

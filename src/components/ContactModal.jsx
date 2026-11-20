@@ -1,151 +1,214 @@
-import React, { useState, useEffect } from 'react';
-import { X, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+﻿import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { AlertCircle, ArrowUpRight, CheckCircle2, Loader2, Mail, X } from 'lucide-react';
 import { useContactModal } from '../context/ContactModalContext';
+import { site } from '../data/site';
+
+const CHIPS = [
+  'AI product build',
+  'Product engineering role',
+  'Design engineering role',
+  'Freelance project',
+  'Early-stage collaboration',
+];
+
+const PROJECT_TYPES = [
+  'AI application',
+  'Full-stack product',
+  'Product design and build',
+  'Frontend engineering',
+  'Design system',
+  'Something else',
+];
+
+function buildMailto(formData) {
+  const subject = `Portfolio inquiry from ${formData.get('name') || 'a visitor'}`;
+  const lines = [
+    `Name: ${formData.get('name') || ''}`,
+    `Email: ${formData.get('email') || ''}`,
+    `Company: ${formData.get('company') || ''}`,
+    `Reason: ${formData.get('reason') || ''}`,
+    `Timeline: ${formData.get('timeline') || ''}`,
+    '',
+    'Details:',
+    `${formData.get('details') || ''}`,
+  ];
+  return `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+    lines.join('\n')
+  )}`;
+}
 
 export default function ContactModal() {
   const { isOpen, closeModal } = useContactModal();
-  const [isRendered, setIsRendered] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
-  const [formState, setFormState] = useState('idle'); // idle, sending, success, error
-  
+  const [formState, setFormState] = useState('idle');
   const [selectedChip, setSelectedChip] = useState('');
-  
-  const chips = [
-    "Need a designer",
-    "Need MVP help",
-    "Need AI workflow help",
-    "Partnership",
-    "Just saying hi"
-  ];
+  const [fallbackHref, setFallbackHref] = useState('');
+  const firstFieldRef = useRef(null);
+  const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
 
-  // Handle animation mounting/unmounting
+  const reason = useMemo(() => selectedChip, [selectedChip]);
+
+  const handleClose = useCallback(() => {
+    setFormState('idle');
+    setSelectedChip('');
+    setFallbackHref('');
+    closeModal();
+  }, [closeModal]);
+
   useEffect(() => {
-    if (isOpen) {
-      setIsRendered(true);
-      // Small delay to allow DOM to render before triggering CSS transition
-      setTimeout(() => setIsVisible(true), 10);
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    } else {
-      setIsVisible(false);
-      const timer = setTimeout(() => {
-        setIsRendered(false);
-        setFormState('idle');
-        document.body.style.overflow = '';
-      }, 300); // match animation duration
-      return () => clearTimeout(timer);
-    }
+    if (!isOpen) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
   }, [isOpen]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setFormState('sending');
+  useEffect(() => {
+    if (!isOpen) return undefined;
 
-    const formData = new FormData(e.target);
-    if (selectedChip) {
-      formData.append('Reason', selectedChip);
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') handleClose();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    const focusTimer = window.setTimeout(() => firstFieldRef.current?.focus(), 120);
+
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      window.clearTimeout(focusTimer);
+    };
+  }, [isOpen, handleClose]);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    if (reason) formData.append('reason', reason);
+
+    if (!endpoint) {
+      const href = buildMailto(formData);
+      setFallbackHref(href);
+      setFormState('fallback');
+      window.location.href = href;
+      return;
     }
 
+    setFormState('sending');
+
     try {
-      const response = await fetch(import.meta.env.VITE_FORMSPREE_ENDPOINT, {
+      const response = await fetch(endpoint, {
         method: 'POST',
         body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
+        headers: { Accept: 'application/json' },
       });
 
-      if (response.ok) {
-        setFormState('success');
-      } else {
-        setFormState('error');
-      }
-    } catch (error) {
+      setFormState(response.ok ? 'success' : 'error');
+    } catch {
       setFormState('error');
     }
   };
 
-  if (!isRendered) return null;
+  if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      
-      {/* Backdrop */}
-      <div 
-        className={`fixed inset-0 bg-black/40 backdrop-blur-md transition-opacity`}
-        style={{ 
-          opacity: isVisible ? 1 : 0, 
-          transitionDuration: '300ms',
-          transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)'
-        }}
-        onClick={closeModal}
-      ></div>
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto p-4 sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contact-modal-title"
+    >
+      <button
+        type="button"
+        aria-label="Close contact form"
+        onClick={handleClose}
+        className="modal-backdrop fixed inset-0 cursor-default bg-black/70"
+      />
 
-      {/* Modal Card */}
-      <div 
-        className={`relative w-full max-w-3xl bg-bg-primary rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-card-border overflow-hidden flex flex-col max-h-[90vh] my-auto`}
-        style={{
-          transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(24px) scale(0.96)',
-          opacity: isVisible ? 1 : 0,
-          transitionProperty: 'transform, opacity',
-          transitionDuration: '300ms',
-          transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)'
-        }}
+      <div
+        className="modal-panel relative my-auto flex max-h-[92vh] w-full max-w-2xl flex-col overflow-hidden border border-line bg-bg-panel shadow-2xl"
       >
-        {/* Header */}
-        <div className="flex items-start justify-between p-8 md:p-12 pb-0 shrink-0">
+        <div className="flex shrink-0 items-start justify-between gap-6 border-b border-line p-6 md:p-8">
           <div>
-            <h2 className="font-serif text-[36px] md:text-[48px] leading-[1.0] text-text-primary tracking-tight mb-4">
-              Let’s build something meaningful.
+            <p className="eyebrow">Contact</p>
+            <h2
+              id="contact-modal-title"
+              className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-text-primary md:text-3xl"
+            >
+              Let&apos;s build something real.
             </h2>
-            <p className="text-text-secondary text-[17px] md:text-[19px] leading-relaxed max-w-md">
-              Tell me what you’re working on.
+            <p className="mt-2 max-w-md text-sm leading-relaxed text-text-secondary">
+              Tell me what you are working on, or what kind of role you are hiring for.
             </p>
           </div>
-          <button 
-            onClick={closeModal}
-            className="w-12 h-12 flex items-center justify-center rounded-full bg-card border border-card-border hover:bg-bg-inverse hover:text-text-inverse transition-colors group shrink-0"
+          <button
+            type="button"
+            onClick={handleClose}
+            className="flex h-9 w-9 shrink-0 items-center justify-center border border-line text-text-secondary transition-colors hover:border-line-strong hover:text-text-primary"
             aria-label="Close modal"
           >
-            <X size={20} className="text-text-secondary group-hover:text-text-inverse transition-colors" />
+            <X size={16} />
           </button>
         </div>
 
-        {/* Scrollable Body */}
-        <div className="p-8 md:p-12 overflow-y-auto custom-scrollbar">
-          
+        <div className="overflow-y-auto p-6 md:p-8">
           {formState === 'success' ? (
-            <div className="flex flex-col items-center justify-center py-20 text-center animate-fade-in">
-              <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mb-6">
-                <CheckCircle size={40} className="text-green-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-text-primary mb-2">Message sent successfully.</h3>
-              <p className="text-text-secondary text-lg">I’ll get back within 24–48 hours.</p>
-              <button 
-                onClick={closeModal}
-                className="mt-10 px-8 py-4 bg-bg-inverse text-text-inverse rounded-full font-semibold hover:bg-accent-orange transition-colors"
+            <div className="flex flex-col items-center py-14 text-center">
+              <CheckCircle2 size={34} className="text-signal" aria-hidden="true" />
+              <h3 className="mt-5 text-xl font-semibold text-text-primary">Message sent.</h3>
+              <p className="mt-2 max-w-sm text-sm leading-relaxed text-text-secondary">
+                Thanks for reaching out. I will read the context and reply by email.
+              </p>
+              <button
+                type="button"
+                onClick={handleClose}
+                className="mt-7 bg-paper px-5 py-3 text-sm font-semibold text-paper-ink transition-colors hover:bg-signal"
               >
-                Close Window
+                Close
               </button>
             </div>
+          ) : formState === 'fallback' ? (
+            <div className="flex flex-col items-start py-8">
+              <Mail size={28} className="text-signal" aria-hidden="true" />
+              <h3 className="mt-4 text-xl font-semibold text-text-primary">
+                Your email app should open.
+              </h3>
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-text-secondary">
+                The form service is not configured on this deployment, so the message was
+                prepared as an email instead. If nothing opened, use the link below or email me
+                directly.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <a
+                  href={fallbackHref}
+                  className="inline-flex items-center gap-2 bg-paper px-5 py-3 text-sm font-semibold text-paper-ink transition-colors hover:bg-signal"
+                >
+                  Open the email again
+                  <ArrowUpRight size={14} aria-hidden="true" />
+                </a>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="text-sm text-text-secondary underline decoration-line-strong underline-offset-4 hover:text-text-primary"
+                >
+                  {site.email}
+                </a>
+              </div>
+            </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-10">
-              
-              {/* Quick Selection Chips */}
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div>
-                <label className="block text-sm font-bold uppercase tracking-widest text-text-secondary mb-4">
+                <span className="block text-xs font-medium uppercase tracking-[0.1em] text-text-secondary">
                   What brings you here?
-                </label>
-                <div className="flex flex-wrap gap-3">
-                  {chips.map(chip => (
+                </span>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {CHIPS.map((chip) => (
                     <button
                       key={chip}
                       type="button"
                       onClick={() => setSelectedChip(chip === selectedChip ? '' : chip)}
-                      className={`px-5 py-2.5 rounded-full text-[15px] font-medium border transition-colors ${
-                        selectedChip === chip 
-                          ? 'bg-bg-inverse border-bg-inverse text-text-inverse' 
-                          : 'bg-card border-card-border text-text-secondary hover:border-bg-inverse hover:text-text-primary'
+                      aria-pressed={selectedChip === chip}
+                      className={`border px-3 py-1.5 text-xs transition-colors ${
+                        selectedChip === chip
+                          ? 'border-signal-border bg-signal-soft text-signal'
+                          : 'border-line text-text-secondary hover:border-line-strong hover:text-text-primary'
                       }`}
                     >
                       {chip}
@@ -154,86 +217,130 @@ export default function ContactModal() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-[15px] font-semibold text-text-primary">Full Name *</label>
-                  <input required type="text" id="name" name="name" className="w-full bg-card border border-card-border rounded-xl px-5 py-4 focus:outline-none focus:border-bg-inverse focus:ring-1 focus:ring-bg-inverse transition-all text-[16px] text-text-primary" placeholder="John Doe" />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-[15px] font-semibold text-text-primary">Email Address *</label>
-                  <input required type="email" id="email" name="email" className="w-full bg-card border border-card-border rounded-xl px-5 py-4 focus:outline-none focus:border-bg-inverse focus:ring-1 focus:ring-bg-inverse transition-all text-[16px] text-text-primary" placeholder="john@example.com" />
-                </div>
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <label className="flex flex-col gap-2">
+                  <span className="text-xs font-medium text-text-secondary">Name *</span>
+                  <input
+                    ref={firstFieldRef}
+                    required
+                    type="text"
+                    name="name"
+                    autoComplete="name"
+                    className="border border-line bg-bg-primary px-4 py-3 text-sm text-text-primary outline-none transition-colors placeholder:text-text-tertiary focus:border-signal-border"
+                    placeholder="Your name"
+                  />
+                </label>
+                <label className="flex flex-col gap-2">
+                  <span className="text-xs font-medium text-text-secondary">Email *</span>
+                  <input
+                    required
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    className="border border-line bg-bg-primary px-4 py-3 text-sm text-text-primary outline-none transition-colors placeholder:text-text-tertiary focus:border-signal-border"
+                    placeholder="you@company.com"
+                  />
+                </label>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="company" className="text-[15px] font-semibold text-text-primary">Company / Startup</label>
-                  <input type="text" id="company" name="company" className="w-full bg-card border border-card-border rounded-xl px-5 py-4 focus:outline-none focus:border-bg-inverse focus:ring-1 focus:ring-bg-inverse transition-all text-[16px] text-text-primary" placeholder="Acme Corp" />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="timeline" className="text-[15px] font-semibold text-text-primary">Timeline</label>
-                  <input type="text" id="timeline" name="timeline" className="w-full bg-card border border-card-border rounded-xl px-5 py-4 focus:outline-none focus:border-bg-inverse focus:ring-1 focus:ring-bg-inverse transition-all text-[16px] text-text-primary" placeholder="e.g. Next month, ASAP" />
-                </div>
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <label className="flex flex-col gap-2">
+                  <span className="text-xs font-medium text-text-secondary">Company or team</span>
+                  <input
+                    type="text"
+                    name="company"
+                    autoComplete="organization"
+                    className="border border-line bg-bg-primary px-4 py-3 text-sm text-text-primary outline-none transition-colors placeholder:text-text-tertiary focus:border-signal-border"
+                    placeholder="Optional"
+                  />
+                </label>
+                <label className="flex flex-col gap-2">
+                  <span className="text-xs font-medium text-text-secondary">Timeline</span>
+                  <input
+                    type="text"
+                    name="timeline"
+                    className="border border-line bg-bg-primary px-4 py-3 text-sm text-text-primary outline-none transition-colors placeholder:text-text-tertiary focus:border-signal-border"
+                    placeholder="e.g. next month, flexible"
+                  />
+                </label>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="projectType" className="text-[15px] font-semibold text-text-primary">Project Type</label>
-                  <select id="projectType" name="projectType" className="w-full bg-card border border-card-border rounded-xl px-5 py-4 focus:outline-none focus:border-bg-inverse focus:ring-1 focus:ring-bg-inverse transition-all text-[16px] text-text-primary appearance-none">
-                    <option value="">Select an option...</option>
-                    <option value="Product Design">Product Design</option>
-                    <option value="MVP / Startup Build">MVP / Startup Build</option>
-                    <option value="AI Product / Workflow Design">AI Product / Workflow Design</option>
-                    <option value="UX Audit / Product Review">UX Audit / Product Review</option>
-                    <option value="Design Systems">Design Systems</option>
-                    <option value="Long-term Collaboration">Long-term Collaboration</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="budget" className="text-[15px] font-semibold text-text-primary">Budget Range</label>
-                  <select id="budget" name="budget" className="w-full bg-card border border-card-border rounded-xl px-5 py-4 focus:outline-none focus:border-bg-inverse focus:ring-1 focus:ring-bg-inverse transition-all text-[16px] text-text-primary appearance-none">
-                    <option value="">Select range...</option>
-                    <option value="< $500">&lt; $500</option>
-                    <option value="$500 - $2k">$500 – $2k</option>
-                    <option value="$2k - $5k">$2k – $5k</option>
-                    <option value="$5k+">$5k+</option>
-                  </select>
-                </div>
-              </div>
+              <label className="flex flex-col gap-2">
+                <span className="text-xs font-medium text-text-secondary">Project or role type</span>
+                <select
+                  name="projectType"
+                  className="border border-line bg-bg-primary px-4 py-3 text-sm text-text-primary outline-none transition-colors focus:border-signal-border"
+                  defaultValue=""
+                >
+                  <option value="">Select an option</option>
+                  {PROJECT_TYPES.map((type) => (
+                    <option key={type} value={type}>
+                      {type}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-              <div className="flex flex-col gap-2">
-                <label htmlFor="details" className="text-[15px] font-semibold text-text-primary">Project Details *</label>
-                <textarea required id="details" name="details" rows={4} className="w-full bg-card border border-card-border rounded-xl px-5 py-4 focus:outline-none focus:border-bg-inverse focus:ring-1 focus:ring-bg-inverse transition-all text-[16px] text-text-primary resize-none" placeholder="Tell me about the problem you're solving, current stage, and goals..."></textarea>
-              </div>
+              <label className="flex flex-col gap-2">
+                <span className="text-xs font-medium text-text-secondary">Details *</span>
+                <textarea
+                  required
+                  name="details"
+                  rows={4}
+                  className="resize-none border border-line bg-bg-primary px-4 py-3 text-sm text-text-primary outline-none transition-colors placeholder:text-text-tertiary focus:border-signal-border"
+                  placeholder="The problem, the stage, the scope and what success looks like."
+                />
+              </label>
 
-              {formState === 'error' && (
-                <div className="flex items-center gap-3 p-4 bg-red-50 text-red-600 rounded-xl border border-red-100 animate-fade-in">
-                  <AlertCircle size={20} />
-                  <span className="font-medium">Something went wrong. Please try again.</span>
+              {!endpoint ? (
+                <p className="border border-line bg-bg-alt px-4 py-3 text-xs leading-relaxed text-text-secondary">
+                  The form endpoint is not configured on this deployment. Submitting will open a
+                  prepared email instead, so your message still reaches me.
+                </p>
+              ) : null}
+
+              {formState === 'error' ? (
+                <div className="flex items-start gap-3 border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-200">
+                  <AlertCircle size={17} className="mt-0.5 shrink-0" aria-hidden="true" />
+                  <span>
+                    The message could not be sent. Please try again or email{' '}
+                    <a href={`mailto:${site.email}`} className="underline underline-offset-2">
+                      {site.email}
+                    </a>
+                    .
+                  </span>
                 </div>
-              )}
+              ) : null}
 
-              <div className="pt-4 border-t border-card-border flex justify-end">
-                <button 
-                  type="submit" 
+              <div className="flex items-center justify-between gap-4 border-t border-line pt-5">
+                <a
+                  href={`mailto:${site.email}`}
+                  className="hidden text-xs text-text-tertiary underline decoration-line-strong underline-offset-4 hover:text-text-secondary sm:inline"
+                >
+                  {site.email}
+                </a>
+                <button
+                  type="submit"
                   disabled={formState === 'sending'}
-                  className="bg-bg-inverse text-text-inverse px-10 py-5 rounded-full text-[16px] font-bold tracking-wide hover:bg-accent-orange transition-colors flex items-center justify-center gap-3 min-w-[200px] disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="inline-flex items-center justify-center gap-2 bg-paper px-5 py-3 text-sm font-semibold text-paper-ink transition-colors hover:bg-signal disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {formState === 'sending' ? (
                     <>
-                      <Loader2 size={20} className="animate-spin" /> Sending...
+                      <Loader2 size={15} className="animate-spin" aria-hidden="true" />
+                      Sending
                     </>
-                  ) : 'Send Message'}
+                  ) : (
+                    <>
+                      Send message
+                      <ArrowUpRight size={14} aria-hidden="true" />
+                    </>
+                  )}
                 </button>
               </div>
-
             </form>
           )}
-
         </div>
       </div>
-
     </div>
   );
 }

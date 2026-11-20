@@ -1,5 +1,4 @@
-import React from 'react';
-import ProductFrame from './ProductFrame';
+﻿import ProductFrame from './ProductFrame';
 import { ArrowUpRight } from 'lucide-react';
 
 export default function CaseStudyHero({ data }) {

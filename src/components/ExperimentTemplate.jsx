@@ -1,4 +1,4 @@
-import { ArrowUpRight, ArrowLeft, ExternalLink, Cpu } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Cpu } from 'lucide-react';
 import ProductFrame from './ProductFrame';
 import Navbar from './v2/Navbar';
 import Footer from './v2/Footer';

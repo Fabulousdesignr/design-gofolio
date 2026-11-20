@@ -15,7 +15,6 @@ const SLIDES = [
 
 export default function HomeLaunchPages() {
   const [current, setCurrent] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
   const timerRef = useRef(null);
 
   const goTo = (idx) => {
@@ -27,17 +26,13 @@ export default function HomeLaunchPages() {
 
   const resetTimer = () => {
     clearInterval(timerRef.current);
-    if (isPlaying) {
-      timerRef.current = setInterval(() => setCurrent(c => (c + 1) % SLIDES.length), 3500);
-    }
+    timerRef.current = setInterval(() => setCurrent(c => (c + 1) % SLIDES.length), 3500);
   };
 
   useEffect(() => {
-    if (isPlaying) {
-      timerRef.current = setInterval(() => setCurrent(c => (c + 1) % SLIDES.length), 3500);
-    }
+    timerRef.current = setInterval(() => setCurrent(c => (c + 1) % SLIDES.length), 3500);
     return () => clearInterval(timerRef.current);
-  }, [isPlaying]);
+  }, []);
 
   return (
     <WorkspaceModule

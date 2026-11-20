@@ -1,235 +1,291 @@
-import { Download, ArrowUpRight, Layout, Zap, Search, PenTool, Target, Users, Smartphone, Globe, Lightbulb, Scissors, Tv, Eye, Code, Layers, Image, Cpu, MessageCircle, MessageSquare, Heart, Wind } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import { useScrollReveal } from '../hooks/useScrollReveal';
+﻿import { ArrowUpRight, Download } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import Navbar from '../components/v2/Navbar';
+import Footer from '../components/v2/Footer';
+import ContactSection from '../components/v2/ContactSection';
+import PageHeader from '../components/site/PageHeader';
+import MediaFrame from '../components/site/MediaFrame';
+import SocialLinks from '../components/site/SocialLinks';
+import StatusPill from '../components/site/StatusPill';
+import { bootcamp, buildLog, currentlyLearning } from '../data/journey';
+import { site } from '../data/site';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
+
+const STAGES = [
+  {
+    label: 'Foundation',
+    title: 'Visual and web design',
+    body: 'I learned craft through typography, layout, brand systems and websites. That background still shapes how I judge hierarchy, spacing and detail.',
+  },
+  {
+    label: 'Product',
+    title: 'Product design across complex systems',
+    body: 'SaaS dashboards, fintech apps, mobile products, ecommerce and education. I moved from making screens to framing problems, mapping flows and designing systems.',
+  },
+  {
+    label: 'Now',
+    title: 'Applied AI and product engineering',
+    body: 'I build the products I used to only design: React and TypeScript interfaces, Supabase and PostgreSQL data, LLM integrations, deployment and testing.',
+  },
+];
+
+const PRINCIPLES = [
+  {
+    title: 'Understand before generating',
+    body: 'AI is fast. A wrong problem is still wrong when the code appears quickly. I start with the user, the constraints and the smallest useful scope.',
+  },
+  {
+    title: 'The interface is part of the system',
+    body: 'Loading states, errors, permissions and empty data are product decisions. They cannot be left to the end of the build.',
+  },
+  {
+    title: 'Choose the simplest architecture that works',
+    body: 'A smaller system with clear boundaries is easier to test, explain and improve than a complex one with impressive diagrams.',
+  },
+  {
+    title: 'Document what is real',
+    body: 'I would rather show a live product with a limited scope than describe a feature that does not exist. Accuracy is part of the design.',
+  },
+];
 
 export default function About() {
-  useScrollReveal();
+  useDocumentMeta(
+    'About',
+    'Godwin Okechukwu is an AI Product Engineer with a background in product design. His path from visual design to full-stack AI product builds.'
+  );
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar isCaseStudy={true} />
-      
-      <main className="flex-grow pt-40 pb-24">
-        {/* 1. HERO SECTION */}
-        <section className="container-custom mb-32 scroll-reveal">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-sm font-bold uppercase tracking-widest text-accent mb-6 block">
-                Godwin O.
-              </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-text-primary mb-10 leading-[1.1] uppercase">
-                Product Designer. Nearly a decade of digital product experience.
-              </h1>
-              <p className="text-lg md:text-xl text-text-secondary font-medium leading-relaxed mb-6 max-w-xl">
-                I'm a Product Designer with nearly a decade of experience building AI tools, SaaS platforms, fintech applications, and Shopify stores.
-              </p>
-              <p className="text-lg md:text-xl text-text-secondary font-medium leading-relaxed max-w-xl">
-                I turn complex technical requirements into intuitive, high-converting digital products through strategy, rapid prototyping, and close developer collaboration.
-              </p>
-            </div>
-            <div className="relative aspect-square lg:aspect-[4/5] bg-bg-alt rounded-[48px] border border-card-border overflow-hidden shadow-2xl group">
-              <img src="/images/My Image.png" alt="Godwin" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent opacity-30 group-hover:opacity-50 transition-opacity duration-700 pointer-events-none"></div>
-            </div>
-          </div>
-        </section>
+    <div className="min-h-screen bg-bg-primary text-text-primary">
+      <Navbar />
+      <main id="main-content">
+        <PageHeader
+          eyebrow="About"
+          title="From visual craft to product engineering."
+          intro="I am Godwin Okechukwu, a product-minded AI developer with around ten years of design experience. I care about how a product looks, but I am more interested in whether it works."
+          aside={<SocialLinks className="max-w-xs" />}
+        />
 
-        {/* 2. HOW I THINK ABOUT DESIGN (CARDS) */}
-        <section className="container-custom mb-32 section-dark py-24 border-y border-card-border">
-          <div className="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
-            <h2 className="text-3xl md:text-4xl font-black text-text-primary mb-6 uppercase tracking-tight">
-              How I Think About Design
-            </h2>
-            <p className="text-lg text-text-secondary leading-relaxed">
-              Good design isn't just about how something looks — it's about whether it works for the person using it and whether it helps the business achieve its goal.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "User First", desc: "I try to understand the real person on the other side before I design anything — what they need, what confuses them, and what would make their life easier.", icon: <Users size={32} /> },
-              { title: "Keep It Simple", desc: "I turn complicated problems into clean, clear screens. If a user has to think too hard, the design hasn't done its job.", icon: <Zap size={32} /> },
-              { title: "Tied to the Business", desc: "Good-looking doesn't mean good design. I make sure what I build actually helps the product grow and meet its goals.", icon: <Target size={32} /> }
-            ].map((card, idx) => (
-              <div key={idx} className="p-10 bg-card border border-card-border rounded-3xl scroll-reveal fade-up hover:border-accent hover:-translate-y-2 transition-all duration-300 group" style={{ transitionDelay: `${idx * 150}ms` }}>
-                <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-8 group-hover:scale-110 transition-transform">
-                  {card.icon}
+        <section className="site-section border-b border-line">
+          <div className="site-shell">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+              <div className="lg:col-span-4">
+                <MediaFrame
+                  src="/images/My Image.png"
+                  alt="Portrait of Godwin Okechukwu"
+                  imgClassName="aspect-[4/5]"
+                  className="max-w-sm lg:max-w-none"
+                />
+                <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.12em] text-text-tertiary">
+                  Godwin Okechukwu / AI Product Engineer
+                </p>
+              </div>
+
+              <div className="lg:col-span-8">
+                <p className="eyebrow">The short version</p>
+                <h2 className="display-subsection mt-5 max-w-2xl text-text-primary">
+                  I design the interface and build the system behind it.
+                </h2>
+
+                <div className="prose-site mt-6">
+                  <p>
+                    I started in visual design and moved into product design, working across
+                    SaaS, fintech, healthcare, education and ecommerce. Over time, the most
+                    interesting questions stopped being about the screen and started being
+                    about how the product actually worked.
+                  </p>
+                  <p>
+                    That led me into front-end development, backend fundamentals and applied AI.
+                    Today I build AI-powered applications with React, TypeScript, Supabase,
+                    PostgreSQL and LLM APIs. I am still a designer, but I no longer hand the
+                    idea to someone else and wait for a build.
+                  </p>
+                  <p>
+                    I am not a machine learning researcher or a senior infrastructure engineer.
+                    I am a product engineer in progress, with a strong design foundation and
+                    real shipped work. The case studies on this site are the honest record of
+                    that.
+                  </p>
                 </div>
-                <h3 className="text-xl font-black text-text-primary mb-4 uppercase tracking-tight">{card.title}</h3>
-                <p className="text-text-secondary leading-relaxed">{card.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
 
-        {/* 3. WHAT I CAN HELP WITH (STRUCTURED GRID) */}
-        <section className="container-custom mb-32 scroll-reveal fade-up">
-          <div className="mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-black text-text-primary uppercase tracking-tight">
-              What I Can Help You With
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { text: "UI/UX Design for Web & Mobile", icon: <Smartphone size={24} /> },
-              { text: "Product Design for Startups & Scale-ups", icon: <Lightbulb size={24} /> },
-              { text: "Shopify Storefront & Ecommerce UX", icon: <Globe size={24} /> },
-              { text: "AI Product Design & Workflow Integration", icon: <Cpu size={24} /> },
-              { text: "SaaS Dashboards & Internal Tools", icon: <Layout size={24} /> },
-              { text: "Fintech & Mobile Banking Design", icon: <Smartphone size={24} /> },
-              { text: "Conversion Rate Optimization (CRO)", icon: <Target size={24} /> },
-              { text: "Prototyping & Design Systems", icon: <Layers size={24} /> },
-              { text: "Usability & UX Audits", icon: <Search size={24} /> }
-            ].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-4 p-6 bg-bg-alt border border-card-border rounded-2xl hover:border-text-secondary transition-colors group">
-                <div className="text-text-secondary group-hover:text-text-primary transition-colors">
-                  {item.icon}
+                <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+                  <a
+                    href={site.links.cv}
+                    download
+                    className="inline-flex items-center gap-2 bg-paper px-5 py-3 text-sm font-semibold text-paper-ink transition-colors hover:bg-signal"
+                  >
+                    <Download size={15} aria-hidden="true" />
+                    Download CV
+                  </a>
+                  <Link
+                    to="/work"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-text-primary transition-colors hover:text-signal"
+                  >
+                    See the work
+                    <ArrowUpRight size={15} aria-hidden="true" />
+                  </Link>
                 </div>
-                <span className="text-lg font-bold text-text-primary">{item.text}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 4. TOOLS (CATEGORIZED) */}
-        <section className="container-custom mb-32 scroll-reveal fade-up">
-          <div className="mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-black text-text-primary uppercase tracking-tight">
-              My Toolstack
-            </h2>
-          </div>
-          
-          <div className="space-y-16 max-w-5xl mx-auto">
-            {/* Category 1 */}
-            <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-text-secondary mb-8 text-center border-b border-card-border pb-4">
-                Design Tools
-              </h3>
-              <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-                {[
-                  { name: "Figma", icon: <Layout size={20} /> },
-                  { name: "FigJam", icon: <PenTool size={20} /> },
-                  { name: "Canva", icon: <Image size={20} /> },
-                  { name: "Illustrator", icon: <PenTool size={20} /> },
-                  { name: "Protopie", icon: <Zap size={20} /> }
-                ].map((tool, idx) => (
-                  <div key={idx} className="flex items-center gap-3 px-6 py-4 bg-card border border-card-border rounded-2xl hover:border-accent hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5 transition-all cursor-default group">
-                    <div className="text-text-secondary group-hover:text-accent transition-colors">{tool.icon}</div>
-                    <span className="text-text-primary font-bold text-sm tracking-wide">{tool.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Category 2 */}
-            <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-text-secondary mb-8 text-center border-b border-card-border pb-4">
-                Development (No-code)
-              </h3>
-              <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-                {[
-                  { name: "Framer", icon: <Layout size={20} /> },
-                  { name: "Odoo", icon: <Globe size={20} /> }
-                ].map((tool, idx) => (
-                  <div key={idx} className="flex items-center gap-3 px-6 py-4 bg-card border border-card-border rounded-2xl hover:border-accent hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5 transition-all cursor-default group">
-                    <div className="text-text-secondary group-hover:text-accent transition-colors">{tool.icon}</div>
-                    <span className="text-text-primary font-bold text-sm tracking-wide">{tool.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Category 3 */}
-            <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-text-secondary mb-8 text-center border-b border-card-border pb-4">
-                AI Tools
-              </h3>
-              <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-                {[
-                  { name: "ChatGPT", icon: <MessageCircle size={20} /> },
-                  { name: "Claude", icon: <MessageSquare size={20} /> },
-                  { name: "Lovable", icon: <Heart size={20} /> },
-                  { name: "Antigravity", icon: <Cpu size={20} /> },
-                  { name: "Google Stitch", icon: <Layers size={20} /> },
-                  { name: "Windsurf", icon: <Wind size={20} /> }
-                ].map((tool, idx) => (
-                  <div key={idx} className="flex items-center gap-3 px-6 py-4 bg-card border border-card-border rounded-2xl hover:border-accent hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5 transition-all cursor-default group">
-                    <div className="text-text-secondary group-hover:text-accent transition-colors">{tool.icon}</div>
-                    <span className="text-text-primary font-bold text-sm tracking-wide">{tool.name}</span>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* 5. BEYOND DESIGN (VISUAL BADGES) */}
-        <section className="container-custom mb-32 scroll-reveal fade-up">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-black text-text-primary mb-6 uppercase tracking-tight">
-                Outside of Design
+        <section className="site-section border-b border-line">
+          <div className="site-shell">
+            <div className="max-w-2xl">
+              <p className="eyebrow">The path</p>
+              <h2 className="display-section mt-5 text-text-primary">
+                A designer who kept going deeper.
               </h2>
-              <p className="text-lg text-text-secondary leading-relaxed">
-                I have a background in a few different creative areas, and I think they all help me design better — because they've taught me how people experience stories, emotion, and attention.
-              </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { title: "Storytelling", icon: <Eye size={24} /> },
-                { title: "Acting", icon: <Tv size={24} /> },
-                { title: "Tailoring", icon: <Scissors size={24} /> },
-                { title: "Graphic Design", icon: <PenTool size={24} /> }
-              ].map((skill, idx) => (
-                <div key={idx} className="flex flex-col items-center justify-center p-8 bg-card border border-card-border rounded-[32px] hover:bg-bg-alt transition-colors">
-                  <div className="text-text-secondary mb-4">{skill.icon}</div>
-                  <span className="font-bold text-text-primary uppercase tracking-widest text-sm">{skill.title}</span>
+
+            <div className="mt-12 grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-3">
+              {STAGES.map((stage, index) => (
+                <div key={stage.label} className="bg-bg-primary p-6 md:p-8">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.13em] text-signal">
+                      {stage.label}
+                    </span>
+                    <span className="font-mono text-[10px] text-text-tertiary">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <h3 className="mt-8 text-lg font-semibold tracking-[-0.025em] text-text-primary">
+                    {stage.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-text-secondary">{stage.body}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 6. EXPERIENCE HIGHLIGHT */}
-        <section className="container-custom mb-32 scroll-reveal fade-up">
-          <div className="relative overflow-hidden bg-accent border border-accent/20 rounded-[40px] p-12 md:p-20 text-center shadow-2xl">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
-            
-            <div className="relative z-10 flex flex-col items-center">
-              <h2 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tight">
-                See My Full Experience
-              </h2>
-              <p className="text-lg md:text-xl text-white/80 font-medium mb-12 max-w-2xl mx-auto">
-                Want a closer look at my work history, the tools I use, and the projects I've been part of? Download my CV.
-              </p>
-              <a 
-                href="/cv.pdf" 
-                download
-                className="inline-flex items-center gap-3 bg-white text-accent px-10 py-5 rounded-full font-black text-lg uppercase tracking-widest hover:-translate-y-1 hover:shadow-xl transition-all"
-              >
-                <Download size={22} /> Download CV
-              </a>
+        <section className="site-section border-b border-line bg-bg-alt/40">
+          <div className="site-shell">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+              <div className="lg:col-span-4">
+                <p className="eyebrow">Principles</p>
+                <h2 className="display-section mt-5 text-text-primary">
+                  What I optimise for.
+                </h2>
+                <p className="prose-site mt-5">
+                  These are the rules I keep returning to when a project gets complicated.
+                </p>
+              </div>
+
+              <div className="lg:col-span-8">
+                <div className="border-t border-line">
+                  {PRINCIPLES.map((principle, index) => (
+                    <div
+                      key={principle.title}
+                      className="grid grid-cols-1 gap-3 border-b border-line py-6 sm:grid-cols-[48px_1fr] sm:gap-5"
+                    >
+                      <span className="font-mono text-[10px] text-text-tertiary">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <div>
+                        <h3 className="text-base font-medium text-text-primary">
+                          {principle.title}
+                        </h3>
+                        <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-text-secondary">
+                          {principle.body}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* 7. CTA SECTION */}
-        <section className="text-center scroll-reveal fade-up border-t border-card-border pt-32">
-          <p className="text-2xl md:text-3xl text-text-primary font-black uppercase tracking-tight mb-10">
-            Open to remote opportunities and collaborations.
-          </p>
-          <a 
-            href="/#contact" 
-            className="inline-flex items-center gap-3 bg-text-primary text-bg-primary hover:opacity-90 px-10 py-5 rounded-full font-black text-xl uppercase tracking-widest transition-all hover:-translate-y-1 shadow-xl"
-          >
-            Let's Talk <ArrowUpRight size={24} />
-          </a>
+        <section className="site-section border-b border-line" id="bootcamp">
+          <div className="site-shell">
+            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="eyebrow">Professional development</p>
+                <h2 className="display-section mt-5 text-text-primary">
+                  Still learning, in public.
+                </h2>
+              </div>
+              <StatusPill tone="learning">Bootcamp ongoing</StatusPill>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-12">
+              <div className="border border-line bg-bg-panel p-6 md:p-8 lg:col-span-7">
+                <h3 className="text-xl font-semibold tracking-[-0.03em] text-text-primary">
+                  {bootcamp.title}
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-text-secondary">
+                  {bootcamp.summary}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {bootcamp.topics.map((topic) => (
+                    <span key={topic} className="chip">
+                      {topic}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="lg:col-span-5">
+                <div className="border-t border-line">
+                  {currentlyLearning.map((item) => (
+                    <div key={item.title} className="border-b border-line py-4">
+                      <h3 className="text-sm font-medium text-text-primary">{item.title}</h3>
+                      <p className="mt-1 text-xs leading-relaxed text-text-secondary">
+                        {item.body}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
+        <section className="site-section border-b border-line" id="building-in-public">
+          <div className="site-shell">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+              <div className="lg:col-span-4">
+                <p className="eyebrow">Building in public</p>
+                <h2 className="display-section mt-5 text-text-primary">The log.</h2>
+                <p className="prose-site mt-5">
+                  New projects, technical lessons and progress. Kept close to the work, and
+                  updated when something real ships.
+                </p>
+              </div>
+
+              <div className="lg:col-span-8">
+                <div className="border-t border-line">
+                  {buildLog.map((entry) => (
+                    <article
+                      key={`${entry.date}-${entry.title}`}
+                      className="grid grid-cols-1 gap-3 border-b border-line py-6 sm:grid-cols-[110px_1fr] sm:gap-6"
+                    >
+                      <div>
+                        <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-text-tertiary">
+                          {entry.date}
+                        </p>
+                        <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.12em] text-signal">
+                          {entry.tag}
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="text-base font-medium text-text-primary">{entry.title}</h3>
+                        <p className="mt-1.5 text-sm leading-relaxed text-text-secondary">
+                          {entry.body}
+                        </p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <ContactSection />
       </main>
-      
       <Footer />
     </div>
   );

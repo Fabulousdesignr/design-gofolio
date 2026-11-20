@@ -1,8 +1,11 @@
 const prefetched = new Set();
 
 const PREFETCH_MAP = {
+  '/work/': () => import('../pages/WorkCaseStudy'),
   '/work': () => import('../pages/Work'),
   '/about': () => import('../pages/About'),
+  '/capabilities': () => import('../pages/Capabilities'),
+  '/contact': () => import('../pages/Contact'),
   '/labs': () => import('../pages/Experiments'),
   '/case-study': () => import('../pages/CaseStudyDetail'),
   '/ai-playground': () => import('../pages/ExperimentDetail'),

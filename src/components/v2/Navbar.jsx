@@ -1,148 +1,173 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { site } from '../../data/site';
 import { useContactModal } from '../../context/ContactModalContext';
-import { usePrefetch } from '../../hooks/usePrefetch';
 
-export default function Navbar({ isCaseStudy = false }) {
+const NAV = [
+  { label: 'Home', to: '/' },
+  { label: 'Work', to: '/work' },
+  { label: 'About', to: '/about' },
+  { label: 'Capabilities', to: '/capabilities' },
+  { label: 'Contact', to: '/contact' },
+];
+
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const { openModal } = useContactModal();
-  const location = useLocation();
-  const { onMouseEnter } = usePrefetch();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navLinks = [
-    { label: 'Work', href: location.pathname === '/' ? '#work' : '/work' },
-    { label: 'Services', href: location.pathname === '/' ? '#services' : '/#services' },
-    { label: 'About', href: location.pathname === '/' ? '#about' : '/about' },
-    { label: 'Labs', href: '/labs' },
-  ];
+  useEffect(() => {
+    if (!open) {
+      document.body.style.overflow = '';
+      return undefined;
+    }
+
+    document.body.style.overflow = 'hidden';
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [open]);
+
+  const linkClass = ({ isActive }) =>
+    `relative py-2 text-[13px] font-medium transition-colors ${
+      isActive ? 'text-text-primary' : 'text-text-secondary hover:text-text-primary'
+    }`;
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || isCaseStudy
-          ? 'bg-[#09090b]/80 backdrop-blur-md border-b border-white/[0.08] py-3.5'
-          : 'bg-transparent py-5'
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Brand logo */}
-        <Link to="/" onMouseEnter={onMouseEnter} className="group flex items-center gap-2.5">
-          <span className="w-8 h-8 rounded-lg bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-white font-extrabold text-xs tracking-tight group-hover:border-indigo-500/50 group-hover:bg-indigo-500/10 transition-all">
-            GO
-          </span>
-          <span className="text-sm font-semibold tracking-tight text-white/90 group-hover:text-white transition-colors">
-            Godwin O.
-          </span>
-        </Link>
+    <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[120] focus:bg-paper focus:px-4 focus:py-2 focus:text-paper-ink"
+      >
+        Skip to content
+      </a>
 
-        {/* Desktop navigation */}
-        <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] border border-white/[0.08] px-3 py-1.5 rounded-full backdrop-blur-sm">
-          {navLinks.map((link) => (
-            link.href.startsWith('/') ? (
-              <Link
-                key={link.label}
-                to={link.href}
-                onMouseEnter={onMouseEnter}
-                className="text-xs font-medium text-white/70 hover:text-white px-3 py-1 rounded-full hover:bg-white/[0.06] transition-all"
-              >
-                {link.label}
-              </Link>
-            ) : (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-xs font-medium text-white/70 hover:text-white px-3 py-1 rounded-full hover:bg-white/[0.06] transition-all"
-              >
-                {link.label}
-              </a>
-            )
-          ))}
-        </nav>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
+          scrolled || open ? 'border-line bg-bg-primary' : 'border-transparent bg-bg-primary'
+        }`}
+      >
+        <div className="site-shell flex h-16 items-center justify-between gap-6 md:h-[72px]">
+          <Link to="/" className="group flex items-center gap-3" aria-label="Godwin Okechukwu, home">
+            <span className="flex h-8 w-8 items-center justify-center border border-line-strong font-mono text-[10px] font-medium tracking-[0.08em] text-text-primary transition-colors group-hover:border-signal-border group-hover:text-signal">
+              GO
+            </span>
+            <span className="hidden leading-tight sm:block">
+              <span className="block text-[13px] font-semibold tracking-[-0.01em] text-text-primary">
+                {site.name}
+              </span>
+              <span className="block font-mono text-[9px] uppercase tracking-[0.12em] text-text-tertiary">
+                {site.role}
+              </span>
+            </span>
+          </Link>
 
-        {/* Right CTAs */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="https://gofolio.site"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 hover:bg-indigo-500/20 hover:border-indigo-500/30 transition-all"
-          >
-            PM Portfolio <ArrowUpRight size={13} />
-          </a>
+          <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
+            {NAV.slice(0, 4).map((item) => (
+              <NavLink key={item.to} to={item.to} className={linkClass} end={item.to === '/'}>
+                {item.label}
+              </NavLink>
+            ))}
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 border border-line-strong px-4 py-2 text-[12px] font-medium text-text-primary transition-colors hover:border-signal-border hover:text-signal"
+            >
+              Contact
+              <ArrowUpRight size={13} aria-hidden="true" />
+            </Link>
+          </nav>
 
           <button
-            onClick={openModal}
-            className="px-4 py-1.5 text-xs font-medium text-zinc-950 bg-white hover:bg-zinc-200 rounded-full transition-all shadow-sm cursor-pointer"
+            type="button"
+            onClick={() => setOpen((value) => !value)}
+            className="inline-flex h-10 w-10 items-center justify-center border border-line text-text-primary md:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? 'Close menu' : 'Open menu'}
           >
-            Contact
+            {open ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
+      </header>
 
-        {/* Mobile menu button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-white/70 hover:text-white p-1"
-          aria-label="Toggle Menu"
+      {open ? (
+        <div
+          id="mobile-menu"
+          className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto border-t border-line bg-bg-primary md:hidden"
         >
-          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </div>
+          <nav aria-label="Mobile" className="site-shell flex min-h-full flex-col py-8">
+            <div className="flex flex-col">
+              {NAV.map((item, index) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  end={item.to === '/'}
+                  onClick={() => setOpen(false)}
+                  className={({ isActive }) =>
+                    `flex items-center justify-between border-b border-line py-5 ${
+                      isActive ? 'text-text-primary' : 'text-text-secondary'
+                    }`
+                  }
+                >
+                  <span className="text-2xl font-semibold tracking-[-0.035em]">{item.label}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-text-tertiary">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </NavLink>
+              ))}
+            </div>
 
-      {/* Mobile drawer */}
-      {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[57px] bg-[#09090b] border-b border-white/[0.1] px-6 py-6 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            link.href.startsWith('/') ? (
-              <Link
-                key={link.label}
-                to={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-medium text-white/80 hover:text-white py-1"
-              >
-                {link.label}
-              </Link>
-            ) : (
+            <div className="mt-auto pt-10">
+              <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-text-tertiary">
+                Start a conversation
+              </p>
               <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-medium text-white/80 hover:text-white py-1"
+                href={`mailto:${site.email}`}
+                className="mt-3 block break-all text-lg font-medium text-text-primary"
               >
-                {link.label}
+                {site.email}
               </a>
-            )
-          ))}
-          <div className="pt-4 border-t border-white/[0.08] flex flex-col gap-3">
-            <a
-              href="https://gofolio.site"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-medium rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
-            >
-              Switch to PM Portfolio <ArrowUpRight size={14} />
-            </a>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                openModal();
-              }}
-              className="w-full py-2.5 text-xs font-semibold text-zinc-950 bg-white rounded-full text-center"
-            >
-              Get in touch
-            </button>
-          </div>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  openModal();
+                }}
+                className="mt-6 flex w-full items-center justify-center gap-2 bg-paper px-5 py-3.5 text-sm font-semibold text-paper-ink"
+              >
+                Tell me about the project
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </button>
+
+              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-text-secondary">
+                <a href={site.links.github} target="_blank" rel="noopener noreferrer" className="hover:text-text-primary">
+                  GitHub
+                </a>
+                <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-text-primary">
+                  LinkedIn
+                </a>
+                <a href={site.links.cv} download className="hover:text-text-primary">
+                  Download CV
+                </a>
+              </div>
+            </div>
+          </nav>
         </div>
-      )}
-    </header>
+      ) : null}
+    </>
   );
 }

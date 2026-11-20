@@ -1,50 +1,78 @@
-import { Mail, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { site } from '../../data/site';
 import { useContactModal } from '../../context/ContactModalContext';
+
+const OPEN_TO = [
+  'AI product development',
+  'Product engineering roles',
+  'Design engineering roles',
+  'Freelance product builds',
+  'Early-stage collaborations',
+];
 
 export default function ContactSection() {
   const { openModal } = useContactModal();
 
   return (
-    <section id="contact" className="py-28 relative overflow-hidden">
-      {/* Glow highlight */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-indigo-600/10 blur-[130px] rounded-full pointer-events-none -z-10" />
+    <section className="paper-section" id="contact">
+      <div className="site-shell py-20 md:py-28">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-8">
+            <p className="eyebrow">Next</p>
+            <h2 className="display-section mt-5 max-w-3xl text-paper-ink">
+              Have an idea worth building? Let&apos;s make it real.
+            </h2>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-paper-ink/65">
+              I am open to AI product development, product engineering and design engineering
+              roles, freelance product builds, and collaboration with early-stage teams.
+            </p>
 
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-4">
-          Get In Touch
-        </h2>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <button
+                type="button"
+                onClick={openModal}
+                className="inline-flex items-center justify-center gap-2 bg-paper-ink px-6 py-3.5 text-sm font-semibold text-paper transition-colors hover:bg-signal hover:text-paper-ink"
+              >
+                Start a conversation
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </button>
+              <a
+                href={`mailto:${site.email}`}
+                className="inline-flex items-center justify-center gap-2 border border-paper-ink/25 px-6 py-3.5 text-sm font-medium text-paper-ink transition-colors hover:border-paper-ink"
+              >
+                <Mail size={15} aria-hidden="true" />
+                {site.email}
+              </a>
+            </div>
+          </div>
 
-        <h3 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
-          Ready to elevate your digital product experience?
-        </h3>
+          <div className="lg:col-span-4">
+            <div className="border-t border-paper-ink/20 pt-5">
+              <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-paper-ink/55">
+                Open to
+              </p>
+              <ul className="mt-5 space-y-3">
+                {OPEN_TO.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center justify-between gap-4 border-b border-paper-ink/10 pb-3 text-sm text-paper-ink/80"
+                  >
+                    <span>{item}</span>
+                    <span className="h-1 w-1 rounded-full bg-paper-ink/40" aria-hidden="true" />
+                  </li>
+                ))}
+              </ul>
 
-        <p className="text-base sm:text-lg text-white/60 font-normal leading-relaxed max-w-2xl mx-auto mb-10">
-          Open for full-time Product Designer roles, contract project design, and strategic consultations. Let's discuss your goals.
-        </p>
-
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <button
-            onClick={openModal}
-            className="px-8 py-4 text-sm font-semibold text-zinc-950 bg-white hover:bg-zinc-200 rounded-full transition-all shadow-xl cursor-pointer"
-          >
-            Send a Message
-          </button>
-
-          <a
-            href="https://wa.me/2349157826355?text=Hi%20Godwin%2C%20I%20came%20across%20your%20portfolio%20and%20I%E2%80%99d%20love%20to%20connect."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-4 text-sm font-semibold text-white bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] rounded-full transition-all"
-          >
-            <MessageCircle size={16} /> WhatsApp <ArrowUpRight size={14} />
-          </a>
-
-          <a
-            href="mailto:fabianokechukwu6@gmail.com?subject=Product%20Design%20Inquiry"
-            className="inline-flex items-center gap-2 px-6 py-4 text-sm font-semibold text-white/70 hover:text-white transition-all"
-          >
-            <Mail size={16} /> Email Direct
-          </a>
+              <div className="mt-6 flex items-center justify-between gap-4 text-xs text-paper-ink/55">
+                <span>{site.location}</span>
+                <Link to="/contact" className="inline-flex items-center gap-1 hover:text-paper-ink">
+                  Contact page
+                  <ArrowUpRight size={12} aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

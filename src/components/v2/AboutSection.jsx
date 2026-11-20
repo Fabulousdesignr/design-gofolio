@@ -1,72 +1,97 @@
+import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { bootcamp, currentlyLearning } from '../../data/journey';
+import MediaFrame from '../site/MediaFrame';
+import StatusPill from '../site/StatusPill';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-28 border-b border-white/[0.06]">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
-          <div>
-            <h2 className="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-3">
-              About Godwin
+    <section className="site-section border-b border-line" id="about">
+      <div className="site-shell">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <MediaFrame
+              src="/images/My Image.png"
+              alt="Portrait of Godwin Okechukwu"
+              imgClassName="aspect-[4/5]"
+              className="max-w-sm lg:max-w-none"
+            />
+            <div className="mt-3 flex items-center justify-between gap-4">
+              <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-text-tertiary">
+                Godwin Okechukwu
+              </p>
+              <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-text-tertiary">
+                Nigeria / Remote
+              </p>
+            </div>
+          </div>
+
+          <div className="lg:col-span-8">
+            <p className="eyebrow">About</p>
+            <h2 className="display-section mt-5 max-w-2xl text-text-primary">
+              A designer&apos;s eye, applied to the whole product.
             </h2>
-            <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight mb-6">
-              Designer who speaks the language of product strategy and code.
-            </h3>
 
-            <p className="text-base text-white/70 leading-relaxed mb-4">
-              With nearly a decade of hands-on digital product experience, I bridge the gap between user needs, business goals, and engineering constraints.
-            </p>
+            <div className="prose-site mt-6">
+              <p>
+                I have spent around ten years in digital design, including four years in
+                product design. My work has moved from websites and visual systems into SaaS,
+                fintech, education and AI products.
+              </p>
+              <p>
+                More recently, I have moved from designing AI products to building them. That
+                means learning the backend, the data model, authentication and deployment, not
+                only the screen.
+              </p>
+              <p>
+                I am not positioning myself as an ML researcher. My strength is applied AI:
+                using models and APIs inside products that people can actually use, with a
+                clear interface and a sensible technical boundary.
+              </p>
+            </div>
 
-            <p className="text-base text-white/70 leading-relaxed mb-8">
-              Whether building AI tools from zero to one, scaling fintech platforms, or optimizing high-volume Shopify stores for conversion, my goal is simple: deliver memorable products that solve real problems.
-            </p>
-
-            {/* Value checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+            <div className="mt-9 grid grid-cols-3 gap-px border border-line bg-line">
               {[
-                'Product Design & Strategy',
-                'Design Systems & UI Kits',
-                'Shopify Storefronts & CRO',
-                'AI Interface Workflows',
-                'Rapid Code Prototyping',
-                'Cross-functional Leadership',
+                { value: '10', label: 'Years in design' },
+                { value: '4', label: 'Years in product' },
+                { value: '03', label: 'Live AI products' },
               ].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-xs font-medium text-white/80">
-                  <CheckCircle2 size={15} className="text-indigo-400 shrink-0" />
-                  {item}
+                <div key={item.label} className="bg-bg-primary p-4 sm:p-5">
+                  <p className="font-display text-2xl font-semibold tracking-[-0.04em] text-text-primary sm:text-3xl">
+                    {item.value}
+                  </p>
+                  <p className="mt-1 text-[11px] leading-tight text-text-tertiary sm:text-xs">
+                    {item.label}
+                  </p>
                 </div>
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-4 items-center">
-              <Link
-                to="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 text-xs font-semibold text-zinc-950 bg-white hover:bg-zinc-200 rounded-full transition-all"
-              >
-                Read Full Story <ArrowUpRight size={14} />
-              </Link>
-            </div>
-          </div>
-
-          {/* Quick Metrics / Bio Box */}
-          <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.08] flex flex-col gap-6">
-            <div className="pb-6 border-b border-white/[0.06]">
-              <span className="text-4xl font-extrabold text-white tracking-tight">8+</span>
-              <span className="text-xs text-white/50 block font-medium mt-1">Years of Product Experience</span>
-            </div>
-
-            <div className="pb-6 border-b border-white/[0.06]">
-              <span className="text-4xl font-extrabold text-white tracking-tight">20+</span>
-              <span className="text-xs text-white/50 block font-medium mt-1">Digital Products & Stores Shipped</span>
-            </div>
-
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-white/40 block mb-2">Specializations</span>
-              <p className="text-xs text-white/70 leading-relaxed">
-                SaaS Workflows · Fintech UX · AI Products · Ecommerce & Shopify CRO · Mobile Native Apps
+            <div className="mt-8 border border-line bg-bg-panel p-5 sm:p-6">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <p className="text-sm font-medium text-text-primary">{bootcamp.title}</p>
+                <StatusPill tone="learning">{bootcamp.status}</StatusPill>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                Ongoing professional development across context engineering, backend
+                engineering, database design, testing and deployment.
               </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {currentlyLearning.slice(0, 3).map((item) => (
+                  <span key={item.title} className="chip">
+                    {item.title}
+                  </span>
+                ))}
+              </div>
             </div>
+
+            <Link
+              to="/about"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-text-primary transition-colors hover:text-signal"
+            >
+              More about my path
+              <ArrowUpRight size={15} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </div>
