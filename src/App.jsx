@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import ScrollToTop from './components/ScrollToTop';
 import { ContactModalProvider } from './context/ContactModalContext';
